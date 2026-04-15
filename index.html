@@ -12,7 +12,6 @@
       --panel-bg:#f7f8ff;
       --panel-card:#ffffff;
       --panel-text:#1d2340;
-      --panel-sub:#7f86a3;
       --panel-accent:#6a84ff;
       --panel-accent-dark:#5671ee;
       --panel-border:#d9def7;
@@ -113,7 +112,7 @@
       height:100%;
       display:block;
       object-fit:cover;
-      aspect-ratio: 4 / 5;
+      aspect-ratio:4 / 5;
     }
 
     @media (min-width:901px){
@@ -289,14 +288,6 @@
       line-height:1.25;
     }
 
-    .a11y-subtitle{
-      text-align:center;
-      color:var(--panel-sub);
-      font-size:1rem;
-      font-weight:800;
-      margin:18px 0 10px;
-    }
-
     .a11y-reset{
       width:100%;
       border:none;
@@ -429,13 +420,13 @@
 
   <div class="gallery">
     <div class="gallery-card">
-      <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/model1.jpg" alt="Naya model 1">
+      <img src="model1.jpg" alt="Naya model 1">
     </div>
     <div class="gallery-card">
-      <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/model2.jpg" alt="Naya model 2">
+      <img src="model2.jpg" alt="Naya model 2">
     </div>
     <div class="gallery-card">
-      <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/model3.jpg" alt="Naya model 3">
+      <img src="model3.jpg" alt="Naya model 3">
     </div>
   </div>
 
@@ -477,7 +468,6 @@
       </button>
     </div>
 
-    <div class="a11y-subtitle">אפשרויות נוספות</div>
     <button class="a11y-reset" id="a11yReset">איפוס</button>
   </div>
 </div>
@@ -488,7 +478,7 @@
   const closeBtn = document.getElementById('a11yClose');
   const resetBtn = document.getElementById('a11yReset');
   const cards = Array.from(document.querySelectorAll('.a11y-card'));
-  const storageKey = 'naya_a11y_modes_v2';
+  const storageKey = 'naya_a11y_modes_v3';
 
   function getSavedModes() {
     try {
