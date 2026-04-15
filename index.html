@@ -53,6 +53,17 @@ body{
   text-decoration:none;
 }
 
+.btn-outline{
+  background:transparent !important;
+  border:1px solid #f2b21b;
+  color:#f2b21b;
+}
+
+.btn-outline:hover{
+  background:#f2b21b;
+  color:#2b1800;
+}
+
 .intro-section{
   max-width:850px;
   margin:20px auto 25px;
@@ -86,137 +97,32 @@ body{
 
 @media (min-width:901px){
   .gallery{grid-template-columns:repeat(3,1fr);}
-  .gallery-card{width:90%;margin:auto;}
 }
 
 @media (max-width:768px){
   .gallery{grid-template-columns:repeat(2,1fr);}
-  .gallery-card img{max-height:40vh;}
 }
 
-@media (max-width:900px) and (orientation:landscape){
-  .gallery{grid-template-columns:repeat(2,1fr);}
-  .gallery-card img{max-height:55vh;}
-}
-
-/* EMAIL */
 .email-section{
-  margin:20px 0 10px;
+  margin:20px 0;
   display:flex;
   flex-direction:column;
   align-items:center;
   gap:10px;
-}
-
-.email-button{
-  text-decoration:none;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:6px;
 }
 
 .email-image{width:70px;}
 
-.email-text{
-  color:rgba(255,255,255,0.85);
-  font-size:0.9rem;
-}
-
 .bottom-buttons{
   display:flex;
   gap:10px;
-  margin-top:8px;
 }
 
-.btn-outline{
-  background:transparent !important;
-  border:1px solid #f2b21b;
-  color:#f2b21b;
-  font-size:0.8rem;
-  padding:10px 14px;
-}
-
-.btn-outline:hover{
-  background:#f2b21b;
-  color:#2b1800;
-}
-
-/* FOOTER */
 .site-footer{
   font-size:0.75rem;
   color:rgba(255,255,255,0.6);
   margin-bottom:20px;
 }
-
-/* ACCESSIBILITY */
-.a11y-fab{
-  position:fixed;
-  left:12px;
-  bottom:16px;
-  z-index:99999;
-  width:55px;
-  height:55px;
-  border:none;
-  border-radius:12px;
-  background:#6a84ff;
-  color:#fff;
-  font-size:26px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  cursor:pointer;
-}
-
-.a11y-panel{
-  position:fixed;
-  left:12px;
-  bottom:80px;
-  z-index:99998;
-  width:220px;
-  background:#fff;
-  color:#111;
-  border-radius:14px;
-  box-shadow:0 12px 30px rgba(0,0,0,0.3);
-  display:none;
-}
-
-.a11y-panel.open{display:block;}
-
-.a11y-header{
-  background:#6a84ff;
-  color:#fff;
-  display:flex;
-  justify-content:space-between;
-  padding:12px;
-}
-
-.a11y-close{
-  background:none;
-  border:none;
-  color:#fff;
-  font-size:24px;
-  cursor:pointer;
-}
-
-.a11y-body{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-  padding:12px;
-}
-
-.a11y-option{
-  border:none;
-  border-radius:10px;
-  padding:10px;
-  cursor:pointer;
-}
-
-/* MODES */
-body.a11y-dark{background:#000 !important;}
-body.a11y-large{font-size:118%;}
-body.a11y-bold *{font-weight:800 !important;}
 </style>
 </head>
 
@@ -228,17 +134,25 @@ body.a11y-bold *{font-weight:800 !important;}
 
 <div class="logo-row">
   <a class="btn" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
+
   <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png" class="logo">
+
   <a class="btn" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
 </div>
 
 <section class="intro-section">
+
 <p>
 ברוכים הבאים לעולם של משמעות, אמונה וסטייל עדכני.<br><br>
 האתר שלנו מתמחה בתכשיטים ייחודיים עם סממנים יהודיים עמוקים, המשלבים בין מסורת עתיקה לעיצוב מודרני מוקפד.<br><br>
 כל פריט נוצר מתוך השראה לערכים של זהות, רוחניות וחיבור לשורשים ומעניק הרבה מעבר ליופי חיצוני.<br><br>
 בקולקציה שלנו תמצאו שרשראות, צמידים וטבעות המעוטרים בסמלים יהודיים מוכרים כמו מגן דוד, חי, תפילות וברכות, לצד עיצובים חדשניים עם נגיעות עכשוויות.
 </p>
+
+<div style="margin-top:16px;font-size:1.5rem;font-weight:800;color:#f2b21b;text-align:center;text-shadow:0 0 12px rgba(255,200,0,0.4);">
+❤️ וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ ❤️
+</div>
+
 </section>
 
 <div class="gallery">
@@ -248,61 +162,25 @@ body.a11y-bold *{font-weight:800 !important;}
 </div>
 
 <div class="email-section">
-  <a href="mailto:info@naya-jewelry.com" class="email-button">
-    <img src="mail trans.png" class="email-image">
-    <div class="email-text">שליחת מייל</div>
-  </a>
 
-  <div class="bottom-buttons">
-    <a class="btn btn-outline" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
-    <a class="btn btn-outline" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
-  </div>
+<a href="mailto:info@naya-jewelry.com">
+  <img src="mail trans.png" class="email-image">
+</a>
+
+<div>שליחת מייל</div>
+
+<div class="bottom-buttons">
+  <a class="btn btn-outline" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
+  <a class="btn btn-outline" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
+</div>
+
 </div>
 
 </div>
 
 <footer class="site-footer">
-  © Naya Fine Jewelry 2006
+© Naya Fine Jewelry 2006
 </footer>
-
-<!-- ACCESSIBILITY -->
-<button class="a11y-fab" id="a11yFab">♿</button>
-
-<div class="a11y-panel" id="a11yPanel">
-  <div class="a11y-header">
-    <span>נגישות</span>
-    <button class="a11y-close" id="a11yClose">×</button>
-  </div>
-  <div class="a11y-body">
-    <button class="a11y-option" data-mode="dark">מצב כהה</button>
-    <button class="a11y-option" data-mode="large">טקסט גדול</button>
-    <button class="a11y-option" data-mode="bold">טקסט עבה</button>
-    <button class="a11y-option" id="a11yReset">איפוס</button>
-  </div>
-</div>
-
-<script>
-const fab=document.getElementById('a11yFab');
-const panel=document.getElementById('a11yPanel');
-const closeBtn=document.getElementById('a11yClose');
-const resetBtn=document.getElementById('a11yReset');
-
-fab.onclick=()=>panel.classList.toggle('open');
-closeBtn.onclick=()=>panel.classList.remove('open');
-
-document.querySelectorAll('[data-mode]').forEach(btn=>{
-  btn.onclick=()=>{
-    const m=btn.dataset.mode;
-    if(m==='dark')document.body.classList.toggle('a11y-dark');
-    if(m==='large')document.body.classList.toggle('a11y-large');
-    if(m==='bold')document.body.classList.toggle('a11y-bold');
-  }
-});
-
-resetBtn.onclick=()=>{
-  document.body.classList.remove('a11y-dark','a11y-large','a11y-bold');
-};
-</script>
 
 </body>
 </html>
