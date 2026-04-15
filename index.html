@@ -4,14 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Naya Fine Jewelry</title>
-  <meta name="description" content="Naya Fine Jewelry" />
+
   <style>
     :root{
       --gold1:#f2b21b;
       --gold2:#c88400;
-      --gold3:#ffe3a0;
       --text:#ffffff;
-      --panel:#0a0a0a;
     }
 
     *{
@@ -24,230 +22,132 @@
       font-family:Arial, Helvetica, sans-serif;
       color:var(--text);
       text-align:center;
-      overflow-x:hidden;
       background:
-        radial-gradient(circle at 12% 42%, rgba(212,160,23,0.18), transparent 18%),
-        radial-gradient(circle at 88% 42%, rgba(212,160,23,0.14), transparent 18%),
-        linear-gradient(180deg, #2b2b2b 0%, #171717 34%, #060606 65%, #000 100%);
+        radial-gradient(circle at 15% 40%, rgba(212,160,23,0.2), transparent 20%),
+        radial-gradient(circle at 85% 40%, rgba(212,160,23,0.15), transparent 20%),
+        linear-gradient(180deg, #2b2b2b, #000);
     }
 
     .container{
-      width:100%;
-      max-width:1280px;
-      margin:0 auto;
-      padding-bottom:40px;
+      max-width:1200px;
+      margin:auto;
     }
 
     /* ===== HEADER ===== */
-    .header-wrap{
+    .header{
       width:100%;
+      padding-top:20px;
       background:#111;
-      padding-top:22px;
-      overflow:hidden;
     }
 
-    .header-inner{
-      width:min(92%, 1040px);
-      margin:0 auto;
-    }
-
-    .header-image{
-      width:100%;
+    .header img{
+      width:90%;
+      max-width:1000px;
       display:block;
-      height:auto;
-      max-height:430px;
-      object-fit:contain;
-      margin:0 auto;
+      margin:auto;
     }
 
     /* ===== LOGO ===== */
-    .logo-wrap{
-      width:170px;
-      height:170px;
-      margin:-24px auto 18px;
-      border-radius:50%;
-      overflow:hidden;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:#1b1c26;
-      box-shadow:
-        0 0 24px rgba(255,191,0,0.16),
-        0 14px 34px rgba(0,0,0,0.5);
-      position:relative;
-      z-index:2;
-    }
-
-    .logo-wrap img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .logo{
+      width:120px;
+      margin:-25px auto 15px;
       display:block;
-      border-radius:50%;
+      filter: drop-shadow(0 10px 25px rgba(0,0,0,0.6));
     }
 
     /* ===== BUTTONS ===== */
     .buttons{
       display:flex;
       justify-content:center;
-      gap:16px;
-      flex-wrap:wrap;
-      padding:0 16px;
-      margin-bottom:28px;
+      gap:15px;
+      margin:20px 10px;
     }
 
     .btn{
-      min-width:200px;
-      padding:15px 24px;
+      flex:1;
+      max-width:200px;
+      padding:14px;
       border-radius:999px;
       text-decoration:none;
-      font-size:1.05rem;
-      font-weight:700;
+      font-weight:bold;
       color:#2b1800;
       background:linear-gradient(180deg, var(--gold1), var(--gold2));
-      box-shadow:
-        0 0 18px rgba(255,170,0,0.30),
-        inset 0 0 0 2px rgba(255,245,210,0.45);
-      transition:transform .2s ease, box-shadow .2s ease;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-      box-shadow:
-        0 0 24px rgba(255,170,0,0.45),
-        inset 0 0 0 2px rgba(255,245,210,0.55);
+      box-shadow:0 0 20px rgba(255,170,0,0.4);
     }
 
     /* ===== GALLERY ===== */
     .gallery{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      padding:0 16px;
+      gap:15px;
+      padding:15px;
     }
 
-    .placeholder{
-      min-height:210px;
-      border:2px dashed rgba(255,255,255,0.22);
-      border-radius:18px;
+    .box{
+      height:180px;
+      border:2px dashed rgba(255,255,255,0.3);
+      border-radius:15px;
       display:flex;
       align-items:center;
       justify-content:center;
-      color:#d6d6d6;
-      background:rgba(255,255,255,0.02);
-      padding:16px;
-    }
-
-    /* ===== DESKTOP TUNING ===== */
-    @media (min-width: 901px){
-      .header-wrap{
-        padding-top:26px;
-      }
-
-      .header-inner{
-        width:min(82%, 1080px);
-      }
-
-      .header-image{
-        max-height:390px;
-      }
-    }
-
-    /* ===== TABLET ===== */
-    @media (max-width: 900px){
-      .header-inner{
-        width:92%;
-      }
-
-      .header-image{
-        max-height:300px;
-      }
+      color:#ccc;
     }
 
     /* ===== MOBILE ===== */
-    @media (max-width: 700px){
-      .header-wrap{
-        padding-top:10px;
-      }
+    @media(max-width:700px){
 
-      .header-inner{
+      .header img{
         width:100%;
       }
 
-      .header-image{
-        width:100%;
-        max-height:none;
-      }
-
-      .logo-wrap{
-        width:118px;
-        height:118px;
-        margin:-16px auto 16px;
+      .logo{
+        width:85px;
+        margin:-15px auto 10px;
       }
 
       .buttons{
         gap:10px;
-        padding:0 10px;
-        margin-bottom:20px;
-        flex-wrap:nowrap;
       }
 
       .btn{
-        min-width:auto;
-        width:calc(50% - 5px);
-        padding:12px 10px;
-        font-size:0.98rem;
+        font-size:0.9rem;
+        padding:12px;
       }
 
       .gallery{
         grid-template-columns:1fr;
-        gap:14px;
-        padding:0 12px;
-      }
-
-      .placeholder{
-        min-height:170px;
       }
     }
+
   </style>
 </head>
+
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="header-wrap">
-      <div class="header-inner">
-        <img
-          src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png"
-          alt="Naya Header"
-          class="header-image"
-        >
-      </div>
-    </div>
-
-    <div class="logo-wrap">
-      <img
-        src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo.png"
-        alt="Naya Logo"
-      >
-    </div>
-
-    <div class="buttons">
-      <a class="btn" href="https://twik.co.il/a/Naya/" target="_blank" rel="noopener noreferrer">
-        לאתר שלנו
-      </a>
-      <a class="btn" href="https://twik.co.il/store/Naya/" target="_blank" rel="noopener noreferrer">
-        לחנות שלנו
-      </a>
-    </div>
-
-    <div class="gallery">
-      <div class="placeholder">כאן תבוא תמונה</div>
-      <div class="placeholder">כאן תבוא תמונה</div>
-      <div class="placeholder">כאן תבוא תמונה</div>
-    </div>
-
+  <!-- HEADER -->
+  <div class="header">
+    <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png">
   </div>
+
+  <!-- LOGO -->
+  <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo.png" class="logo">
+
+  <!-- BUTTONS -->
+  <div class="buttons">
+    <a class="btn" href="https://twik.co.il/a/Naya/" target="_blank">לאתר שלנו</a>
+    <a class="btn" href="https://twik.co.il/store/Naya/" target="_blank">לחנות שלנו</a>
+  </div>
+
+  <!-- GALLERY -->
+  <div class="gallery">
+    <div class="box">כאן תבוא תמונה</div>
+    <div class="box">כאן תבוא תמונה</div>
+    <div class="box">כאן תבוא תמונה</div>
+  </div>
+
+</div>
 
 </body>
 </html>
