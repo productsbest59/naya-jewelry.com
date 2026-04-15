@@ -1,147 +1,152 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Naya Fine Jewelry</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naya Fine Jewelry</title>
+  <meta name="description" content="Naya Fine Jewelry" />
+  <style>
+    :root{
+      --gold1:#f2b21b;
+      --gold2:#c88400;
+    }
 
-<style>
-:root{
-  --gold1:#f2b21b;
-  --gold2:#c88400;
-}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    body{
+      font-family:Arial, sans-serif;
+      color:#fff;
+      text-align:center;
+      overflow-x:hidden;
+      background:
+        radial-gradient(circle at 12% 46%, rgba(212,160,23,0.16), transparent 18%),
+        radial-gradient(circle at 88% 46%, rgba(212,160,23,0.12), transparent 18%),
+        linear-gradient(180deg,#2b2b2b 0%,#161616 34%,#050505 68%,#000 100%);
+    }
 
-body{
-  font-family:Arial, sans-serif;
-  color:white;
-  text-align:center;
-  overflow-x:hidden;
-  background:
-    radial-gradient(circle at 12% 46%, rgba(212,160,23,0.16), transparent 18%),
-    radial-gradient(circle at 88% 46%, rgba(212,160,23,0.12), transparent 18%),
-    linear-gradient(180deg,#2b2b2b 0%,#161616 34%,#050505 68%,#000 100%);
-}
+    .container{
+      max-width:1320px;
+      margin:auto;
+      padding-bottom:40px;
+    }
 
-.container{
-  max-width:1320px;
-  margin:auto;
-}
+    .header{
+      height:240px;
+      background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png") center/cover no-repeat;
+      background-color:#111;
+    }
 
-/* HEADER MOBILE */
-.header{
-  height:240px;
-  background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png") center/cover no-repeat;
-}
+    .logo-row{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:14px;
+      padding:0 10px;
+      margin-top:-28px;
+      margin-bottom:20px;
+    }
 
-/* LOGO */
-.logo{
-  width:190px;
-  margin:-28px auto 14px;
-  display:block;
-  background:none !important;
-  box-shadow:none !important;
-  border:none !important;
-  border-radius:0 !important;
-  filter:
-    drop-shadow(0 12px 30px rgba(0,0,0,0.7))
-    drop-shadow(0 0 10px rgba(255,200,0,0.25));
-}
+    .logo{
+      width:190px;
+      display:block;
+      background:none !important;
+      box-shadow:none !important;
+      border:none !important;
+      border-radius:0 !important;
+      filter:
+        drop-shadow(0 12px 30px rgba(0,0,0,0.7))
+        drop-shadow(0 0 10px rgba(255,200,0,0.25));
+    }
 
-/* BUTTONS */
-.buttons{
-  display:flex;
-  justify-content:center;
-  gap:10px;-
-  padding:0 10px;
-  margin-bottom:20px;
-}
+    .btn{
+      width:auto;
+      min-width:140px;
+      padding:12px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.9rem;
+      color:#2b1800;
+      background:linear-gradient(180deg,var(--gold1),var(--gold2));
+      box-shadow:
+        0 0 18px rgba(255,170,0,0.30),
+        inset 0 0 0 2px rgba(255,245,210,0.44);
+    }
 
-.btn{
-  width:48%;
-  padding:12px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:700;
-  color:#2b1800;
-  background:linear-gradient(180deg,var(--gold1),var(--gold2));
-  box-shadow:
-    0 0 18px rgba(255,170,0,0.30),
-    inset 0 0 0 2px rgba(255,245,210,0.44);
-}
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      padding:0 12px;
+    }
 
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:14px;
-  padding:0 12px;
-}
+    .box{
+      min-height:170px;
+      border:2px dashed rgba(255,255,255,0.25);
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#ccc;
+      background:rgba(255,255,255,0.02);
+      padding:16px;
+    }
 
-.box{
-  min-height:170px;
-  border:2px dashed rgba(255,255,255,0.25);
-  border-radius:18px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#ccc;
-}
+    @media (min-width:901px){
+      .header{
+        height:330px;
+        background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header%20desktop.png") center/cover no-repeat;
+        background-color:#111;
+      }
 
-/* DESKTOP */
-@media (min-width:901px){
+      .logo-row{
+        gap:18px;
+        margin-top:-42px;
+        margin-bottom:24px;
+      }
 
-  .header{
-    height:330px;
-    background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header%20desktop.png") center/cover no-repeat;
-  }
+      .logo{
+        width:300px;
+      }
 
-  .logo{
-    width:300px;
-    margin:-50px auto 20px;
-  }
+      .btn{
+        min-width:200px;
+        padding:14px 22px;
+        font-size:1rem;
+      }
 
-  .buttons{
-    gap:16px;
-  }
+      .gallery{
+        grid-template-columns:repeat(3,1fr);
+        gap:18px;
+        padding:0 16px;
+      }
 
-  .btn{
-    width:auto;
-    min-width:200px;
-    padding:14px 22px;
-  }
-
-  .gallery{
-    grid-template-columns:repeat(3,1fr);
-  }
-
-  .box{
-    min-height:220px;
-  }
-}
-</style>
+      .box{
+        min-height:220px;
+      }
+    }
+  </style>
 </head>
-
 <body>
 
 <div class="container">
 
   <div class="header"></div>
 
-  <img
-    src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png"
-    class="logo"
-    alt="logo"
-  >
-
-  <div class="buttons">
-    <a class="btn" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
+  <div class="logo-row">
     <a class="btn" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
+
+    <img
+      src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png"
+      class="logo"
+      alt="logo"
+    >
+
+    <a class="btn" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
   </div>
 
   <div class="gallery">
