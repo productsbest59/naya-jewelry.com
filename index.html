@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Naya Fine Jewelry</title>
 
 <style>
@@ -17,18 +17,16 @@ body{
   font-family:Arial,sans-serif;
   color:#fff;
   text-align:center;
-  overflow-x:hidden;
-  background:linear-gradient(180deg,#2b2b2b,#000);
+  background:linear-gradient(#2b2b2b,#000);
 }
 
 .container{
-  max-width:1320px;
+  max-width:1200px;
   margin:auto;
-  padding-bottom:30px;
 }
 
 .header{
-  height:240px;
+  height:220px;
   background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png") center/cover no-repeat;
 }
 
@@ -42,87 +40,94 @@ body{
 .logo{width:190px;}
 
 .btn{
-  display:flex;
-  align-items:center;
-  justify-content:center;
   padding:12px;
   border-radius:999px;
   font-weight:700;
-  background:linear-gradient(180deg,var(--gold1),var(--gold2));
+  background:linear-gradient(var(--gold1),var(--gold2));
   color:#2b1800;
   text-decoration:none;
 }
 
 .btn-outline{
-  background:transparent !important;
-  border:1px solid #f2b21b;
-  color:#f2b21b;
-}
-
-.btn-outline:hover{
-  background:#f2b21b;
-  color:#2b1800;
+  background:transparent;
+  border:1px solid var(--gold1);
+  color:var(--gold1);
 }
 
 .intro-section{
-  max-width:850px;
-  margin:20px auto 25px;
-  padding:0 16px;
-}
-
-.intro-section p{
-  font-size:1rem;
-  line-height:1.8;
+  padding:20px;
 }
 
 .gallery{
   display:grid;
   grid-template-columns:1fr;
-  gap:14px;
-  padding:0 12px;
-}
-
-.gallery-card{
-  border-radius:18px;
-  overflow:hidden;
-  background:#111;
+  gap:12px;
   padding:10px;
 }
 
-.gallery-card img{
+.gallery img{
   width:100%;
-  height:auto;
-  object-fit:contain;
+  border-radius:16px;
 }
 
-@media (min-width:901px){
+@media(min-width:900px){
   .gallery{grid-template-columns:repeat(3,1fr);}
 }
 
-@media (max-width:768px){
+@media(max-width:768px){
   .gallery{grid-template-columns:repeat(2,1fr);}
 }
 
 .email-section{
-  margin:20px 0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
+  margin:20px;
 }
 
 .email-image{width:70px;}
 
 .bottom-buttons{
   display:flex;
+  justify-content:center;
   gap:10px;
+  margin-top:10px;
 }
 
-.site-footer{
-  font-size:0.75rem;
-  color:rgba(255,255,255,0.6);
-  margin-bottom:20px;
+footer{
+  font-size:0.8rem;
+  opacity:0.7;
+  margin:20px;
 }
+
+/* נגישות */
+#a11yBtn{
+  position:fixed;
+  left:12px;
+  bottom:16px;
+  width:55px;
+  height:55px;
+  background:#6a84ff;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  font-size:26px;
+  cursor:pointer;
+}
+
+#a11yMenu{
+  position:fixed;
+  left:12px;
+  bottom:80px;
+  background:#fff;
+  color:#000;
+  padding:10px;
+  border-radius:12px;
+  display:none;
+  width:200px;
+}
+
+.dark{background:#000;color:#fff;}
+.big{font-size:120%;}
+.bold *{font-weight:800 !important;}
+
 </style>
 </head>
 
@@ -134,9 +139,7 @@ body{
 
 <div class="logo-row">
   <a class="btn" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
-
   <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png" class="logo">
-
   <a class="btn" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
 </div>
 
@@ -149,38 +152,57 @@ body{
 בקולקציה שלנו תמצאו שרשראות, צמידים וטבעות המעוטרים בסמלים יהודיים מוכרים כמו מגן דוד, חי, תפילות וברכות, לצד עיצובים חדשניים עם נגיעות עכשוויות.
 </p>
 
-<div style="margin-top:16px;font-size:1.5rem;font-weight:800;color:#f2b21b;text-align:center;text-shadow:0 0 12px rgba(255,200,0,0.4);">
+<div style="margin-top:16px;font-size:1.5rem;font-weight:800;color:#f2b21b;">
 ❤️ וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ ❤️
 </div>
 
 </section>
 
 <div class="gallery">
-  <div class="gallery-card"><img src="model1.jpg"></div>
-  <div class="gallery-card"><img src="model2.jpg"></div>
-  <div class="gallery-card"><img src="model3.jpg"></div>
+<img src="model1.jpg">
+<img src="model2.jpg">
+<img src="model3.jpg">
 </div>
 
 <div class="email-section">
-
 <a href="mailto:info@naya-jewelry.com">
-  <img src="mail trans.png" class="email-image">
+<img src="mail trans.png" class="email-image">
 </a>
-
 <div>שליחת מייל</div>
 
 <div class="bottom-buttons">
-  <a class="btn btn-outline" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
-  <a class="btn btn-outline" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
+<a class="btn btn-outline" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
+<a class="btn btn-outline" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
+</div>
 </div>
 
 </div>
 
-</div>
-
-<footer class="site-footer">
+<footer>
 © Naya Fine Jewelry 2006
 </footer>
+
+<button id="a11yBtn">♿</button>
+
+<div id="a11yMenu">
+<b>נגישות</b><br>
+<button onclick="document.body.classList.toggle('dark')">מצב כהה</button><br>
+<button onclick="document.body.classList.toggle('big')">טקסט גדול</button><br>
+<button onclick="document.body.classList.toggle('bold')">טקסט עבה</button>
+</div>
+
+<script>
+const btn=document.getElementById("a11yBtn");
+const menu=document.getElementById("a11yMenu");
+
+btn.onclick=()=>menu.style.display="block";
+
+document.addEventListener("click",(e)=>{
+if(!menu.contains(e.target)&&!btn.contains(e.target)){
+menu.style.display="none";
+}
+});
+</script>
 
 </body>
 </html>
