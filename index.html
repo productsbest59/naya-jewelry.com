@@ -9,7 +9,9 @@
     :root{
       --gold1:#f2b21b;
       --gold2:#c88400;
+      --gold3:#ffe3a0;
       --text:#ffffff;
+      --panel:#0a0a0a;
     }
 
     *{
@@ -24,14 +26,14 @@
       text-align:center;
       overflow-x:hidden;
       background:
-        radial-gradient(circle at 15% 40%, rgba(212,160,23,0.20), transparent 20%),
-        radial-gradient(circle at 85% 40%, rgba(212,160,23,0.15), transparent 20%),
-        linear-gradient(180deg, #2c2c2c 0%, #171717 35%, #050505 70%, #000 100%);
+        radial-gradient(circle at 12% 42%, rgba(212,160,23,0.18), transparent 18%),
+        radial-gradient(circle at 88% 42%, rgba(212,160,23,0.14), transparent 18%),
+        linear-gradient(180deg, #2b2b2b 0%, #171717 34%, #060606 65%, #000 100%);
     }
 
     .container{
       width:100%;
-      max-width:1100px;
+      max-width:1280px;
       margin:0 auto;
       padding-bottom:40px;
     }
@@ -39,30 +41,39 @@
     /* ===== HEADER ===== */
     .header-wrap{
       width:100%;
-      height:240px;
-      background-image:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png");
-      background-repeat:no-repeat;
-      background-size:cover;
-      background-position:center 42%;
-      background-color:#111;
-      border-bottom-left-radius:0;
-      border-bottom-right-radius:0;
+      background:#111;
+      padding-top:22px;
+      overflow:hidden;
+    }
+
+    .header-inner{
+      width:min(92%, 1040px);
+      margin:0 auto;
+    }
+
+    .header-image{
+      width:100%;
+      display:block;
+      height:auto;
+      max-height:430px;
+      object-fit:contain;
+      margin:0 auto;
     }
 
     /* ===== LOGO ===== */
     .logo-wrap{
-      width:190px;
-      height:190px;
-      margin:-55px auto 22px;
+      width:170px;
+      height:170px;
+      margin:-24px auto 18px;
       border-radius:50%;
       overflow:hidden;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:#1a1a1a;
+      background:#1b1c26;
       box-shadow:
-        0 0 28px rgba(255,191,0,0.18),
-        0 18px 40px rgba(0,0,0,0.55);
+        0 0 24px rgba(255,191,0,0.16),
+        0 14px 34px rgba(0,0,0,0.5);
       position:relative;
       z-index:2;
     }
@@ -71,31 +82,31 @@
       width:100%;
       height:100%;
       object-fit:cover;
-      border-radius:50%;
       display:block;
+      border-radius:50%;
     }
 
     /* ===== BUTTONS ===== */
     .buttons{
       display:flex;
       justify-content:center;
-      gap:18px;
+      gap:16px;
       flex-wrap:wrap;
       padding:0 16px;
       margin-bottom:28px;
     }
 
     .btn{
-      min-width:220px;
-      padding:16px 28px;
+      min-width:200px;
+      padding:15px 24px;
       border-radius:999px;
       text-decoration:none;
-      font-size:1.1rem;
+      font-size:1.05rem;
       font-weight:700;
       color:#2b1800;
       background:linear-gradient(180deg, var(--gold1), var(--gold2));
       box-shadow:
-        0 0 20px rgba(255,170,0,0.35),
+        0 0 18px rgba(255,170,0,0.30),
         inset 0 0 0 2px rgba(255,245,210,0.45);
       transition:transform .2s ease, box-shadow .2s ease;
     }
@@ -103,7 +114,7 @@
     .btn:hover{
       transform:translateY(-2px);
       box-shadow:
-        0 0 26px rgba(255,170,0,0.5),
+        0 0 24px rgba(255,170,0,0.45),
         inset 0 0 0 2px rgba(255,245,210,0.55);
     }
 
@@ -111,12 +122,12 @@
     .gallery{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:16px;
+      gap:18px;
       padding:0 16px;
     }
 
     .placeholder{
-      min-height:190px;
+      min-height:210px;
       border:2px dashed rgba(255,255,255,0.22);
       border-radius:18px;
       display:flex;
@@ -127,30 +138,75 @@
       padding:16px;
     }
 
+    /* ===== DESKTOP TUNING ===== */
+    @media (min-width: 901px){
+      .header-wrap{
+        padding-top:26px;
+      }
+
+      .header-inner{
+        width:min(82%, 1080px);
+      }
+
+      .header-image{
+        max-height:390px;
+      }
+    }
+
     /* ===== TABLET ===== */
     @media (max-width: 900px){
-      .header-wrap{
-        height:210px;
-        background-position:center 40%;
+      .header-inner{
+        width:92%;
+      }
+
+      .header-image{
+        max-height:300px;
       }
     }
 
     /* ===== MOBILE ===== */
     @media (max-width: 700px){
       .header-wrap{
-        height:250px;
-        background-size:cover;
-        background-position:center 32%;
+        padding-top:10px;
+      }
+
+      .header-inner{
+        width:100%;
+      }
+
+      .header-image{
+        width:100%;
+        max-height:none;
       }
 
       .logo-wrap{
-        width:155px;
-        height:155px;
-        margin:-42px auto 20px;
+        width:118px;
+        height:118px;
+        margin:-16px auto 16px;
+      }
+
+      .buttons{
+        gap:10px;
+        padding:0 10px;
+        margin-bottom:20px;
+        flex-wrap:nowrap;
+      }
+
+      .btn{
+        min-width:auto;
+        width:calc(50% - 5px);
+        padding:12px 10px;
+        font-size:0.98rem;
       }
 
       .gallery{
         grid-template-columns:1fr;
+        gap:14px;
+        padding:0 12px;
+      }
+
+      .placeholder{
+        min-height:170px;
       }
     }
   </style>
@@ -159,7 +215,15 @@
 
   <div class="container">
 
-    <div class="header-wrap"></div>
+    <div class="header-wrap">
+      <div class="header-inner">
+        <img
+          src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png"
+          alt="Naya Header"
+          class="header-image"
+        >
+      </div>
+    </div>
 
     <div class="logo-wrap">
       <img
