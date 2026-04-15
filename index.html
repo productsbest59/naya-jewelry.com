@@ -124,7 +124,15 @@ body{
 
 /* EMAIL */
 .email-section{
-  margin:18px 0 8px;
+  margin:20px 0 10px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:10px;
+}
+
+.email-button{
+  text-decoration:none;
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -133,13 +141,33 @@ body{
 
 .email-image{
   width:70px;
-  cursor:pointer;
 }
 
-.email-address{
-  color:rgba(255,255,255,0.8);
-  font-size:0.85rem;
-  text-decoration:none;
+.email-text{
+  color:rgba(255,255,255,0.85);
+  font-size:0.9rem;
+}
+
+/* BOTTOM BUTTONS */
+.bottom-buttons{
+  display:flex;
+  gap:10px;
+  margin-top:8px;
+}
+
+/* OUTLINE BUTTONS */
+.btn-outline{
+  background:transparent !important;
+  border:1px solid #f2b21b;
+  color:#f2b21b;
+  font-size:0.8rem;
+  padding:10px 14px;
+}
+
+/* HOVER */
+.btn-outline:hover{
+  background:#f2b21b;
+  color:#2b1800;
 }
 
 /* FOOTER */
@@ -176,11 +204,11 @@ body{
 <div class="header"></div>
 
 <div class="logo-row">
-  <a class="btn" href="#">לחנות שלנו</a>
+  <a class="btn" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
 
   <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png" class="logo">
 
-  <a class="btn" href="#">לאתר שלנו</a>
+  <a class="btn" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
 </div>
 
 <!-- TEXT -->
@@ -208,25 +236,29 @@ body{
   </div>
 </div>
 
-<!-- EMAIL WITH IMAGE -->
+<!-- EMAIL + BUTTONS -->
 <div class="email-section">
-  <a href="mailto:info@naya-jewelry.com">
+
+  <a href="mailto:info@naya-jewelry.com" class="email-button">
     <img src="mail trans.png" class="email-image" alt="Send Email">
+    <div class="email-text">שליחת מייל</div>
   </a>
 
-  <a href="mailto:info@naya-jewelry.com" class="email-address">
-    info@naya-jewelry.com
-  </a>
+  <div class="bottom-buttons">
+    <a class="btn btn-outline" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
+    <a class="btn btn-outline" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
+  </div>
+
 </div>
 
 </div>
 
 <!-- FOOTER -->
 <footer class="site-footer">
-  Naya Fine Jewelry 2006 ©
+  © Naya Fine Jewelry 2006
 </footer>
 
-<!-- ACCESSIBILITY BUTTON -->
+<!-- ACCESSIBILITY -->
 <button class="a11y-fab">♿</button>
 
 </body>
