@@ -1,180 +1,114 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naya Fine Jewelry</title>
-  <meta name="description" content="Naya Fine Jewelry" />
-  <style>
-    :root{
-      --bg:#050505;
-      --gold1:#f2b21b;
-      --gold2:#c88400;
-      --text:#ffffff;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Naya Jewelry</title>
 
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-    }
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, sans-serif;
+}
 
-    body{
-      font-family: Arial, Helvetica, sans-serif;
-      background:
-        radial-gradient(circle at 15% 35%, rgba(212,160,23,.18), transparent 22%),
-        radial-gradient(circle at 85% 18%, rgba(212,160,23,.12), transparent 18%),
-        linear-gradient(180deg, #111 0%, #050505 45%, #000 100%);
-      color:var(--text);
-      min-height:100vh;
-      overflow-x:hidden;
-    }
+body{
+  background: radial-gradient(circle at top, #2a2a2a, #0b0b0b);
+  color:white;
+  text-align:center;
+}
 
-    .page{
-      width:100%;
-      max-width:900px;
-      margin:0 auto;
-      padding:0 16px 40px;
-      text-align:center;
-    }
+/* HEADER */
+.header-image{
+  width:100%;
+  max-height:220px;
+  object-fit:cover;
+}
 
-    .header-wrap{
-      padding-top:24px;
-    }
+/* LOGO */
+.logo-wrap{
+  width:180px;
+  height:180px;
+  margin:-60px auto 20px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#111;
 
-    .header-image{
-      width:100%;
-      max-width:820px;
-      display:block;
-      margin:0 auto;
-      border-radius:18px;
-      box-shadow:0 12px 35px rgba(0,0,0,.45);
-    }
+  box-shadow:
+    0 0 40px rgba(212,160,23,0.3),
+    0 20px 40px rgba(0,0,0,0.8);
+}
 
-    .logo-wrap{
-      width:180px;
-      height:180px;
-      margin: -40px auto 0;
-      border-radius:50%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background: radial-gradient(circle at 50% 30%, #2b2b35, #11121a 72%);
-      box-shadow:0 14px 40px rgba(0,0,0,.55);
-      position:relative;
-      z-index:2;
-    }
+.logo-wrap img{
+  width:80%;
+}
 
-    .logo-wrap img{
-      width:72%;
-      height:72%;
-      object-fit:contain;
-    }
+/* BUTTONS */
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin:20px;
+  flex-wrap:wrap;
+}
 
-    .buttons{
-      display:flex;
-      justify-content:center;
-      gap:18px;
-      margin:30px auto 10px;
-      flex-wrap:wrap;
-    }
+.btn{
+  background:linear-gradient(135deg,#ffb300,#ff8800);
+  color:#000;
+  padding:14px 26px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:bold;
+  box-shadow:0 0 15px rgba(255,170,0,0.6);
+  transition:0.3s;
+}
 
-    .btn{
-      min-width:220px;
-      padding:16px 28px;
-      border-radius:999px;
-      text-decoration:none;
-      font-size:1.15rem;
-      font-weight:700;
-      color:#1d1200;
-      background:linear-gradient(180deg, var(--gold1), var(--gold2));
-      box-shadow:
-        0 10px 28px rgba(212,160,23,.18),
-        inset 0 0 0 2px rgba(255,245,200,.45);
-      transition:transform .18s ease, box-shadow .18s ease;
-    }
+.btn:hover{
+  transform:scale(1.05);
+}
 
-    .btn:hover{
-      transform:translateY(-2px);
-      box-shadow:
-        0 14px 32px rgba(212,160,23,.24),
-        inset 0 0 0 2px rgba(255,245,200,.55);
-    }
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+  gap:15px;
+  padding:20px;
+}
 
-    .gallery{
-      margin-top:42px;
-      display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:16px;
-    }
-
-    .gallery img{
-      width:100%;
-      aspect-ratio:1 / 1;
-      object-fit:cover;
-      border-radius:18px;
-      background:#111;
-      box-shadow:0 10px 28px rgba(0,0,0,.35);
-    }
-
-    .placeholder{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      min-height:220px;
-      border-radius:18px;
-      border:1px dashed rgba(255,255,255,.18);
-      color:#cfcfcf;
-      background:rgba(255,255,255,.02);
-      font-size:1rem;
-      padding:16px;
-    }
-
-    @media (max-width: 700px){
-      .logo-wrap{
-        width:180px;
-        height:180px;
-      }
-
-      .btn{
-        min-width:180px;
-        font-size:1rem;
-        padding:14px 20px;
-      }
-
-      .gallery{
-        grid-template-columns:1fr;
-      }
-    }
-  </style>
+.gallery div{
+  border:2px dashed rgba(255,255,255,0.2);
+  padding:40px;
+  border-radius:15px;
+  color:#ccc;
+}
+</style>
 </head>
+
 <body>
-  <main class="page">
 
-    <div class="header-wrap">
-  <img src="header.png" class="header-image">
-</div>
+<!-- HEADER -->
+<img src="https://raw.githubusercontent.com/productsbest59/naya-jewelry.com/main/header.png" class="header-image">
 
+<!-- LOGO -->
 <div class="logo-wrap">
-  <img src="logo.png">
+  <img src="https://raw.githubusercontent.com/productsbest59/naya-jewelry.com/main/logo.png">
 </div>
 
-    <div class="buttons">
-      <a class="btn" href="https://twik.co.il/a/Naya/" target="_blank" rel="noopener noreferrer">
-        לאתר שלנו
-      </a>
+<!-- BUTTONS -->
+<div class="buttons">
+  <a class="btn" href="https://twik.co.il/a/Naya/" target="_blank">לאתר שלנו</a>
+  <a class="btn" href="https://twik.co.il/store/Naya/" target="_blank">לחנות שלנו</a>
+</div>
 
-      <a class="btn" href="https://twik.co.il/store/Naya/" target="_blank" rel="noopener noreferrer">
-        לחנות שלנו
-      </a>
-    </div>
+<!-- GALLERY -->
+<div class="gallery">
+  <div>כאן תוסיף תמונת תכשיט</div>
+  <div>כאן תוסיף תמונת תכשיט</div>
+  <div>כאן תוסיף תמונת תכשיט</div>
+</div>
 
-    <section class="gallery">
-      <div class="placeholder">כאן נוסיף תמונת תכשיט</div>
-      <div class="placeholder">כאן נוסיף תמונת תכשיט</div>
-      <div class="placeholder">כאן נוסיף תמונת תכשיט</div>
-    </section>
-
-  </main>
 </body>
 </html>
