@@ -24,7 +24,7 @@ body{
 .container{
   max-width:1320px;
   margin:auto;
-  padding-bottom:40px;
+  padding-bottom:30px;
 }
 
 .header{
@@ -57,8 +57,8 @@ body{
 
 /* TEXT */
 .intro-section{
-  max-width:800px;
-  margin:20px auto 30px;
+  max-width:850px;
+  margin:20px auto 25px;
   padding:0 16px;
 }
 
@@ -100,7 +100,7 @@ body{
   }
 }
 
-/* MOBILE PORTRAIT - 2 PER ROW */
+/* MOBILE PORTRAIT */
 @media (max-width:768px){
   .gallery{
     grid-template-columns:repeat(2,1fr);
@@ -124,12 +124,21 @@ body{
 
 /* EMAIL */
 .email-section{
-  margin:20px 0;
+  margin:18px 0 8px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:6px;
 }
 
-.email-link{
-  color:#f2b21b;
-  font-weight:700;
+.email-image{
+  width:70px;
+  cursor:pointer;
+}
+
+.email-address{
+  color:rgba(255,255,255,0.8);
+  font-size:0.85rem;
   text-decoration:none;
 }
 
@@ -140,7 +149,7 @@ body{
   margin-bottom:20px;
 }
 
-/* ACCESSIBILITY BUTTON */
+/* ACCESSIBILITY */
 .a11y-fab{
   position:fixed;
   left:12px;
@@ -156,7 +165,6 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  cursor:pointer;
 }
 </style>
 </head>
@@ -200,9 +208,13 @@ body{
   </div>
 </div>
 
-<!-- EMAIL -->
+<!-- EMAIL WITH IMAGE -->
 <div class="email-section">
-  <a href="mailto:info@naya-jewelrt.com" class="email-link">
+  <a href="mailto:info@naya-jewelrt.com">
+    <img src="mail trans.png" class="email-image" alt="Send Email">
+  </a>
+
+  <a href="mailto:info@naya-jewelrt.com" class="email-address">
     info@naya-jewelrt.com
   </a>
 </div>
@@ -214,7 +226,7 @@ body{
   Naya Fine Jewelry 2006 ©
 </footer>
 
-<!-- ACCESSIBILITY -->
+<!-- ACCESSIBILITY BUTTON -->
 <button class="a11y-fab">♿</button>
 
 </body>
