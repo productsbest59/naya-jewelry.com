@@ -1,184 +1,156 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Naya Fine Jewelry</title>
-  <meta name="description" content="Naya Fine Jewelry" />
-  <style>
-    :root{
-      --gold1:#f2b21b;
-      --gold2:#c88400;
-      --text:#ffffff;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Naya Fine Jewelry</title>
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<style>
+:root{
+  --gold1:#f2b21b;
+  --gold2:#c88400;
+}
 
-    body{
-      font-family:Arial, Helvetica, sans-serif;
-      color:var(--text);
-      text-align:center;
-      overflow-x:hidden;
-      background:
-        radial-gradient(circle at 12% 46%, rgba(212,160,23,0.16), transparent 18%),
-        radial-gradient(circle at 88% 46%, rgba(212,160,23,0.12), transparent 18%),
-        linear-gradient(180deg, #2b2b2b 0%, #161616 34%, #050505 68%, #000 100%);
-    }
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
 
-    .container{
-      width:100%;
-      max-width:1320px;
-      margin:0 auto;
-      padding-bottom:40px;
-    }
+body{
+  font-family:Arial, sans-serif;
+  color:white;
+  text-align:center;
+  overflow-x:hidden;
+  background:
+    radial-gradient(circle at 12% 46%, rgba(212,160,23,0.16), transparent 18%),
+    radial-gradient(circle at 88% 46%, rgba(212,160,23,0.12), transparent 18%),
+    linear-gradient(180deg,#2b2b2b 0%,#161616 34%,#050505 68%,#000 100%);
+}
 
-    .header{
-      width:100%;
-      height:250px;
-      background-image:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png");
-      background-repeat:no-repeat;
-      background-size:cover;
-      background-position:center 34%;
-      background-color:#111;
-    }
+.container{
+  max-width:1320px;
+  margin:auto;
+}
 
-    .logo{
-      width:90px;
-      display:block;
-      margin:-14px auto 14px;
-      position:relative;
-      z-index:2;
-      filter: drop-shadow(0 10px 22px rgba(0,0,0,0.65));
-    }
+/* HEADER MOBILE */
+.header{
+  height:240px;
+  background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png") center/cover no-repeat;
+}
 
-    .buttons{
-      display:flex;
-      justify-content:center;
-      gap:10px;
-      padding:0 10px;
-      margin:0 auto 20px;
-      flex-wrap:nowrap;
-    }
+/* LOGO */
+.logo{
+  width:150px;
+  margin:-28px auto 14px;
+  display:block;
+  background:none !important;
+  box-shadow:none !important;
+  border:none !important;
+  border-radius:0 !important;
+  filter:
+    drop-shadow(0 12px 30px rgba(0,0,0,0.7))
+    drop-shadow(0 0 10px rgba(255,200,0,0.25));
+}
 
-    .btn{
-      min-width:auto;
-      width:calc(50% - 5px);
-      padding:12px 10px;
-      border-radius:999px;
-      text-decoration:none;
-      font-size:0.95rem;
-      font-weight:700;
-      color:#2b1800;
-      background:linear-gradient(180deg, var(--gold1), var(--gold2));
-      box-shadow:
-        0 0 18px rgba(255,170,0,0.30),
-        inset 0 0 0 2px rgba(255,245,210,0.44);
-      transition:transform .2s ease, box-shadow .2s ease;
-    }
+/* BUTTONS */
+.buttons{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  padding:0 10px;
+  margin-bottom:20px;
+}
 
-    .btn:hover{
-      transform:translateY(-2px);
-      box-shadow:
-        0 0 24px rgba(255,170,0,0.45),
-        inset 0 0 0 2px rgba(255,245,210,0.56);
-    }
+.btn{
+  width:48%;
+  padding:12px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:700;
+  color:#2b1800;
+  background:linear-gradient(180deg,var(--gold1),var(--gold2));
+  box-shadow:
+    0 0 18px rgba(255,170,0,0.30),
+    inset 0 0 0 2px rgba(255,245,210,0.44);
+}
 
-    .gallery{
-      display:grid;
-      grid-template-columns:1fr;
-      gap:14px;
-      padding:0 12px;
-    }
+/* GALLERY */
+.gallery{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:14px;
+  padding:0 12px;
+}
 
-    .box{
-      min-height:170px;
-      border:2px dashed rgba(255,255,255,0.24);
-      border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#d6d6d6;
-      background:rgba(255,255,255,0.02);
-      padding:16px;
-    }
+.box{
+  min-height:170px;
+  border:2px dashed rgba(255,255,255,0.25);
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#ccc;
+}
 
-    @media (min-width: 901px){
-      .header{
-        height:330px;
-        background-image:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header%20desktop.png");
-        background-repeat:no-repeat;
-        background-size:cover;
-        background-position:center;
-        background-color:#111;
-      }
+/* DESKTOP */
+@media (min-width:901px){
 
-      .logo{
-        width:170px;
-        margin:-36px auto 18px;
-        content:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png");
-        filter:
-          drop-shadow(0 12px 30px rgba(0,0,0,0.7))
-          drop-shadow(0 0 12px rgba(255,200,0,0.25));
-      }
+  .header{
+    height:330px;
+    background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header%20desktop.png") center/cover no-repeat;
+  }
 
-      .buttons{
-        gap:16px;
-        padding:0 16px;
-        margin-bottom:28px;
-        flex-wrap:wrap;
-      }
+  .logo{
+    width:220px;
+    margin:-50px auto 20px;
+  }
 
-      .btn{
-        min-width:190px;
-        width:auto;
-        padding:14px 22px;
-        font-size:1rem;
-      }
+  .buttons{
+    gap:16px;
+  }
 
-      .gallery{
-        grid-template-columns:repeat(3,1fr);
-        gap:18px;
-        padding:0 16px;
-      }
+  .btn{
+    width:auto;
+    min-width:200px;
+    padding:14px 22px;
+  }
 
-      .box{
-        min-height:210px;
-      }
-    }
-  </style>
+  .gallery{
+    grid-template-columns:repeat(3,1fr);
+  }
+
+  .box{
+    min-height:220px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
+<div class="container">
 
-    <div class="header"></div>
+  <div class="header"></div>
 
-    <img
-      src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo.png"
-      alt="Naya Logo"
-      class="logo"
-    >
+  <img
+    src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png"
+    class="logo"
+    alt="logo"
+  >
 
-    <div class="buttons">
-      <a class="btn" href="https://twik.co.il/a/Naya/" target="_blank" rel="noopener noreferrer">
-        לאתר שלנו
-      </a>
-      <a class="btn" href="https://twik.co.il/store/Naya/" target="_blank" rel="noopener noreferrer">
-        לחנות שלנו
-      </a>
-    </div>
-
-    <div class="gallery">
-      <div class="box">כאן תבוא תמונה</div>
-      <div class="box">כאן תבוא תמונה</div>
-      <div class="box">כאן תבוא תמונה</div>
-    </div>
-
+  <div class="buttons">
+    <a class="btn" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
+    <a class="btn" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
   </div>
+
+  <div class="gallery">
+    <div class="box">כאן תבוא תמונה</div>
+    <div class="box">כאן תבוא תמונה</div>
+    <div class="box">כאן תבוא תמונה</div>
+  </div>
+
+</div>
 
 </body>
 </html>
