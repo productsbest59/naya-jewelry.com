@@ -9,12 +9,20 @@
     :root{
       --gold1:#f2b21b;
       --gold2:#c88400;
+      --panel-bg:#f7f7fb;
+      --panel-text:#1b1b1f;
+      --panel-blue:#5f7cff;
+      --panel-blue-dark:#4f69e8;
     }
 
     *{
       margin:0;
       padding:0;
       box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
     }
 
     body{
@@ -26,6 +34,7 @@
         radial-gradient(circle at 12% 46%, rgba(212,160,23,0.16), transparent 18%),
         radial-gradient(circle at 88% 46%, rgba(212,160,23,0.12), transparent 18%),
         linear-gradient(180deg,#2b2b2b 0%,#161616 34%,#050505 68%,#000 100%);
+      transition: background .2s ease, color .2s ease;
     }
 
     .container{
@@ -161,6 +170,242 @@
         font-size:0.82rem;
       }
     }
+
+    /* ===== Accessibility Floating Button ===== */
+    .a11y-fab{
+      position:fixed;
+      left:12px;
+      bottom:18px;
+      z-index:9999;
+      width:52px;
+      height:52px;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(180deg,var(--panel-blue),var(--panel-blue-dark));
+      color:#fff;
+      font-size:28px;
+      line-height:1;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(0,0,0,.28);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .a11y-panel{
+      position:fixed;
+      left:12px;
+      bottom:78px;
+      z-index:9998;
+      width:min(360px, calc(100vw - 24px));
+      max-height:min(78vh, 720px);
+      overflow:auto;
+      background:var(--panel-bg);
+      color:var(--panel-text);
+      border-radius:18px;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+      border:1px solid rgba(0,0,0,.08);
+      display:none;
+    }
+
+    .a11y-panel.open{
+      display:block;
+    }
+
+    .a11y-header{
+      position:sticky;
+      top:0;
+      background:linear-gradient(180deg,var(--panel-blue),var(--panel-blue-dark));
+      color:#fff;
+      padding:16px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-top-left-radius:18px;
+      border-top-right-radius:18px;
+    }
+
+    .a11y-title{
+      font-size:1.3rem;
+      font-weight:700;
+    }
+
+    .a11y-close{
+      background:transparent;
+      border:none;
+      color:#fff;
+      font-size:34px;
+      line-height:1;
+      cursor:pointer;
+    }
+
+    .a11y-body{
+      padding:16px;
+      text-align:right;
+    }
+
+    .a11y-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .a11y-card{
+      background:#fff;
+      border:1px solid #d7dcf5;
+      border-radius:16px;
+      min-height:100px;
+      padding:12px 10px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      cursor:pointer;
+      transition:.15s ease;
+      color:#4f5ca8;
+      font-weight:600;
+      font-size:.95rem;
+    }
+
+    .a11y-card.active{
+      border-color:#7a8cff;
+      box-shadow:0 0 0 2px rgba(95,124,255,.18) inset;
+      background:#f5f7ff;
+    }
+
+    .a11y-icon{
+      font-size:28px;
+      line-height:1;
+    }
+
+    .a11y-section-title{
+      font-size:1rem;
+      font-weight:700;
+      margin:14px 0 10px;
+      color:#5b5f78;
+      text-align:center;
+    }
+
+    .a11y-reset{
+      width:100%;
+      margin-top:8px;
+      padding:14px 16px;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(180deg,var(--panel-blue),var(--panel-blue-dark));
+      color:#fff;
+      font-size:1rem;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    @media (max-width:700px){
+      .a11y-panel{
+        width:min(340px, calc(100vw - 18px));
+        left:9px;
+        bottom:72px;
+        max-height:min(74vh, 640px);
+      }
+
+      .a11y-grid{
+        gap:10px;
+      }
+
+      .a11y-card{
+        min-height:92px;
+        font-size:.85rem;
+      }
+
+      .a11y-icon{
+        font-size:24px;
+      }
+
+      .a11y-fab{
+        left:10px;
+        bottom:14px;
+        width:50px;
+        height:50px;
+      }
+    }
+
+    @media (max-width:480px){
+      .a11y-grid{
+        grid-template-columns:repeat(2, 1fr);
+      }
+
+      .a11y-panel{
+        width:calc(100vw - 16px);
+        left:8px;
+      }
+    }
+
+    @media (orientation:landscape) and (max-width:900px){
+      .a11y-panel{
+        max-height:82vh;
+        width:min(360px, 42vw);
+      }
+    }
+
+    /* ===== Accessibility modes ===== */
+    body.a11y-large-text{
+      font-size:118%;
+    }
+
+    body.a11y-large-text .btn{
+      font-size:1rem;
+    }
+
+    @media (min-width:901px){
+      body.a11y-large-text .btn{
+        font-size:1.08rem;
+      }
+    }
+
+    body.a11y-bold-text,
+    body.a11y-bold-text p,
+    body.a11y-bold-text div,
+    body.a11y-bold-text span,
+    body.a11y-bold-text a,
+    body.a11y-bold-text button,
+    body.a11y-bold-text h1,
+    body.a11y-bold-text h2,
+    body.a11y-bold-text h3{
+      font-weight:800 !important;
+    }
+
+    body.a11y-high-contrast{
+      background:#000 !important;
+      color:#fff !important;
+    }
+
+    body.a11y-high-contrast .box{
+      border-color:#fff;
+      background:#000;
+      color:#fff;
+    }
+
+    body.a11y-high-contrast .btn{
+      background:#ffd54a !important;
+      color:#000 !important;
+      box-shadow:none !important;
+      border:2px solid #fff;
+    }
+
+    body.a11y-highlight-links a{
+      text-decoration:underline !important;
+      text-decoration-thickness:3px !important;
+      text-underline-offset:3px !important;
+      outline:none;
+      box-shadow:0 0 0 3px rgba(255,215,0,.18);
+    }
+
+    body.a11y-dark-mode{
+      background:
+        linear-gradient(180deg,#111 0%, #090909 42%, #000 100%) !important;
+      color:#fff !important;
+    }
   </style>
 </head>
 <body>
@@ -188,6 +433,141 @@
   </div>
 
 </div>
+
+<!-- Accessibility -->
+<button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">
+  ♿
+</button>
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
+  <div class="a11y-header">
+    <div class="a11y-title" id="a11yTitle">כלי נגישות</div>
+    <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
+  </div>
+
+  <div class="a11y-body">
+    <div class="a11y-grid">
+      <button class="a11y-card" data-mode="a11y-dark-mode">
+        <div class="a11y-icon">◐</div>
+        <div>מצב כהה</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-large-text">
+        <div class="a11y-icon">A+</div>
+        <div>טקסט גדול</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-bold-text">
+        <div class="a11y-icon">B</div>
+        <div>טקסט עבה</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-high-contrast">
+        <div class="a11y-icon">☼</div>
+        <div>ניגודיות גבוהה</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-highlight-links">
+        <div class="a11y-icon">🔗</div>
+        <div>הדגשת קישורים</div>
+      </button>
+    </div>
+
+    <button class="a11y-reset" id="a11yReset">איפוס</button>
+  </div>
+</div>
+
+<script>
+  const fab = document.getElementById('a11yFab');
+  const panel = document.getElementById('a11yPanel');
+  const closeBtn = document.getElementById('a11yClose');
+  const resetBtn = document.getElementById('a11yReset');
+  const cards = Array.from(document.querySelectorAll('.a11y-card'));
+  const storageKey = 'naya_a11y_modes';
+
+  function getSavedModes() {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey)) || [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveModes(modes) {
+    localStorage.setItem(storageKey, JSON.stringify(modes));
+  }
+
+  function applyModes() {
+    const modes = getSavedModes();
+    document.body.classList.remove(
+      'a11y-dark-mode',
+      'a11y-large-text',
+      'a11y-bold-text',
+      'a11y-high-contrast',
+      'a11y-highlight-links'
+    );
+    cards.forEach(card => card.classList.remove('active'));
+
+    modes.forEach(mode => {
+      document.body.classList.add(mode);
+      const card = cards.find(c => c.dataset.mode === mode);
+      if (card) card.classList.add('active');
+    });
+  }
+
+  function toggleMode(mode) {
+    const modes = getSavedModes();
+    const idx = modes.indexOf(mode);
+    if (idx >= 0) {
+      modes.splice(idx, 1);
+    } else {
+      modes.push(mode);
+    }
+    saveModes(modes);
+    applyModes();
+  }
+
+  function openPanel() {
+    panel.classList.add('open');
+    fab.setAttribute('aria-expanded', 'true');
+  }
+
+  function closePanel() {
+    panel.classList.remove('open');
+    fab.setAttribute('aria-expanded', 'false');
+  }
+
+  fab.addEventListener('click', () => {
+    if (panel.classList.contains('open')) {
+      closePanel();
+    } else {
+      openPanel();
+    }
+  });
+
+  closeBtn.addEventListener('click', closePanel);
+
+  resetBtn.addEventListener('click', () => {
+    localStorage.removeItem(storageKey);
+    applyModes();
+  });
+
+  cards.forEach(card => {
+    card.addEventListener('click', () => toggleMode(card.dataset.mode));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!panel.contains(e.target) && !fab.contains(e.target) && panel.classList.contains('open')) {
+      closePanel();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePanel();
+  });
+
+  applyModes();
+</script>
 
 </body>
 </html>
