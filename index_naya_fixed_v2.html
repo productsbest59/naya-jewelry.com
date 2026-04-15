@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naya Fine Jewelry</title>
+  <meta name="description" content="Naya Fine Jewelry" />
+  <style>
+    :root{
+      --gold1:#f2b21b;
+      --gold2:#c88400;
+      --panel-bg:#f7f8ff;
+      --panel-card:#ffffff;
+      --panel-text:#1d2340;
+      --panel-accent:#6a84ff;
+      --panel-accent-dark:#5671ee;
+      --panel-border:#d9def7;
+    }
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html,body{
+      width:100%;
+      min-height:100%;
+    }
+
+    body{
+      font-family:Arial, sans-serif;
+      color:#fff;
+      text-align:center;
+      overflow-x:hidden;
+      background:
+        radial-gradient(circle at 12% 46%, rgba(212,160,23,0.16), transparent 18%),
+        radial-gradient(circle at 88% 46%, rgba(212,160,23,0.12), transparent 18%),
+        linear-gradient(180deg,#2b2b2b 0%,#161616 34%,#050505 68%,#000 100%);
+    }
+
+    .container{
+      max-width:1320px;
+      margin:auto;
+      padding-bottom:40px;
+    }
+
+    .header{
+      height:240px;
+      background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png") center/cover no-repeat;
+      background-color:#111;
+    }
+
+    .logo-row{
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      gap:10px;
+      padding:0 10px;
+      margin-top:-28px;
+      margin-bottom:20px;
+    }
+
+    .logo{
+      width:190px;
+      display:block;
+      background:none !important;
+      box-shadow:none !important;
+      border:none !important;
+      border-radius:0 !important;
+      filter:
+        drop-shadow(0 12px 30px rgba(0,0,0,0.7))
+        drop-shadow(0 0 10px rgba(255,200,0,0.25));
+      justify-self:center;
+    }
+
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width:170px;
+      min-height:54px;
+      padding:12px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.9rem;
+      color:#2b1800;
+      background:linear-gradient(180deg,var(--gold1),var(--gold2));
+      box-shadow:
+        0 0 18px rgba(255,170,0,0.30),
+        inset 0 0 0 2px rgba(255,245,210,0.44);
+      justify-self:center;
+      text-align:center;
+      white-space:nowrap;
+    }
+
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      padding:0 12px;
+      align-items:start;
+    }
+
+    .gallery-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.03);
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      padding:10px;
+      width:100%;
+      margin:0 auto;
+    }
+
+    .gallery-card img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      border-radius:14px;
+    }
+
+    @media (min-width:901px){
+      .header{
+        height:330px;
+        background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header%20desktop.png") center/cover no-repeat;
+        background-color:#111;
+      }
+
+      .logo-row{
+        gap:18px;
+        padding:0 16px;
+        margin-top:-42px;
+        margin-bottom:24px;
+      }
+
+      .logo{
+        width:300px;
+      }
+
+      .btn{
+        max-width:none;
+        min-width:200px;
+        width:auto;
+        padding:14px 22px;
+        font-size:1rem;
+      }
+
+      .gallery{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:18px;
+        padding:0 16px;
+      }
+
+      .gallery-card{
+        width:92%;
+        padding:12px;
+      }
+
+      .gallery-card img{
+        max-height:560px;
+        margin:0 auto;
+      }
+    }
+
+    @media (max-width:600px){
+      .logo-row{
+        grid-template-columns:1fr auto 1fr;
+        gap:8px;
+        padding:0 6px;
+        margin-top:-22px;
+        margin-bottom:18px;
+      }
+
+      .logo{
+        width:150px;
+      }
+
+      .btn{
+        max-width:150px;
+        min-height:50px;
+        padding:10px 8px;
+        font-size:0.82rem;
+      }
+    }
+
+    /* Mobile portrait: 2 in a row */
+    @media (max-width:768px) and (orientation:portrait){
+      .gallery{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+        padding:0 10px;
+      }
+
+      .gallery-card{
+        width:100%;
+        padding:8px;
+      }
+
+      .gallery-card img{
+        max-height:40vh;
+      }
+    }
+
+    /* Mobile landscape: 2 in a row and smaller */
+    @media (max-width:900px) and (orientation:landscape){
+      .gallery{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+        padding:0 10px;
+      }
+
+      .gallery-card{
+        width:100%;
+        padding:8px;
+      }
+
+      .gallery-card img{
+        max-height:52vh;
+      }
+    }
+
+    /* ===== Accessibility ===== */
+    .a11y-fab{
+      position:fixed;
+      left:12px;
+      bottom:16px;
+      z-index:2147483647;
+      width:56px;
+      height:56px;
+      border:none;
+      outline:none;
+      border-radius:14px;
+      background:linear-gradient(180deg,var(--panel-accent),var(--panel-accent-dark));
+      color:#fff;
+      font-size:28px;
+      font-weight:700;
+      display:flex !important;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 10px 24px rgba(0,0,0,.30);
+      visibility:visible !important;
+      opacity:1 !important;
+      -webkit-appearance:none;
+      appearance:none;
+    }
+
+    .a11y-panel{
+      position:fixed;
+      left:12px;
+      bottom:82px;
+      z-index:2147483646;
+      width:min(420px, calc(100vw - 24px));
+      max-height:min(80vh, 760px);
+      overflow:auto;
+      display:none;
+      background:var(--panel-bg);
+      color:var(--panel-text);
+      border-radius:18px;
+      box-shadow:0 20px 50px rgba(0,0,0,.35);
+      border:1px solid rgba(0,0,0,.08);
+      text-align:right;
+    }
+
+    .a11y-panel.open{
+      display:block;
+    }
+
+    .a11y-header{
+      position:sticky;
+      top:0;
+      z-index:2;
+      background:linear-gradient(180deg,var(--panel-accent),var(--panel-accent-dark));
+      color:#fff;
+      padding:14px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      border-top-left-radius:18px;
+      border-top-right-radius:18px;
+    }
+
+    .a11y-title{
+      font-size:1.5rem;
+      font-weight:800;
+    }
+
+    .a11y-close{
+      border:none;
+      background:transparent;
+      color:#fff;
+      font-size:36px;
+      line-height:1;
+      cursor:pointer;
+    }
+
+    .a11y-body{
+      padding:16px;
+      text-align:right;
+    }
+
+    .a11y-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+    }
+
+    .a11y-card{
+      border:1px solid var(--panel-border);
+      background:var(--panel-card);
+      color:var(--panel-text);
+      border-radius:16px;
+      min-height:102px;
+      padding:12px 10px;
+      cursor:pointer;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:9px;
+      font-size:.92rem;
+      font-weight:700;
+    }
+
+    .a11y-card.active{
+      background:#eef2ff;
+      border-color:#94a6ff;
+      box-shadow:0 0 0 2px rgba(106,132,255,.15) inset;
+    }
+
+    .a11y-icon{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#6b7cff;
+      background:#f5f7ff;
+      font-size:24px;
+      font-weight:800;
+    }
+
+    .a11y-label{
+      line-height:1.25;
+    }
+
+    .a11y-reset{
+      width:100%;
+      border:none;
+      border-radius:14px;
+      background:linear-gradient(180deg,var(--panel-accent),var(--panel-accent-dark));
+      color:#fff;
+      padding:14px 16px;
+      font-size:1rem;
+      font-weight:800;
+      cursor:pointer;
+      margin-top:10px;
+    }
+
+    @media (max-width:700px){
+      .a11y-fab{
+        left:10px;
+        bottom:14px;
+        width:52px;
+        height:52px;
+        font-size:26px;
+      }
+
+      .a11y-panel{
+        left:8px;
+        bottom:72px;
+        width:calc(100vw - 16px);
+        max-height:74vh;
+      }
+
+      .a11y-grid{
+        grid-template-columns:repeat(2, 1fr);
+        gap:10px;
+      }
+
+      .a11y-card{
+        min-height:92px;
+        font-size:.86rem;
+      }
+
+      .a11y-icon{
+        width:38px;
+        height:38px;
+        font-size:22px;
+      }
+    }
+
+    @media (orientation:landscape) and (max-width:900px){
+      .a11y-panel{
+        width:min(430px, 48vw);
+        max-height:82vh;
+      }
+
+      .a11y-grid{
+        grid-template-columns:repeat(3, 1fr);
+      }
+    }
+
+    body.a11y-large-text{
+      font-size:118%;
+    }
+
+    body.a11y-large-text .btn{
+      font-size:1rem;
+    }
+
+    @media (min-width:901px){
+      body.a11y-large-text .btn{
+        font-size:1.08rem;
+      }
+    }
+
+    body.a11y-bold-text,
+    body.a11y-bold-text p,
+    body.a11y-bold-text div,
+    body.a11y-bold-text span,
+    body.a11y-bold-text a,
+    body.a11y-bold-text button,
+    body.a11y-bold-text h1,
+    body.a11y-bold-text h2,
+    body.a11y-bold-text h3{
+      font-weight:800 !important;
+    }
+
+    body.a11y-high-contrast{
+      background:#000 !important;
+      color:#fff !important;
+    }
+
+    body.a11y-high-contrast .gallery-card{
+      border-color:#fff;
+      background:#000;
+    }
+
+    body.a11y-high-contrast .btn{
+      background:#ffd54a !important;
+      color:#000 !important;
+      box-shadow:none !important;
+      border:2px solid #fff;
+    }
+
+    body.a11y-highlight-links a{
+      text-decoration:underline !important;
+      text-decoration-thickness:3px !important;
+      text-underline-offset:3px !important;
+      box-shadow:0 0 0 3px rgba(255,215,0,.15);
+    }
+
+    body.a11y-dark-mode{
+      background:linear-gradient(180deg,#111 0%,#090909 42%,#000 100%) !important;
+      color:#fff !important;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <div class="header"></div>
+
+  <div class="logo-row">
+    <a class="btn" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
+
+    <img
+      src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png"
+      class="logo"
+      alt="logo"
+    >
+
+    <a class="btn" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
+  </div>
+
+  <div class="gallery">
+    <div class="gallery-card">
+      <img src="model1.jpg" alt="Naya model 1">
+    </div>
+    <div class="gallery-card">
+      <img src="model2.jpg" alt="Naya model 2">
+    </div>
+    <div class="gallery-card">
+      <img src="model3.jpg" alt="Naya model 3">
+    </div>
+  </div>
+
+</div>
+
+<button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">♿</button>
+
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
+  <div class="a11y-header">
+    <div class="a11y-title" id="a11yTitle">כלי נגישות</div>
+    <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
+  </div>
+
+  <div class="a11y-body">
+    <div class="a11y-grid">
+      <button class="a11y-card" data-mode="a11y-dark-mode">
+        <div class="a11y-icon">◐</div>
+        <div class="a11y-label">מצב כהה</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-large-text">
+        <div class="a11y-icon">A+</div>
+        <div class="a11y-label">טקסט גדול</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-bold-text">
+        <div class="a11y-icon">B</div>
+        <div class="a11y-label">טקסט עבה</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-high-contrast">
+        <div class="a11y-icon">☼</div>
+        <div class="a11y-label">ניגודיות גבוהה</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-highlight-links">
+        <div class="a11y-icon">🔗</div>
+        <div class="a11y-label">הדגשת קישורים</div>
+      </button>
+    </div>
+
+    <button class="a11y-reset" id="a11yReset">איפוס</button>
+  </div>
+</div>
+
+<script>
+  const fab = document.getElementById('a11yFab');
+  const panel = document.getElementById('a11yPanel');
+  const closeBtn = document.getElementById('a11yClose');
+  const resetBtn = document.getElementById('a11yReset');
+  const cards = Array.from(document.querySelectorAll('.a11y-card'));
+  const storageKey = 'naya_a11y_modes_v3';
+
+  function getSavedModes() {
+    try {
+      return JSON.parse(localStorage.getItem(storageKey)) || [];
+    } catch (e) {
+      return [];
+    }
+  }
+
+  function saveModes(modes) {
+    localStorage.setItem(storageKey, JSON.stringify(modes));
+  }
+
+  function applyModes() {
+    const modes = getSavedModes();
+    document.body.classList.remove(
+      'a11y-dark-mode',
+      'a11y-large-text',
+      'a11y-bold-text',
+      'a11y-high-contrast',
+      'a11y-highlight-links'
+    );
+    cards.forEach(card => card.classList.remove('active'));
+
+    modes.forEach(mode => {
+      document.body.classList.add(mode);
+      const card = cards.find(c => c.dataset.mode === mode);
+      if (card) card.classList.add('active');
+    });
+  }
+
+  function toggleMode(mode) {
+    const modes = getSavedModes();
+    const idx = modes.indexOf(mode);
+    if (idx >= 0) {
+      modes.splice(idx, 1);
+    } else {
+      modes.push(mode);
+    }
+    saveModes(modes);
+    applyModes();
+  }
+
+  function openPanel() {
+    panel.classList.add('open');
+    fab.setAttribute('aria-expanded', 'true');
+  }
+
+  function closePanel() {
+    panel.classList.remove('open');
+    fab.setAttribute('aria-expanded', 'false');
+  }
+
+  fab.addEventListener('click', function() {
+    if (panel.classList.contains('open')) closePanel();
+    else openPanel();
+  });
+
+  closeBtn.addEventListener('click', closePanel);
+
+  resetBtn.addEventListener('click', function() {
+    localStorage.removeItem(storageKey);
+    applyModes();
+  });
+
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      toggleMode(card.dataset.mode);
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!panel.contains(e.target) && !fab.contains(e.target) && panel.classList.contains('open')) {
+      closePanel();
+    }
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closePanel();
+  });
+
+  applyModes();
+</script>
+
+</body>
+</html>
