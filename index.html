@@ -99,16 +99,21 @@
       padding:0 12px;
     }
 
-    .box{
-      min-height:170px;
-      border:2px dashed rgba(255,255,255,0.25);
+    .gallery-card{
+      position:relative;
+      overflow:hidden;
       border-radius:18px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:#ccc;
+      border:1px solid rgba(255,255,255,0.12);
       background:rgba(255,255,255,0.02);
-      padding:16px;
+      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+    }
+
+    .gallery-card img{
+      width:100%;
+      height:100%;
+      display:block;
+      object-fit:cover;
+      aspect-ratio: 4 / 5;
     }
 
     @media (min-width:901px){
@@ -141,10 +146,6 @@
         grid-template-columns:repeat(3,1fr);
         gap:18px;
         padding:0 16px;
-      }
-
-      .box{
-        min-height:220px;
       }
     }
 
@@ -352,7 +353,6 @@
       }
     }
 
-    /* Modes */
     body.a11y-large-text{
       font-size:118%;
     }
@@ -384,10 +384,9 @@
       color:#fff !important;
     }
 
-    body.a11y-high-contrast .box{
+    body.a11y-high-contrast .gallery-card{
       border-color:#fff;
       background:#000;
-      color:#fff;
     }
 
     body.a11y-high-contrast .btn{
@@ -429,9 +428,15 @@
   </div>
 
   <div class="gallery">
-    <div class="box">כאן תבוא תמונה</div>
-    <div class="box">כאן תבוא תמונה</div>
-    <div class="box">כאן תבוא תמונה</div>
+    <div class="gallery-card">
+      <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/model1.jpg" alt="Naya model 1">
+    </div>
+    <div class="gallery-card">
+      <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/model2.jpg" alt="Naya model 2">
+    </div>
+    <div class="gallery-card">
+      <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/model3.jpg" alt="Naya model 3">
+    </div>
   </div>
 
 </div>
