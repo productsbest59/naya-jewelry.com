@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naya Fine Jewelry</title>
+  <meta name="description" content="Discover Naya Fine Jewelry – premium jewelry inspired by elegance, spirituality, and timeless design. Explore unique rings, bracelets, and necklaces crafted with meaning and style." />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-BNDC35M5GY"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-BNDC35M5GY');
+  </script>
+  <style>
+    :root{
+      --gold1:#f2b21b;
+      --gold2:#c88400;
+      --blue1:#6f86ff;
+      --blue2:#4f67f2;
+      --panel-bg:#fbfbff;
+      --panel-border:#d9def7;
+      --panel-text:#7680a8;
+    }
+    *{margin:0;padding:0;box-sizing:border-box;}
+    html,body{width:100%;min-height:100%;}
+    body{
+      font-family:Arial, sans-serif;
+      color:#fff;
+      text-align:center;
+      overflow-x:hidden;
+      background:
+        radial-gradient(circle at 12% 46%, rgba(212,160,23,0.16), transparent 18%),
+        radial-gradient(circle at 88% 46%, rgba(212,160,23,0.12), transparent 18%),
+        linear-gradient(180deg,#2b2b2b 0%,#161616 34%,#050505 68%,#000 100%);
+      transition:font-size .2s ease, background .2s ease, color .2s ease;
+    }
+    .container{max-width:1320px;margin:auto;padding-bottom:28px;}
+    .header{
+      height:240px;
+      background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header.png") center/cover no-repeat;
+      background-color:#111;
+    }
+    .logo-row{
+      display:grid;
+      grid-template-columns:1fr auto 1fr;
+      align-items:center;
+      gap:10px;
+      padding:0 10px;
+      margin-top:-28px;
+      margin-bottom:20px;
+    }
+    .logo{
+      width:190px;
+      display:block;
+      justify-self:center;
+      background:none !important;
+      box-shadow:none !important;
+      border:none !important;
+      border-radius:0 !important;
+      filter:drop-shadow(0 12px 30px rgba(0,0,0,0.7)) drop-shadow(0 0 10px rgba(255,200,0,0.20));
+    }
+    .btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      width:100%;
+      max-width:170px;
+      min-height:54px;
+      padding:12px 14px;
+      border-radius:999px;
+      text-decoration:none;
+      font-weight:700;
+      font-size:0.9rem;
+      color:#2b1800;
+      background:linear-gradient(180deg,var(--gold1),var(--gold2));
+      box-shadow:0 0 18px rgba(255,170,0,0.28), inset 0 0 0 2px rgba(255,245,210,0.42);
+      justify-self:center;
+      text-align:center;
+      white-space:nowrap;
+      transition:transform .18s ease, box-shadow .18s ease;
+    }
+    .btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 0 24px rgba(255,170,0,0.34), inset 0 0 0 2px rgba(255,245,210,0.42);
+    }
+    .btn-outline{
+      background:transparent !important;
+      border:1px solid var(--gold1);
+      color:var(--gold1);
+      box-shadow:none !important;
+    }
+    .btn-outline:hover{
+      background:linear-gradient(180deg,var(--gold1),var(--gold2)) !important;
+      color:#2b1800 !important;
+    }
+    .intro-section{
+      max-width:940px;
+      margin:0 auto 24px;
+      padding:0 16px;
+      text-align:center;
+    }
+    .intro-section p{
+      font-size:1rem;
+      line-height:1.9;
+      color:rgba(255,255,255,0.92);
+    }
+    .gallery{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:14px;
+      padding:0 12px;
+      align-items:start;
+    }
+    .gallery-card{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,0.10);
+      background:rgba(255,255,255,0.03);
+      box-shadow:0 12px 32px rgba(0,0,0,0.26);
+      padding:10px;
+      width:100%;
+      margin:0 auto;
+    }
+    .gallery-card img{
+      width:100%;
+      height:auto;
+      display:block;
+      object-fit:contain;
+      border-radius:16px;
+    }
+    .email-section{
+      margin:16px 0 10px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
+    .email-button{
+      text-decoration:none;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:6px;
+    }
+    .email-image{
+      width:76px;
+      height:auto;
+      display:block;
+    }
+    .email-text{
+      color:rgba(255,255,255,0.88);
+      font-size:0.92rem;
+    }
+    .bottom-buttons{
+      display:flex;
+      gap:10px;
+      margin-top:4px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .bottom-buttons .btn{
+      max-width:170px;
+      min-height:48px;
+      padding:10px 14px;
+      font-size:0.84rem;
+    }
+    .site-footer{
+      padding:18px 16px 24px;
+      text-align:center;
+      font-size:0.76rem;
+      color:rgba(255,255,255,0.6);
+      letter-spacing:0.03em;
+    }
+    @media (min-width:901px){
+      .header{
+        height:330px;
+        background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header%20desktop.png") center/cover no-repeat;
+        background-color:#111;
+      }
+      .logo-row{
+        gap:18px;
+        padding:0 16px;
+        margin-top:-42px;
+        margin-bottom:24px;
+      }
+      .logo{width:300px;}
+      .btn{
+        max-width:none;
+        min-width:200px;
+        width:auto;
+        padding:14px 22px;
+        font-size:1rem;
+      }
+      .intro-section{margin:0 auto 28px;}
+      .intro-section p{font-size:1.05rem;}
+      .gallery{
+        grid-template-columns:repeat(3,minmax(0,1fr));
+        gap:18px;
+        padding:0 16px;
+      }
+      .gallery-card{
+        width:92%;
+        padding:12px;
+      }
+      .gallery-card img{
+        max-height:560px;
+        margin:0 auto;
+      }
+    }
+    @media (max-width:600px){
+      .logo-row{
+        grid-template-columns:1fr auto 1fr;
+        gap:8px;
+        padding:0 6px;
+        margin-top:-22px;
+        margin-bottom:18px;
+      }
+      .logo{width:190px;}
+      .btn{
+        max-width:150px;
+        min-height:50px;
+        padding:10px 8px;
+        font-size:0.82rem;
+      }
+      .intro-section{padding:0 14px;}
+      .intro-section p{
+        font-size:0.93rem;
+        line-height:1.8;
+      }
+      .bottom-buttons .btn{
+        max-width:145px;
+        font-size:0.8rem;
+      }
+    }
+    @media (max-width:768px) and (orientation:portrait){
+      .gallery{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+        padding:0 10px;
+      }
+      .gallery-card{padding:8px;}
+      .gallery-card img{max-height:40vh;}
+    }
+    @media (max-width:900px) and (orientation:landscape){
+      .gallery{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+        gap:10px;
+        padding:0 10px;
+      }
+      .gallery-card{padding:8px;}
+      .gallery-card img{max-height:52vh;}
+
+      .bottom-buttons{
+        flex-wrap:nowrap;
+        gap:8px;
+      }
+
+      .bottom-buttons .btn{
+        flex:1 1 0;
+        max-width:none;
+        min-width:0;
+        font-size:0.78rem;
+        padding:10px 8px;
+      }
+    }
+
+    .a11y-fab{
+      position:fixed;
+      left:12px;
+      bottom:16px;
+      z-index:2147483647;
+      width:58px;
+      height:58px;
+      border:none;
+      outline:none;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--blue1),var(--blue2));
+      color:#fff;
+      font-size:29px;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 14px 28px rgba(65,87,230,0.28), 0 8px 18px rgba(0,0,0,0.28);
+      transition:transform .18s ease, box-shadow .18s ease;
+      -webkit-appearance:none;
+      appearance:none;
+    }
+    .a11y-fab:hover{transform:translateY(-2px);}
+    .a11y-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.18);
+      backdrop-filter:blur(3px);
+      -webkit-backdrop-filter:blur(3px);
+      z-index:2147483644;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .22s ease;
+    }
+    .a11y-backdrop.open{
+      opacity:1;
+      pointer-events:auto;
+    }
+    .a11y-panel{
+      position:fixed;
+      top:0;
+      left:0;
+      height:100vh;
+      width:min(420px, 92vw);
+      background:var(--panel-bg);
+      color:#1d2340;
+      z-index:2147483646;
+      transform:translateX(-100%);
+      transition:transform .28s ease;
+      box-shadow:20px 0 60px rgba(0,0,0,.28);
+      display:flex;
+      flex-direction:column;
+      overflow:auto;
+    }
+    .a11y-panel.open{transform:translateX(0);}
+    .a11y-header{
+      position:sticky;
+      top:0;
+      z-index:3;
+      background:linear-gradient(135deg,var(--blue1),var(--blue2));
+      color:#fff;
+      padding:18px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .a11y-title{
+      font-size:1.7rem;
+      font-weight:800;
+    }
+    .a11y-close{
+      border:none;
+      background:transparent;
+      color:#fff;
+      font-size:30px;
+      line-height:1;
+      cursor:pointer;
+    }
+    .a11y-body{
+      padding:16px 16px 22px;
+      text-align:right;
+    }
+    .a11y-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .a11y-card{
+      border:1px solid #cfd6fb;
+      background:#fff;
+      color:var(--panel-text);
+      border-radius:22px;
+      min-height:120px;
+      padding:14px 10px;
+      cursor:pointer;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:1rem;
+      font-weight:700;
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      box-shadow:0 8px 18px rgba(69,87,195,0.04);
+    }
+    .a11y-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(69,87,195,0.10);
+    }
+    .a11y-card.active{
+      background:#eef2ff;
+      border-color:#99a9ff;
+      color:#4f67f2;
+    }
+    .a11y-icon{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      color:#7a84d1;
+    }
+    .a11y-label{
+      line-height:1.3;
+      font-size:0.96rem;
+    }
+    .a11y-section-title{
+      font-size:1.25rem;
+      color:#7a84d1;
+      font-weight:800;
+      text-align:center;
+      margin:14px 0 10px;
+    }
+    .a11y-slider-wrap{margin-bottom:26px;}
+    .a11y-slider-row{
+      display:grid;
+      grid-template-columns:54px 1fr 54px;
+      align-items:center;
+      gap:12px;
+      margin-top:10px;
+    }
+    .a11y-circle-btn{
+      width:54px;
+      height:54px;
+      border-radius:999px;
+      border:1px solid #cfd6fb;
+      background:#fff;
+      color:#7a84d1;
+      font-size:34px;
+      cursor:pointer;
+      line-height:1;
+    }
+    .a11y-bar-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
+    .a11y-value{
+      min-width:70px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid #cfd6fb;
+      background:#fff;
+      color:#7a84d1;
+      font-weight:700;
+      font-size:1rem;
+    }
+    .a11y-bar{
+      width:100%;
+      height:12px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#9f6bff,#5d7cff);
+      position:relative;
+      overflow:hidden;
+    }
+    .a11y-footer-note{
+      color:#9aa1c0;
+      font-size:.92rem;
+      text-align:center;
+      margin-top:8px;
+    }
+    @media (max-width:700px){
+      .a11y-fab{
+        left:10px;
+        bottom:14px;
+        width:54px;
+        height:54px;
+        font-size:27px;
+      }
+      .a11y-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+      }
+      .a11y-card{
+        min-height:108px;
+        font-size:.9rem;
+      }
+      .a11y-icon{
+        width:42px;
+        height:42px;
+        font-size:24px;
+      }
+      .a11y-title{font-size:1.45rem;}
+      .a11y-slider-row{
+        grid-template-columns:48px 1fr 48px;
+        gap:10px;
+      }
+      .a11y-circle-btn{
+        width:48px;
+        height:48px;
+        font-size:30px;
+      }
+    }
+
+    body.a11y-dark-mode{
+      background:linear-gradient(180deg,#111 0%,#090909 42%,#000 100%) !important;
+      color:#fff !important;
+    }
+    body.a11y-bold-text,
+    body.a11y-bold-text p,
+    body.a11y-bold-text div,
+    body.a11y-bold-text span,
+    body.a11y-bold-text a,
+    body.a11y-bold-text button,
+    body.a11y-bold-text h1,
+    body.a11y-bold-text h2,
+    body.a11y-bold-text h3{
+      font-weight:800 !important;
+    }
+    body.a11y-high-contrast{
+      background:#000 !important;
+      color:#fff !important;
+    }
+    body.a11y-high-contrast .gallery-card{
+      border-color:#fff;
+      background:#000;
+    }
+    body.a11y-high-contrast .btn{
+      background:#ffd54a !important;
+      color:#000 !important;
+      box-shadow:none !important;
+      border:2px solid #fff;
+    }
+    body.a11y-highlight-links a{
+      text-decoration:underline !important;
+      text-decoration-thickness:3px !important;
+      text-underline-offset:3px !important;
+      box-shadow:0 0 0 3px rgba(255,215,0,.15);
+    }
+    body.a11y-readable-text{
+      letter-spacing:.02em;
+      word-spacing:.05em;
+      line-height:2 !important;
+    }
+    body.a11y-readable-text p,
+    body.a11y-readable-text .intro-section p,
+    body.a11y-readable-text .email-text,
+    body.a11y-readable-text .site-footer{
+      line-height:2 !important;
+    }
+  </style>
+</head>
+<body>
+  <div class="a11y-backdrop" id="a11yBackdrop"></div>
+
+  <div class="container">
+    <div class="header"></div>
+
+    <div class="logo-row">
+      <a class="btn" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
+      <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png" class="logo" alt="Naya Fine Jewelry">
+      <a class="btn" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
+    </div>
+
+    <section class="intro-section">
+      <p>
+        ברוכים הבאים לעולם של משמעות, אמונה וסטייל עדכני.<br><br>
+        האתר שלנו מתמחה בתכשיטים ייחודיים עם סממנים יהודיים עמוקים, המשלבים בין מסורת עתיקה לעיצוב מודרני מוקפד.<br><br>
+        כל פריט נוצר מתוך השראה לערכים של זהות, רוחניות וחיבור לשורשים ומעניק הרבה מעבר ליופי חיצוני.<br><br>
+        בקולקציה שלנו תמצאו שרשראות, צמידים וטבעות המעוטרים בסמלים יהודיים מוכרים כמו מגן דוד, חי, תפילות וברכות, לצד עיצובים חדשניים עם נגיעות עכשוויות.
+      </p>
+      <div style="margin-top:16px;font-size:1.5rem;font-weight:800;color:#f2b21b;text-align:center;text-shadow:0 0 12px rgba(255,200,0,0.4);">
+        ❤️ וְאָהַבְתָּ לְרֵעֲךָ כָּמוֹךָ ❤️
+      </div>
+    </section>
+
+    <div class="gallery">
+      <div class="gallery-card"><img src="model1.jpg" alt="Naya model 1"></div>
+      <div class="gallery-card"><img src="model2.jpg" alt="Naya model 2"></div>
+      <div class="gallery-card"><img src="model3.jpg" alt="Naya model 3"></div>
+    </div>
+
+    <div class="email-section">
+      <a href="mailto:info@naya-jewelry.com" class="email-button" aria-label="שליחת מייל">
+        <img src="mail trans.png" class="email-image" alt="שליחת מייל">
+        <div class="email-text">שליחת מייל</div>
+      </a>
+      <div class="bottom-buttons">
+        <a class="btn btn-outline" href="https://twik.co.il/store/Naya/">לחנות שלנו</a>
+        <a class="btn btn-outline" href="https://twik.co.il/a/Naya/">לאתר שלנו</a>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">© Naya Fine Jewelry 2006</footer>
+
+  <button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">♿</button>
+
+  <aside class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
+    <div class="a11y-header">
+      <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
+      <div class="a11y-title" id="a11yTitle">כלי נגישות</div>
+    </div>
+
+    <div class="a11y-body">
+      <div class="a11y-grid">
+        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◐</div><div class="a11y-label">גוני אפור</div></button>
+        <button class="a11y-card" data-mode="a11y-dark-mode"><div class="a11y-icon">☾</div><div class="a11y-label">ניגודיות הפוכה</div></button>
+        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">☼</div><div class="a11y-label">ניגודיות גבוהה</div></button>
+        <button class="a11y-card" data-mode="a11y-readable-text"><div class="a11y-icon">〰</div><div class="a11y-label">טקסט קריא</div></button>
+        <button class="a11y-card" data-mode="a11y-highlight-links"><div class="a11y-icon">🔗</div><div class="a11y-label">הדגשת קישורים</div></button>
+        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◑</div><div class="a11y-label">שחור לבן</div></button>
+      </div>
+
+      <div class="a11y-section-title">התאמת גודל גופן</div>
+      <div class="a11y-slider-wrap">
+        <div class="a11y-slider-row">
+          <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
+          <div class="a11y-bar-wrap">
+            <div class="a11y-value" id="fontValue">100%</div>
+            <div class="a11y-bar"></div>
+          </div>
+          <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
+        </div>
+      </div>
+
+      <div class="a11y-section-title">איפוס</div>
+      <div class="a11y-slider-wrap">
+        <div class="a11y-footer-note">אפשר להחזיר את כל ההגדרות למצב רגיל</div>
+        <button class="a11y-reset" id="a11yReset" style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">איפוס מלא</button>
+      </div>
+    </div>
+  </aside>
+
+  <script>
+    const fab = document.getElementById('a11yFab');
+    const panel = document.getElementById('a11yPanel');
+    const backdrop = document.getElementById('a11yBackdrop');
+    const closeBtn = document.getElementById('a11yClose');
+    const resetBtn = document.getElementById('a11yReset');
+    const cards = Array.from(document.querySelectorAll('.a11y-card'));
+    const fontValue = document.getElementById('fontValue');
+    const fontPlus = document.getElementById('fontPlus');
+    const fontMinus = document.getElementById('fontMinus');
+
+    const storageKey = 'naya_a11y_sidepanel_v1';
+    const fontStorageKey = 'naya_font_scale_v1';
+
+    function openPanel() {
+      panel.classList.add('open');
+      backdrop.classList.add('open');
+      fab.setAttribute('aria-expanded', 'true');
+    }
+    function closePanel() {
+      panel.classList.remove('open');
+      backdrop.classList.remove('open');
+      fab.setAttribute('aria-expanded', 'false');
+    }
+    function getSavedModes() {
+      try { return JSON.parse(localStorage.getItem(storageKey)) || []; }
+      catch (e) { return []; }
+    }
+    function saveModes(modes) {
+      localStorage.setItem(storageKey, JSON.stringify(modes));
+    }
+    function getSavedFont() {
+      const saved = parseInt(localStorage.getItem(fontStorageKey) || '100', 10);
+      return isNaN(saved) ? 100 : Math.min(140, Math.max(90, saved));
+    }
+    function saveFont(value) { localStorage.setItem(fontStorageKey, String(value)); }
+    function applyFont() {
+      const value = getSavedFont();
+      document.documentElement.style.fontSize = value + '%';
+      fontValue.textContent = value + '%';
+    }
+    function applyModes() {
+      const modes = getSavedModes();
+      document.body.classList.remove(
+        'a11y-dark-mode',
+        'a11y-bold-text',
+        'a11y-high-contrast',
+        'a11y-highlight-links',
+        'a11y-readable-text'
+      );
+      cards.forEach(card => card.classList.remove('active'));
+      modes.forEach(mode => {
+        document.body.classList.add(mode);
+        cards.filter(c => c.dataset.mode === mode).forEach(c => c.classList.add('active'));
+      });
+    }
+    function toggleMode(mode) {
+      let modes = getSavedModes();
+      if (modes.includes(mode)) modes = modes.filter(m => m !== mode);
+      else modes.push(mode);
+      saveModes(modes);
+      applyModes();
+    }
+
+    fab.addEventListener('click', function() {
+      if (panel.classList.contains('open')) closePanel();
+      else openPanel();
+    });
+    closeBtn.addEventListener('click', closePanel);
+    backdrop.addEventListener('click', closePanel);
+
+    cards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        const mode = card.dataset.mode;
+        if (mode === 'a11y-high-contrast') {
+          let modes = getSavedModes();
+          const exists = modes.includes('a11y-high-contrast');
+          modes = modes.filter(m => m !== 'a11y-high-contrast');
+          if (!exists) modes.push('a11y-high-contrast');
+          saveModes(modes);
+          applyModes();
+          return;
+        }
+        toggleMode(mode);
+      });
+    });
+
+    fontPlus.addEventListener('click', function() {
+      const next = Math.min(140, getSavedFont() + 10);
+      saveFont(next);
+      applyFont();
+    });
+    fontMinus.addEventListener('click', function() {
+      const next = Math.max(90, getSavedFont() - 10);
+      saveFont(next);
+      applyFont();
+    });
+    resetBtn.addEventListener('click', function() {
+      localStorage.removeItem(storageKey);
+      localStorage.removeItem(fontStorageKey);
+      document.documentElement.style.fontSize = '100%';
+      applyModes();
+      applyFont();
+    });
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closePanel();
+    });
+
+    applyModes();
+    applyFont();
+  </script>
+</body>
+</html>
