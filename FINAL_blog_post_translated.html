@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>למה אנשים בוחרים תכשיטים עם משמעות?</title>
+<style>
+
+body{margin:0;font-family:Arial,sans-serif;background:#0b0b0b;color:#fff}
+button{cursor:pointer}
+#menuToggle{position:fixed;top:15px;right:15px;font-size:26px;background:#111;color:#fff;border:none;padding:10px 14px;border-radius:10px;z-index:1000}
+#langToggle{position:fixed;top:15px;right:72px;background:#111;color:#fff;border:none;padding:12px 14px;border-radius:10px;z-index:1000;font-weight:bold}
+#mainMenu{position:fixed;top:0;right:-300px;width:260px;height:100%;background:#111;padding:20px;transition:.25s;z-index:999;box-shadow:-10px 0 30px rgba(0,0,0,.35)}
+#mainMenu.open{right:0}
+#menuBackdrop{position:fixed;inset:0;background:rgba(0,0,0,.5);display:none;z-index:998}
+#menuBackdrop.open{display:block}
+#mainMenu a{display:block;color:#fff;margin:15px 0;text-decoration:none;font-weight:bold;padding:12px 14px;border-radius:12px;background:rgba(255,255,255,.05)}
+#menuClose{background:none;border:none;color:#fff;font-size:28px;display:block;margin-bottom:15px}
+footer{padding:22px 16px;text-align:center;color:#ccc;font-size:14px}
+
+.container{max-width:860px;margin:auto;padding:90px 20px 40px}
+h1{font-size:40px;line-height:1.35;margin-bottom:20px}
+p{line-height:2;font-size:19px;color:#e7e7e7}
+.block{background:#171717;border:1px solid rgba(255,255,255,.08);padding:28px;border-radius:22px}
+.back{display:inline-block;background:gold;color:#000;padding:14px 22px;border-radius:999px;text-decoration:none;font-weight:bold;margin-top:24px}
+</style>
+</head>
+<body data-title-he="למה אנשים בוחרים תכשיטים עם משמעות?" data-title-en="Why do people choose meaningful jewelry?">
+<button id="menuToggle">☰</button>
+<button id="langToggle">EN</button>
+<div id="menuBackdrop"></div>
+
+<div id="mainMenu">
+  <button id="menuClose">✕</button>
+  <a href="https://twik.co.il/store/Naya/" data-he="לחנות שלנו" data-en="Our Store">לחנות שלנו</a>
+  <a href="blog.html" data-he="לבלוגים" data-en="Blog">לבלוגים</a>
+</div>
+
+<div class="container">
+  <div class="block">
+    <h1 data-he="למה אנשים בוחרים תכשיטים עם משמעות?" data-en="Why do people choose meaningful jewelry?">למה אנשים בוחרים תכשיטים עם משמעות?</h1>
+    <p data-he="אנשים לא קונים רק תכשיט – הם קונים רגש, סמל וחיבור אישי." data-en="People are not buying only jewelry — they are buying emotion, symbolism and personal connection.">אנשים לא קונים רק תכשיט – הם קונים רגש, סמל וחיבור אישי.</p>
+    <p data-he="לפעמים זה זיכרון מאדם אהוב, לפעמים אמונה שמלווה אותם ביום־יום, ולפעמים פשוט צורך לענוד משהו שמרגיש נכון יותר ומייצג מי שהם." data-en="Sometimes it is a memory of someone loved, sometimes a belief that stays with them every day, and sometimes simply the desire to wear something that feels right and reflects who they are.">לפעמים זה זיכרון מאדם אהוב, לפעמים אמונה שמלווה אותם ביום־יום, ולפעמים פשוט צורך לענוד משהו שמרגיש נכון יותר ומייצג מי שהם.</p>
+    <p data-he="לכן תכשיטים עם משמעות מרגישים עמוקים יותר. הם לא רק משלימים את הלוק – הם גם מספרים משהו על האדם שעונד אותם." data-en="That is why meaningful jewelry feels deeper. It does not just complete a look — it also says something about the person wearing it.">לכן תכשיטים עם משמעות מרגישים עמוקים יותר. הם לא רק משלימים את הלוק – הם גם מספרים משהו על האדם שעונד אותם.</p>
+    <a class="back" href="blog.html" data-he="חזרה לבלוג" data-en="Back to Blog">חזרה לבלוג</a>
+  </div>
+</div>
+
+<footer data-he="© Naya Fine Jewelry 2006" data-en="© Naya Fine Jewelry 2006">© Naya Fine Jewelry 2006</footer>
+
+<script>
+const menu=document.getElementById('mainMenu');
+const toggle=document.getElementById('menuToggle');
+const closeBtn=document.getElementById('menuClose');
+const backdrop=document.getElementById('menuBackdrop');
+const langBtn=document.getElementById('langToggle');
+const storageKey='naya_lang_final';
+
+function openMenu(){menu.classList.add('open');backdrop.classList.add('open')}
+function closeMenu(){menu.classList.remove('open');backdrop.classList.remove('open')}
+
+toggle.onclick=openMenu;
+closeBtn.onclick=closeMenu;
+backdrop.onclick=closeMenu;
+document.addEventListener('keydown',e=>{if(e.key==='Escape') closeMenu();});
+
+function applyLang(lang){
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.body.dir = lang === 'he' ? 'rtl' : 'ltr';
+
+  document.querySelectorAll('[data-he]').forEach(el=>{
+    el.textContent = lang === 'he' ? el.dataset.he : el.dataset.en;
+  });
+
+  document.title = lang === 'he'
+    ? document.body.dataset.titleHe
+    : document.body.dataset.titleEn;
+
+  langBtn.textContent = lang === 'he' ? 'EN' : 'HE';
+  localStorage.setItem(storageKey, lang);
+}
+
+langBtn.onclick=()=>{
+  const current = localStorage.getItem(storageKey) || 'he';
+  applyLang(current === 'he' ? 'en' : 'he');
+};
+
+applyLang(localStorage.getItem(storageKey) || 'he');
+</script>
+
+</body>
+</html>
