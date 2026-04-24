@@ -228,14 +228,15 @@
     }
 
     .gallery-card img{
-      width:100%;
-      height:auto;
-      display:block;
-      object-fit:contain;
-      border-radius:16px;
-      transition:transform .3s ease;
-    }
-
+  width:100%;
+  aspect-ratio:4 / 5;
+  display:block;
+  object-fit:contain;
+  object-position:center center;
+  background:#111;
+  border-radius:16px;
+  transition:transform .3s ease;
+}
     .gallery-card:hover img{
       transform:scale(1.04);
     }
