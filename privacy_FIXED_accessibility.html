@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>מדיניות פרטיות | NAYA</title>
+<meta name="description" content="מדיניות הפרטיות של NAYA – איסוף מידע, שימוש בעוגיות, אבטחת מידע וזכויות המשתמשים.">
+<link rel="canonical" href="https://naya-jewelry.com/privacy.html">
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b0b0b;
+  color: #f5f5f5;
+  line-height: 1.7;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+h2 {
+  color: #d4af37;
+  margin-top: 30px;
+}
+p, li {
+  font-size: 16px;
+}
+ul {
+  padding-right: 22px;
+}
+a {
+  color: #d4af37;
+  text-decoration: none;
+}
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+:root{
+  --blue1:#6f86ff;
+  --blue2:#4f67f2;
+  --panel-bg:#fbfbff;
+  --panel-border:#d9def7;
+  --panel-text:#7680a8;
+}
+    .a11y-fab{
+      position:fixed;
+      left:12px;
+      bottom:16px;
+      z-index:2147483647;
+      width:58px;
+      height:58px;
+      border:none;
+      outline:none;
+      border-radius:16px;
+      background:linear-gradient(135deg,var(--blue1),var(--blue2));
+      color:#fff;
+      font-size:29px;
+      font-weight:700;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      cursor:pointer;
+      box-shadow:0 14px 28px rgba(65,87,230,0.28), 0 8px 18px rgba(0,0,0,0.28);
+      transition:transform .18s ease, box-shadow .18s ease;
+      -webkit-appearance:none;
+      appearance:none;
+    }
+
+    .a11y-fab:hover{transform:translateY(-2px);}
+
+    .a11y-backdrop{
+      position:fixed;
+      inset:0;
+      background:rgba(0,0,0,0.18);
+      backdrop-filter:blur(3px);
+      -webkit-backdrop-filter:blur(3px);
+      z-index:2147483644;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .22s ease;
+    }
+
+    .a11y-backdrop.open{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .a11y-panel{
+      position:fixed;
+      top:0;
+      left:0;
+      height:100vh;
+      width:min(420px, 92vw);
+      background:var(--panel-bg);
+      color:#1d2340;
+      z-index:2147483646;
+      transform:translateX(-100%);
+      transition:transform .28s ease;
+      box-shadow:20px 0 60px rgba(0,0,0,.28);
+      display:flex;
+      flex-direction:column;
+      overflow:auto;
+    }
+
+    .a11y-panel.open{transform:translateX(0);}
+
+    .a11y-header{
+      position:sticky;
+      top:0;
+      z-index:3;
+      background:linear-gradient(135deg,var(--blue1),var(--blue2));
+      color:#fff;
+      padding:18px 18px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .a11y-title{
+      font-size:1.7rem;
+      font-weight:800;
+    }
+
+    .a11y-close{
+      border:none;
+      background:transparent;
+      color:#fff;
+      font-size:30px;
+      line-height:1;
+      cursor:pointer;
+    }
+
+    .a11y-body{
+      padding:16px 16px 22px;
+      text-align:right;
+    }
+
+    .a11y-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-bottom:18px;
+    }
+
+    .a11y-card{
+      border:1px solid #cfd6fb;
+      background:#fff;
+      color:var(--panel-text);
+      border-radius:22px;
+      min-height:120px;
+      padding:14px 10px;
+      cursor:pointer;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      font-size:1rem;
+      font-weight:700;
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease, background .18s ease;
+      box-shadow:0 8px 18px rgba(69,87,195,0.04);
+    }
+
+    .a11y-card:hover{
+      transform:translateY(-2px);
+      box-shadow:0 10px 20px rgba(69,87,195,0.10);
+    }
+
+    .a11y-card.active{
+      background:#eef2ff;
+      border-color:#99a9ff;
+      color:#4f67f2;
+    }
+
+    .a11y-icon{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-size:28px;
+      color:#7a84d1;
+    }
+
+    .a11y-label{
+      line-height:1.3;
+      font-size:0.96rem;
+    }
+
+    .a11y-section-title{
+      font-size:1.25rem;
+      color:#7a84d1;
+      font-weight:800;
+      text-align:center;
+      margin:14px 0 10px;
+    }
+
+    .a11y-slider-wrap{margin-bottom:26px;}
+
+    .a11y-slider-row{
+      display:grid;
+      grid-template-columns:54px 1fr 54px;
+      align-items:center;
+      gap:12px;
+      margin-top:10px;
+    }
+
+    .a11y-circle-btn{
+      width:54px;
+      height:54px;
+      border-radius:999px;
+      border:1px solid #cfd6fb;
+      background:#fff;
+      color:#7a84d1;
+      font-size:34px;
+      cursor:pointer;
+      line-height:1;
+    }
+
+    .a11y-bar-wrap{
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:10px;
+    }
+
+    .a11y-value{
+      min-width:70px;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid #cfd6fb;
+      background:#fff;
+      color:#7a84d1;
+      font-weight:700;
+      font-size:1rem;
+    }
+
+    .a11y-bar{
+      width:100%;
+      height:12px;
+      border-radius:999px;
+      background:linear-gradient(90deg,#9f6bff,#5d7cff);
+      position:relative;
+      overflow:hidden;
+    }
+
+    .a11y-footer-note{
+      color:#9aa1c0;
+      font-size:.92rem;
+      text-align:center;
+      margin-top:8px;
+    }
+
+    @media (max-width:700px){
+      .a11y-fab{
+        left:10px;
+        bottom:14px;
+        width:54px;
+        height:54px;
+        font-size:27px;
+      }
+
+      .a11y-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:10px;
+      }
+
+      .a11y-card{
+        min-height:108px;
+        font-size:.9rem;
+      }
+
+      .a11y-icon{
+        width:42px;
+        height:42px;
+        font-size:24px;
+      }
+
+      .a11y-title{font-size:1.45rem;}
+
+      .a11y-slider-row{
+        grid-template-columns:48px 1fr 48px;
+        gap:10px;
+      }
+
+      .a11y-circle-btn{
+        width:48px;
+        height:48px;
+        font-size:30px;
+      }
+    }
+
+    body.a11y-dark-mode{
+      background:linear-gradient(180deg,#111 0%,#090909 42%,#000 100%) !important;
+      color:#fff !important;
+    }
+
+    body.a11y-bold-text,
+    body.a11y-bold-text p,
+    body.a11y-bold-text div,
+    body.a11y-bold-text span,
+    body.a11y-bold-text a,
+    body.a11y-bold-text button,
+    body.a11y-bold-text h1,
+    body.a11y-bold-text h2,
+    body.a11y-bold-text h3{
+      font-weight:800 !important;
+    }
+
+    body.a11y-high-contrast{
+      background:#000 !important;
+      color:#fff !important;
+    }
+
+    body.a11y-high-contrast .gallery-card{
+      border-color:#fff;
+      background:#000;
+    }
+
+    body.a11y-high-contrast .btn{
+      background:#ffd54a !important;
+      color:#000 !important;
+      box-shadow:none !important;
+      border:2px solid #fff;
+    }
+
+    body.a11y-highlight-links a{
+      text-decoration:underline !important;
+      text-decoration-thickness:3px !important;
+      text-underline-offset:3px !important;
+      box-shadow:0 0 0 3px rgba(255,215,0,.15);
+    }
+
+    body.a11y-readable-text{
+      letter-spacing:.02em;
+      word-spacing:.05em;
+      line-height:2 !important;
+    }
+
+    body.a11y-readable-text p,
+    body.a11y-readable-text .intro-section p,
+    body.a11y-readable-text .email-text,
+    body.a11y-readable-text .site-footer{
+      line-height:2 !important;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>מדיניות פרטיות</h1>
+
+<h2>1. כללי</h2>
+<p>אתר NAYA מכבד את פרטיות המשתמשים באתר ופועל לשמירה על המידע הנמסר לו בהתאם לדין.</p>
+<p>השימוש באתר מהווה הסכמה למדיניות פרטיות זו.</p>
+
+<h2>2. איזה מידע נאסף</h2>
+<p>בעת שימוש באתר או ביצוע רכישה, ייתכן שייאסף מידע כגון:</p>
+<ul>
+  <li>שם מלא</li>
+  <li>כתובת דוא"ל</li>
+  <li>מספר טלפון</li>
+  <li>כתובת למשלוח</li>
+  <li>פרטי הזמנה ורכישה</li>
+  <li>מידע טכני כגון כתובת IP, סוג דפדפן, מכשיר ונתוני שימוש באתר</li>
+</ul>
+
+<h2>3. מטרות השימוש במידע</h2>
+<p>המידע ישמש לצרכים הבאים:</p>
+<ul>
+  <li>טיפול בהזמנות ורכישות</li>
+  <li>משלוח מוצרים ללקוחות</li>
+  <li>שירות לקוחות ומענה לפניות</li>
+  <li>שיפור חוויית המשתמש באתר</li>
+  <li>ניתוח נתוני שימוש ופעילות באתר</li>
+  <li>פרסום ושיווק, ככל שהדבר מותר לפי דין</li>
+</ul>
+
+<h2>4. עוגיות וכלי מדידה</h2>
+<p>האתר עשוי להשתמש בקובצי Cookies ובכלי מדידה ופרסום כגון Google Analytics, Google Ads, TikTok Pixel או כלים דומים.</p>
+<p>כלים אלה עשויים לאסוף מידע סטטיסטי וטכני על פעילות המשתמש באתר, לצורך מדידה, שיפור האתר, התאמת פרסום וניתוח ביצועים.</p>
+<p>ניתן לחסום או למחוק Cookies דרך הגדרות הדפדפן. חסימה כזו עשויה להשפיע על חלק מהשירותים באתר.</p>
+
+<h2>5. מסירת מידע לצדדים שלישיים</h2>
+<p>האתר לא יעביר פרטים אישיים לצד שלישי ללא הסכמת המשתמש, למעט במקרים הבאים:</p>
+<ul>
+  <li>לצורך תפעול האתר וביצוע הזמנות</li>
+  <li>לצורך משלוחים ושירותי סליקה</li>
+  <li>לספקי שירות טכניים, פרסום, מדידה ואחסון</li>
+  <li>כאשר קיימת חובה חוקית למסור את המידע</li>
+  <li>במקרה של מחלוקת משפטית או חשד לשימוש בלתי חוקי באתר</li>
+</ul>
+
+<h2>6. אבטחת מידע</h2>
+<p>האתר נוקט באמצעים סבירים לשמירה על המידע האישי של המשתמשים.</p>
+<p>עם זאת, אין אפשרות להבטיח חסינות מוחלטת מפני חדירה או שימוש בלתי מורשה במערכות האתר.</p>
+
+<h2>7. שמירת מידע</h2>
+<p>המידע יישמר למשך הזמן הדרוש לצורך מתן השירות, עמידה בדרישות החוק, ניהול הזמנות, שירות לקוחות וצרכים עסקיים לגיטימיים.</p>
+
+<h2>8. זכויות המשתמש</h2>
+<p>משתמש רשאי לפנות לאתר בבקשה לעיין במידע שנשמר עליו, לתקן אותו או לבקש את מחיקתו, בכפוף להוראות הדין.</p>
+
+<h2>9. יצירת קשר בנושא פרטיות</h2>
+<p>לפניות בנושא פרטיות ניתן לפנות בדוא"ל:</p>
+<p><a href="mailto:info@naya-jewelry.com">info@naya-jewelry.com</a></p>
+
+<h2>10. שינויים במדיניות</h2>
+<p>האתר רשאי לעדכן מדיניות פרטיות זו מעת לעת. הנוסח המעודכן יפורסם באתר.</p>
+
+<footer>
+© Naya Fine Jewelry 2006
+</footer>
+
+</div>
+
+  <div class="a11y-backdrop" id="a11yBackdrop"></div>
+
+  <button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">♿</button>
+
+  <aside class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
+    <div class="a11y-header">
+      <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
+      <div class="a11y-title" id="a11yTitle">כלי נגישות</div>
+    </div>
+
+    <div class="a11y-body">
+      <div class="a11y-grid">
+        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◐</div><div class="a11y-label">גוני אפור</div></button>
+        <button class="a11y-card" data-mode="a11y-dark-mode"><div class="a11y-icon">☾</div><div class="a11y-label">ניגודיות הפוכה</div></button>
+        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">☼</div><div class="a11y-label">ניגודיות גבוהה</div></button>
+        <button class="a11y-card" data-mode="a11y-readable-text"><div class="a11y-icon">〰</div><div class="a11y-label">טקסט קריא</div></button>
+        <button class="a11y-card" data-mode="a11y-highlight-links"><div class="a11y-icon">🔗</div><div class="a11y-label">הדגשת קישורים</div></button>
+        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◑</div><div class="a11y-label">שחור לבן</div></button>
+      </div>
+
+      <div class="a11y-section-title">התאמת גודל גופן</div>
+      <div class="a11y-slider-wrap">
+        <div class="a11y-slider-row">
+          <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
+          <div class="a11y-bar-wrap">
+            <div class="a11y-value" id="fontValue">100%</div>
+            <div class="a11y-bar"></div>
+          </div>
+          <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
+        </div>
+      </div>
+
+      <div class="a11y-section-title">איפוס</div>
+      <div class="a11y-slider-wrap">
+        <div class="a11y-footer-note">אפשר להחזיר את כל ההגדרות למצב רגיל</div>
+        <button class="a11y-reset" id="a11yReset" style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">איפוס מלא</button>
+      </div>
+    </div>
+  </aside>
+
+
+  <script>
+    const fab = document.getElementById('a11yFab');
+    const panel = document.getElementById('a11yPanel');
+    const backdrop = document.getElementById('a11yBackdrop');
+    const closeBtn = document.getElementById('a11yClose');
+    const resetBtn = document.getElementById('a11yReset');
+    const cards = Array.from(document.querySelectorAll('.a11y-card'));
+    const fontValue = document.getElementById('fontValue');
+    const fontPlus = document.getElementById('fontPlus');
+    const fontMinus = document.getElementById('fontMinus');
+
+    const storageKey = 'naya_a11y_sidepanel_v1';
+    const fontStorageKey = 'naya_font_scale_v1';
+
+    function openPanel() {
+      panel.classList.add('open');
+      backdrop.classList.add('open');
+      fab.setAttribute('aria-expanded', 'true');
+    }
+
+    function closePanel() {
+      panel.classList.remove('open');
+      backdrop.classList.remove('open');
+      fab.setAttribute('aria-expanded', 'false');
+    }
+
+    function getSavedModes() {
+      try { return JSON.parse(localStorage.getItem(storageKey)) || []; }
+      catch (e) { return []; }
+    }
+
+    function saveModes(modes) {
+      localStorage.setItem(storageKey, JSON.stringify(modes));
+    }
+
+    function getSavedFont() {
+      const saved = parseInt(localStorage.getItem(fontStorageKey) || '100', 10);
+      return isNaN(saved) ? 100 : Math.min(140, Math.max(90, saved));
+    }
+
+    function saveFont(value) {
+      localStorage.setItem(fontStorageKey, String(value));
+    }
+
+    function applyFont() {
+      const value = getSavedFont();
+      document.documentElement.style.fontSize = value + '%';
+      fontValue.textContent = value + '%';
+    }
+
+    function applyModes() {
+      const modes = getSavedModes();
+      document.body.classList.remove(
+        'a11y-dark-mode',
+        'a11y-bold-text',
+        'a11y-high-contrast',
+        'a11y-highlight-links',
+        'a11y-readable-text'
+      );
+      cards.forEach(card => card.classList.remove('active'));
+      modes.forEach(mode => {
+        document.body.classList.add(mode);
+        cards.filter(c => c.dataset.mode === mode).forEach(c => c.classList.add('active'));
+      });
+    }
+
+    function toggleMode(mode) {
+      let modes = getSavedModes();
+      if (modes.includes(mode)) modes = modes.filter(m => m !== mode);
+      else modes.push(mode);
+      saveModes(modes);
+      applyModes();
+    }
+
+    fab.addEventListener('click', function() {
+      if (panel.classList.contains('open')) closePanel();
+      else openPanel();
+    });
+
+    closeBtn.addEventListener('click', closePanel);
+    backdrop.addEventListener('click', closePanel);
+
+    cards.forEach(function(card) {
+      card.addEventListener('click', function() {
+        const mode = card.dataset.mode;
+        if (mode === 'a11y-high-contrast') {
+          let modes = getSavedModes();
+          const exists = modes.includes('a11y-high-contrast');
+          modes = modes.filter(m => m !== 'a11y-high-contrast');
+          if (!exists) modes.push('a11y-high-contrast');
+          saveModes(modes);
+          applyModes();
+          return;
+        }
+        toggleMode(mode);
+      });
+    });
+
+    fontPlus.addEventListener('click', function() {
+      const next = Math.min(140, getSavedFont() + 10);
+      saveFont(next);
+      applyFont();
+    });
+
+    fontMinus.addEventListener('click', function() {
+      const next = Math.max(90, getSavedFont() - 10);
+      saveFont(next);
+      applyFont();
+    });
+
+    resetBtn.addEventListener('click', function() {
+      localStorage.removeItem(storageKey);
+      localStorage.removeItem(fontStorageKey);
+      document.documentElement.style.fontSize = '100%';
+      applyModes();
+      applyFont();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closePanel();
+    });
+
+    applyModes();
+    applyFont();
+  </script>
+
+
+</body>
+</html>
