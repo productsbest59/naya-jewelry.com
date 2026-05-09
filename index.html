@@ -1747,5 +1747,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 </script>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll('.buy-now-btn').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      if (typeof ttq !== "undefined") {
+        ttq.track('InitiateCheckout');
+        ttq.track('CompletePayment');
+      }
+    });
+  });
+});
+</script>
 </body>
 </html>
