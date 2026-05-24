@@ -1322,27 +1322,21 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
   position:fixed;
   right:14px;
   bottom:16px;
-  width:64px;
-  height:64px;
+  width:58px;
+  height:58px;
   border-radius:50%;
-  background:#25D366;
+  background:rgba(37,211,102,.16);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.12);
   display:flex;
   align-items:center;
   justify-content:center;
-  box-shadow:0 0 24px rgba(37,211,102,0.42);
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.38),
+    0 0 22px rgba(255,255,255,.06);
   z-index:9999999;
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-
-.naya-whatsapp-float:hover{
-  transform:scale(1.08);
-  box-shadow:0 0 30px rgba(37,211,102,0.58);
-}
-
-.naya-whatsapp-float img{
-  width:34px;
-  height:34px;
-  filter:brightness(0) invert(1);
+  transition:all .25s ease;
 }
 
 @media(max-width:768px){
