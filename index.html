@@ -1460,11 +1460,21 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
 @media (max-width:768px){
 
   body{
-    background:
-      linear-gradient(rgba(0,0,0,.58), rgba(0,0,0,.76)),
-      url("nayabg.png") center top / cover no-repeat !important;
+    background:none !important;
+  }
 
-    background-attachment:scroll !important;
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:-1;
+
+    background:
+      linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.78)),
+      url("nayabg.png") center center / cover no-repeat;
+
+    transform:translateZ(0);
+    -webkit-transform:translateZ(0);
   }
 
 }
