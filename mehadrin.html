@@ -636,28 +636,30 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
     }
 
     .a11y-fab{
-      position:fixed;
-      left:14px;
-      bottom:16px;
-      z-index:2147483647;
-      width:64px;
-      height:64px;
-      border:none;
-      outline:none;
-      border-radius:50%;
-      background:linear-gradient(135deg,var(--blue1),var(--blue2));
-      color:#fff;
-      font-size:30px;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      box-shadow:0 14px 28px rgba(65,87,230,0.28), 0 8px 18px rgba(0,0,0,0.28);
-      transition:transform .18s ease, box-shadow .18s ease;
-      -webkit-appearance:none;
-      appearance:none;
-    }
+  position:fixed;
+  left:14px;
+  bottom:16px;
+  z-index:2147483647;
+  width:58px;
+  height:58px;
+  border:none;
+  outline:none;
+  border-radius:50%;
+  background:rgba(111,134,255,.16);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  font-size:28px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:
+    0 10px 28px rgba(0,0,0,.38),
+    0 0 22px rgba(255,255,255,.06);
+  transition:all .25s ease;
+}
 
     .a11y-fab:hover{transform:translateY(-2px);}
 
