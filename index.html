@@ -1554,12 +1554,14 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
 }
 /* מהדרין - מובייל עומד */
 @media (max-width:900px) and (orientation:portrait){
+
   .mehadrin-float-link{
     position:static !important;
     display:block !important;
-    width:58vw !important;
-    max-width:420px !important;
-    margin:22px auto 35px !important;
+    width:34vw !important;
+    min-width:140px !important;
+    max-width:190px !important;
+    margin:20px auto 30px !important;
     transform:none !important;
   }
 
@@ -1568,13 +1570,28 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
     height:auto !important;
     display:block !important;
   }
+
 }
 
 /* מהדרין - מובייל לרוחב */
 @media (max-width:950px) and (orientation:landscape){
+
   .mehadrin-float-link{
-    display:none !important;
+    position:absolute !important;
+    top:90px !important;
+    left:12px !important;
+    width:95px !important;
+    margin:0 !important;
+    transform:none !important;
+    z-index:2 !important;
   }
+
+  .mehadrin-float-link img{
+    width:100% !important;
+    height:auto !important;
+    display:block !important;
+  }
+
 }
 </style>
 </head>
