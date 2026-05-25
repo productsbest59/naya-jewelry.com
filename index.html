@@ -1508,6 +1508,50 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
   }
 
 }
+.intro-section{
+  position:relative;
+}
+
+.mehadrin-float-link{
+  position:absolute;
+  left:60px;
+  top:210px;
+  width:220px;
+  display:block;
+  transform:rotate(-12deg);
+  z-index:5;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 0 26px rgba(242,178,27,.34);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.mehadrin-float-link:hover{
+  transform:rotate(-12deg) scale(1.04);
+  box-shadow:0 0 38px rgba(242,178,27,.5);
+}
+
+.mehadrin-float-link img{
+  width:100%;
+  display:block;
+}
+
+@media(max-width:768px){
+
+  .mehadrin-float-link{
+    position:relative;
+    left:auto;
+    top:auto;
+    margin:18px auto 0;
+    width:220px;
+    transform:none;
+  }
+
+  .mehadrin-float-link:hover{
+    transform:scale(1.03);
+  }
+
+}
 </style>
 </head>
 <body>
