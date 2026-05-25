@@ -1588,6 +1588,22 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
     max-width:74px !important;
   }
 }
+/* iPad / טאבלטים בלבד - רקע כמו דסקטופ */
+@media only screen 
+and (min-width:768px) 
+and (max-width:1180px){
+
+  body{
+    background:
+      linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.82)),
+      url("nayabg.png") center center / cover fixed no-repeat !important;
+  }
+
+  body::before{
+    display:none !important;
+  }
+
+}    
 </style>
 </head>
 <body>
