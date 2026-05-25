@@ -2857,7 +2857,48 @@ function openNayaA11yPanel(){
   document.body.classList.add("a11y-panel-lock");
 }
 </script>
+<div class="product-modal-backdrop" id="productModalBackdrop" onclick="closeProductModal()"></div>
 
+<div class="product-modal" id="productModal">
+  <button class="product-modal-close" onclick="closeProductModal()">×</button>
+
+  <h2 id="productModalTitle">שרשרת בן פורת יוסף</h2>
+
+  <div class="product-modal-gallery" id="productModalGallery"></div>
+
+  <p class="product-modal-desc">
+    שרשרת בן פורת יוסף בעיצוב יהודי ייחודי, עם נראות אלגנטית ומשמעות רוחנית עמוקה.
+  </p>
+</div>
+
+<script>
+function openProductModal(productId){
+  const gallery = document.getElementById('productModalGallery');
+
+  gallery.innerHTML = `
+    <img src="products-images/${productId}-1.jpg" alt="">
+    <img src="products-images/${productId}-2.jpg" alt="">
+    <img src="products-images/${productId}-3.jpg" alt="">
+    <img src="products-images/${productId}-4.jpg" alt="">
+    <img src="products-images/${productId}-5.jpg" alt="">
+
+    <video controls playsinline preload="metadata">
+      <source src="products-images/${productId}-video.mp4" type="video/mp4">
+    </video>
+  `;
+
+  document.getElementById('productModalBackdrop').classList.add('open');
+  document.getElementById('productModal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeProductModal(){
+  document.getElementById('productModalBackdrop').classList.remove('open');
+  document.getElementById('productModal').classList.remove('open');
+  document.getElementById('productModalGallery').innerHTML = '';
+  document.body.style.overflow = '';
+}
+</script>
 </body>
 </html>
 
