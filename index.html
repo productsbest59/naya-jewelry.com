@@ -1552,30 +1552,28 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
   }
 
 }
-/* תיקון סופי לינק מהדרין במובייל */
+/* מהדרין - מובייל עומד */
 @media (max-width:900px) and (orientation:portrait){
   .mehadrin-float-link{
-    width:260px !important;
-    max-width:58vw !important;
+    position:static !important;
+    display:block !important;
+    width:58vw !important;
+    max-width:420px !important;
+    margin:22px auto 35px !important;
     transform:none !important;
   }
 
   .mehadrin-float-link img{
     width:100% !important;
     height:auto !important;
+    display:block !important;
   }
 }
 
+/* מהדרין - מובייל לרוחב */
 @media (max-width:950px) and (orientation:landscape){
   .mehadrin-float-link{
-    width:150px !important;
-    max-width:20vw !important;
-    transform:none !important;
-  }
-
-  .mehadrin-float-link img{
-    width:100% !important;
-    height:auto !important;
+    display:none !important;
   }
 }
 </style>
