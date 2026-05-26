@@ -644,12 +644,19 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
     }
 
     @media only screen and (min-width:768px) and (max-width:1024px) and (orientation:portrait){
-      .gallery{
-        grid-template-columns:repeat(2, minmax(0,1fr)) !important;
-        gap:12px !important;
-        padding:0 16px !important;
-        align-items:start !important;
-      }
+
+  body{
+    background:
+      linear-gradient(rgba(0,0,0,.55), rgba(0,0,0,.78)),
+      url("naya-bg-mobile.jpg") center center / cover no-repeat !important;
+  }
+
+  .gallery{
+    grid-template-columns:repeat(2, minmax(0,1fr)) !important;
+    gap:12px !important;
+    padding:0 16px !important;
+    align-items:start !important;
+  }
 
       .gallery-card{
         width:100% !important;
