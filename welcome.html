@@ -150,8 +150,39 @@
   <a class="float-whatsapp" href="https://wa.me/972559992255" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
   <script>
     const html=document.documentElement, langToggle=document.getElementById('langToggle'), welcomeImage=document.getElementById('welcomeImage');
-    function setLang(lang){const isHe=lang==='he';html.lang=isHe?'he':'en';html.dir=isHe?'rtl':'ltr';welcomeImage.src=isHe?'nayawelcomeheb.jpg':'nayawelcomeeng.jpg';welcomeImage.alt=isHe?'Naya Fine Jewelry - ברוכים הבאים':'Naya Fine Jewelry - Welcome';langToggle.textContent=isHe?'English':'עברית';document.querySelectorAll('[data-he][data-en]').forEach(el=>{el.textContent=isHe?el.getAttribute('data-he'):el.getAttribute('data-en')});document.querySelector('.entry-main').setAttribute('aria-label',isHe?'כניסה לאתר שלנו':'Enter our main site');document.querySelector('.entry-mehadrin').setAttribute('aria-label',isHe?'כניסה לאתר מהדרין':'Enter Mehadrin site');}
-    langToggle.addEventListener('click',()=>setLang(html.lang==='he'?'en':'he')); setLang('he');
+function setLang(lang){
+  const isHe = lang === 'he';
+
+  html.lang = isHe ? 'he' : 'en';
+  html.dir = isHe ? 'rtl' : 'ltr';
+
+  welcomeImage.src =
+    window.innerWidth <= 768
+      ? (isHe ? 'nayawelcomehebmobile.jpg' : 'nayawelcomeengmobile.jpg')
+      : (isHe ? 'nayawelcomeheb.jpg' : 'nayawelcomeeng.jpg');
+
+  welcomeImage.alt = isHe
+    ? 'Naya Fine Jewelry - ברוכים הבאים'
+    : 'Naya Fine Jewelry - Welcome';
+
+  langToggle.textContent = isHe ? 'English' : 'עברית';
+
+  document.querySelectorAll('[data-he][data-en]').forEach(el=>{
+    el.textContent = isHe
+      ? el.getAttribute('data-he')
+      : el.getAttribute('data-en');
+  });
+
+  document.querySelector('.entry-main').setAttribute(
+    'aria-label',
+    isHe ? 'כניסה לאתר שלנו' : 'Enter our main site'
+  );
+
+  document.querySelector('.entry-mehadrin').setAttribute(
+    'aria-label',
+    isHe ? 'כניסה לאתר מהדרין' : 'Enter Mehadrin site'
+  );
+}    langToggle.addEventListener('click',()=>setLang(html.lang==='he'?'en':'he')); setLang('he');
   </script>
   <script>
     const fab=document.getElementById('a11yFab'),panel=document.getElementById('a11yPanel'),backdrop=document.getElementById('a11yBackdrop'),closeBtn=document.getElementById('a11yClose'),resetBtn=document.getElementById('a11yReset'),cards=Array.from(document.querySelectorAll('.a11y-card')),fontValue=document.getElementById('fontValue'),fontPlus=document.getElementById('fontPlus'),fontMinus=document.getElementById('fontMinus');
