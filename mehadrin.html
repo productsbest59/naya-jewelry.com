@@ -3246,17 +3246,23 @@ function openProductModal(productId){
   titleEl.innerHTML = data.title;
   descEl.innerHTML = data.desc;
 
-  gallery.innerHTML = `
+  const productsWithVideo = ['product01'];
+
+gallery.innerHTML = `
     <img src="products-images/${productId}-1.jpg" alt="" onerror="this.style.display='none'">
     <img src="products-images/${productId}-2.jpg" alt="" onerror="this.style.display='none'">
     <img src="products-images/${productId}-3.jpg" alt="" onerror="this.style.display='none'">
     <img src="products-images/${productId}-4.jpg" alt="" onerror="this.style.display='none'">
     <img src="products-images/${productId}-5.jpg" alt="" onerror="this.style.display='none'">
+`;
 
+if(productsWithVideo.includes(productId)){
+  gallery.innerHTML += `
     <video controls playsinline preload="metadata">
       <source src="products-images/${productId}-video.mp4" type="video/mp4">
     </video>
   `;
+}
 
   document.getElementById('productModalBackdrop').classList.add('open');
   document.getElementById('productModal').classList.add('open');
