@@ -1941,20 +1941,19 @@ body.a11y-readable-text p,
 .product-title{
   font-family:Arial, sans-serif !important;
 }
-@media (min-width:901px){
 
-  body::before{
-    display:none !important;
-  }
+@media only screen
+and (min-width:768px)
+and (max-width:1366px)
+and (orientation:landscape){
 
   body{
     background:
       linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.9)),
-      url("nayabg.png") center center / cover fixed no-repeat !important;
+      url("nayabg.png") center center / contain fixed no-repeat !important;
   }
 
-}    
-
+}
 /* ===== NEW MEHADRIN PRODUCT CARDS ===== */
 
 .mehadrin-trust-icons{
