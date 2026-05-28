@@ -1995,7 +1995,23 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
 .product-modal{
   z-index:9999999 !important;
 }
+/* iPad landscape background fix */
+@media (min-width:700px) and (max-width:1366px) and (orientation:landscape){
+  body{
+    background:#000 !important;
+  }
 
+  body::before{
+    content:"" !important;
+    position:fixed !important;
+    inset:0 !important;
+    z-index:-1 !important;
+    display:block !important;
+    background:
+      linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.82)),
+      url("nayabg.png") center center / cover no-repeat !important;
+  }
+}
 </style>
 </head>
 <body>
