@@ -2034,40 +2034,80 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
 
 
 <aside class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
-    <div class="a11y-header">
-      <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
-      <div class="a11y-title" id="a11yTitle">כלי נגישות</div>
+  <div class="a11y-header">
+    <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
+    <div class="a11y-title" id="a11yTitle" data-he="כלי נגישות" data-en="Accessibility Tools">כלי נגישות</div>
+  </div>
+
+  <div class="a11y-body">
+    <div class="a11y-grid">
+      <button class="a11y-card" data-mode="a11y-grayscale">
+        <div class="a11y-icon">◐</div>
+        <div class="a11y-label" data-he="גווני אפור" data-en="Grayscale">גווני אפור</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-dark-mode">
+        <div class="a11y-icon">☾</div>
+        <div class="a11y-label" data-he="ניגודיות הפוכה" data-en="Inverted Contrast">ניגודיות הפוכה</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-high-contrast">
+        <div class="a11y-icon">☼</div>
+        <div class="a11y-label" data-he="ניגודיות גבוהה" data-en="High Contrast">ניגודיות גבוהה</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-readable-text">
+        <div class="a11y-icon">〰</div>
+        <div class="a11y-label" data-he="טקסט קריא" data-en="Readable Text">טקסט קריא</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-highlight-links">
+        <div class="a11y-icon">🔗</div>
+        <div class="a11y-label" data-he="הדגשת קישורים" data-en="Highlight Links">הדגשת קישורים</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-blackwhite">
+        <div class="a11y-icon">◑</div>
+        <div class="a11y-label" data-he="שחור לבן" data-en="Black & White">שחור לבן</div>
+      </button>
     </div>
 
-    <div class="a11y-body">
-      <div class="a11y-grid">
-        <button class="a11y-card" data-mode="a11y-grayscale"><div class="a11y-icon">◐</div><div class="a11y-label">גוני אפור</div></button>
-        <button class="a11y-card" data-mode="a11y-dark-mode"><div class="a11y-icon">☾</div><div class="a11y-label">ניגודיות הפוכה</div></button>
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">☼</div><div class="a11y-label">ניגודיות גבוהה</div></button>
-        <button class="a11y-card" data-mode="a11y-readable-text"><div class="a11y-icon">〰</div><div class="a11y-label">טקסט קריא</div></button>
-        <button class="a11y-card" data-mode="a11y-highlight-links"><div class="a11y-icon">🔗</div><div class="a11y-label">הדגשת קישורים</div></button>
-        <button class="a11y-card" data-mode="a11y-blackwhite"><div class="a11y-icon">◑</div><div class="a11y-label">שחור לבן</div></button>
-      </div>
+    <div class="a11y-section-title" data-he="התאמת גודל גופן" data-en="Adjust Font Size">
+      התאמת גודל גופן
+    </div>
 
-      <div class="a11y-section-title">התאמת גודל גופן</div>
-      <div class="a11y-slider-wrap">
-        <div class="a11y-slider-row">
-          <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
-          <div class="a11y-bar-wrap">
-            <div class="a11y-value" id="fontValue">100%</div>
-            <div class="a11y-bar"></div>
-          </div>
-          <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
+    <div class="a11y-slider-wrap">
+      <div class="a11y-slider-row">
+        <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
+        <div class="a11y-bar-wrap">
+          <div class="a11y-value" id="fontValue">100%</div>
+          <div class="a11y-bar"></div>
         </div>
-      </div>
-
-      <div class="a11y-section-title">איפוס</div>
-      <div class="a11y-slider-wrap">
-        <div class="a11y-footer-note">אפשר להחזיר את כל ההגדרות למצב רגיל</div>
-        <button class="a11y-reset" id="a11yReset" style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">איפוס מלא</button>
+        <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
       </div>
     </div>
-  </aside>
+
+    <div class="a11y-section-title" data-he="איפוס" data-en="Reset">
+      איפוס
+    </div>
+
+    <div class="a11y-slider-wrap">
+      <div class="a11y-footer-note"
+           data-he="אפשר להחזיר את כל ההגדרות למצב רגיל"
+           data-en="Restore all settings to default">
+        אפשר להחזיר את כל ההגדרות למצב רגיל
+      </div>
+
+      <button class="a11y-reset"
+              id="a11yReset"
+              data-he="איפוס מלא"
+              data-en="Full Reset"
+              style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">
+        איפוס מלא
+      </button>
+    </div>
+  </div>
+</aside>
 
 
 
