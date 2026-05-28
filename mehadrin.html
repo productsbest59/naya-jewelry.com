@@ -3117,12 +3117,14 @@ document.addEventListener("DOMContentLoaded", function () {
     function applyModes() {
       const modes = getSavedModes();
       document.body.classList.remove(
-        'a11y-dark-mode',
-        'a11y-bold-text',
-        'a11y-high-contrast',
-        'a11y-highlight-links',
-        'a11y-readable-text'
-      );
+  'a11y-dark-mode',
+  'a11y-bold-text',
+  'a11y-high-contrast',
+  'a11y-highlight-links',
+  'a11y-readable-text',
+  'a11y-grayscale',
+  'a11y-blackwhite'
+);
       cards.forEach(card => card.classList.remove('active'));
       modes.forEach(mode => {
         document.body.classList.add(mode);
