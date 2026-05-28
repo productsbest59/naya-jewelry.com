@@ -3337,5 +3337,11 @@ function closeProductModal(){
   document.body.style.overflow = '';
 }
 </script>
+<script>
+document.querySelectorAll('.product-slider img').forEach(img => {
+  img.loading = 'lazy';
+  img.decoding = 'async';
+});
+</script>
 </body>
 </html>
