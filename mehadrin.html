@@ -864,7 +864,17 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
       }
     }
 
-    
+    body.a11y-grayscale .container{
+  filter:grayscale(100%) !important;
+}
+
+body.a11y-blackwhite .container{
+  filter:grayscale(100%) contrast(140%) brightness(115%) !important;
+}
+
+body.a11y-high-contrast .container{
+  filter:contrast(145%) saturate(120%) !important;
+}
     body.a11y-dark-mode{
       background:linear-gradient(180deg,#111 0%,#090909 42%,#000 100%) !important;
       color:#fff !important;
