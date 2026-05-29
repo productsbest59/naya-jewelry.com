@@ -80,7 +80,6 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
 </script>
 
   <style>
-    /* CLEAN SAFE VERSION: removed unused duplicate WhatsApp/social CSS + fixed validation warning. */
     :root{
       --gold1:#f2b21b;
       --gold2:#c88400;
@@ -1004,6 +1003,7 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
       display:block;
       margin:0 auto !important;
       padding:0 !important;
+      vertical-align:top;
     }
 
     .payments-secure{
@@ -1313,6 +1313,99 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
       }
     }
 
+/* NAYA SOCIAL ICONS */
+.naya-social-row{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  margin:14px 0 14px;
+  direction:ltr;
+}
+
+.naya-social-row a{
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#0b0b0b;
+  border:2px solid rgba(212,175,55,0.78);
+  box-shadow:0 0 14px rgba(212,175,55,0.18);
+  transition:all .25s ease;
+  text-decoration:none;
+}
+
+.naya-social-row a:hover{
+  transform:translateY(-4px) scale(1.06);
+  box-shadow:0 0 24px rgba(212,175,55,0.34);
+}
+
+.naya-social-row img{
+  width:28px;
+  height:28px;
+  object-fit:contain;
+  filter:brightness(0) invert(1);
+}
+
+/* Floating WhatsApp */
+.naya-whatsapp-float{
+  position:fixed;
+  right:14px;
+  bottom:16px;
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 0 24px rgba(37,211,102,0.42);
+  z-index:9999999;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.naya-whatsapp-float:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 30px rgba(37,211,102,0.58);
+}
+
+.naya-whatsapp-float img{
+  width:34px;
+  height:34px;
+  filter:brightness(0) invert(1);
+}
+
+@media(max-width:768px){
+  .naya-social-row{
+    gap:14px;
+    margin:12px 0;
+  }
+
+  .naya-social-row a{
+    width:52px;
+    height:52px;
+  }
+
+  .naya-social-row img{
+    width:24px;
+    height:24px;
+  }
+
+  .naya-whatsapp-float{
+    width:58px;
+    height:58px;
+    right:12px;
+    bottom:14px;
+  }
+
+  .naya-whatsapp-float img{
+    width:30px;
+    height:30px;
+  }
+}
+
 
 /* ===== NAYA MEHADRIN PAGE OVERRIDES ===== */
 .logo-row-mehadrin{
@@ -1324,7 +1417,8 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
 }
 
 .cta-button,
-.bottom-buttons{
+.bottom-buttons,
+.naya-social-row{
   display:none !important;
 }
 
@@ -1433,8 +1527,33 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
 }
 
 
+
 /* ===== DIGITAL EXACT FLOATING BUTTONS COPIED ===== */
 /* ---------------- FLOATING BUTTONS ---------------- */
+
+.float-whatsapp {
+  position: fixed;
+  right: 0;
+  bottom: 92px;
+
+  width: 58px;
+  height: 58px;
+
+  background: #050505 !important;
+
+  border: 1.5px solid #d4af37;
+  border-right: none;
+
+  border-radius: 16px 0 0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 999;
+
+  box-shadow: 0 0 18px rgba(212,175,55,.28);
+}
 
 .float-whatsapp i {
   color: #d4af37 !important;
@@ -1448,6 +1567,11 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
   text-decoration: none !important;
   color: #d4af37 !important;
 }
+
+
+
+
+
 
 
 /* FINAL BANNER FIX */
@@ -1966,6 +2090,7 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
     </div>
   </div>
 </aside>
+
 
 
 <div class="contact-popup-backdrop" id="contactPopupBackdrop"></div>
@@ -2664,6 +2789,10 @@ document.addEventListener("DOMContentLoaded", function () {
   
 
 
+
+
+
+
 <a class="float-whatsapp" href="https://wa.me/972559992255" target="_blank" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -2796,6 +2925,8 @@ document.addEventListener("DOMContentLoaded", function () {
     applyFont();
   
 </script>
+
+
 
 
 <script>
