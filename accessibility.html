@@ -3,78 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>הצהרת נגישות | NAYA</title>
 <meta name="description" content="הצהרת הנגישות של NAYA – מידע על התאמות נגישות באתר ודרכי פנייה בנושא נגישות.">
 <link rel="canonical" href="https://naya-jewelry.com/accessibility.html">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: #f5f5f5;
-  line-height: 1.7;
-}
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-}
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-h2 {
-  color: #d4af37;
-  margin-top: 30px;
-}
-p, li {
-  font-size: 16px;
-}
-ul {
-  padding-right: 22px;
-}
-a {
-  color: #d4af37;
-  text-decoration: none;
-}
-footer {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 14px;
-  color: #aaa;
-}
-
 :root{
+  --gold1:#f2b21b;
+  --gold2:#c88400;
   --blue1:#6f86ff;
   --blue2:#4f67f2;
   --panel-bg:#fbfbff;
   --panel-border:#d9def7;
   --panel-text:#7680a8;
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;min-height:100%;}
+body{
+  font-family:Arial, sans-serif;
+  color:#f5f0e6;
+  overflow-x:hidden;
+  background:
+    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.9)),
+    url("nayabg.png") center center / cover fixed no-repeat;
+  padding-top:34px;
+  transition:font-size .2s ease, background .2s ease, color .2s ease;
+}
+body::before{display:none;}
+.naya-sale-banner{
+  position:fixed;top:0;left:0;width:100%;height:34px;
+  background:linear-gradient(90deg,#000,#c8a44d,#000);
+  overflow:hidden;z-index:9999999;border-bottom:1px solid rgba(255,255,255,.18);
+  box-shadow:0 2px 12px rgba(0,0,0,.35);display:flex;align-items:center;white-space:nowrap;direction:rtl;
+}
+.naya-sale-track{display:flex;align-items:center;width:max-content;animation:nayaBannerMove 18s linear infinite;will-change:transform;}
+.naya-sale-track span{color:#fff8dc;font-size:.95rem;font-weight:700;padding-right:90px;flex-shrink:0;}
+@keyframes nayaBannerMove{from{transform:translateX(0);}to{transform:translateX(50%);}}
+.site-topbar{
+  position:fixed;top:46px;right:12px;left:12px;display:flex;align-items:center;justify-content:space-between;z-index:999999;pointer-events:none;
+}
+.site-topbar > *{pointer-events:auto;}
+.back-btn,.lang-toggle{
+  border:none;outline:none;cursor:pointer;border-radius:999px;min-height:46px;padding:10px 16px;
+  background:rgba(0,0,0,.58);color:#fff;border:1px solid rgba(242,178,27,.45);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  font-weight:800;text-decoration:none;font-size:.9rem;font-family:Arial, sans-serif;
+}
+.back-btn:hover,.lang-toggle:hover{background:rgba(242,178,27,.14);}
+.container{max-width:960px;margin:0 auto;padding:92px 18px 30px;}
+.logo-wrap{text-align:center;margin-bottom:8px;}
+.logo{width:230px;max-width:72%;filter:drop-shadow(0 12px 30px rgba(0,0,0,.7)) drop-shadow(0 0 10px rgba(255,200,0,.20));}
+.bsd-text{font-size:1.05rem;color:#f2c94c;margin:8px 0 18px;font-weight:800;text-align:center;}
+.terms-card{
+  background:linear-gradient(180deg,rgba(24,24,24,.72) 0%,rgba(16,16,16,.62) 100%);
+  border:1px solid rgba(242,178,27,.24);border-radius:26px;
+  box-shadow:0 18px 48px rgba(0,0,0,.42), inset 0 0 0 1px rgba(255,255,255,.03);
+  padding:26px 24px;text-align:right;
+}
+h1{text-align:center;color:#f2d28b;font-size:2rem;line-height:1.35;margin-bottom:24px;}
+h2{color:#f2d28b;font-size:1.2rem;margin:26px 0 10px;}
+p{color:rgba(255,255,255,.9);font-size:1rem;line-height:1.85;margin:9px 0;}
+.footer{text-align:center;margin-top:28px;color:rgba(255,255,255,.65);font-size:.85rem;}
+a{color:#d4af37;}
+/* ===== CLEAN ACCESSIBILITY PANEL ===== */
     .a11y-fab{
-      position:fixed;
-      left:12px;
-      bottom:16px;
-      z-index:2147483647;
-      width:58px;
-      height:58px;
-      border:none;
-      outline:none;
-      border-radius:16px;
-      background:linear-gradient(135deg,var(--blue1),var(--blue2));
-      color:#fff;
-      font-size:29px;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      box-shadow:0 14px 28px rgba(65,87,230,0.28), 0 8px 18px rgba(0,0,0,0.28);
-      transition:transform .18s ease, box-shadow .18s ease;
+      position:fixed !important;
+      right:0 !important;
+      left:auto !important;
+      bottom:24px !important;
+      width:58px !important;
+      height:58px !important;
+      background:#050505 !important;
+      border:1.5px solid #d4af37 !important;
+      border-right:none !important;
+      border-radius:16px 0 0 16px !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      cursor:pointer !important;
+      font-size:28px !important;
+      font-weight:900 !important;
+      color:#d4af37 !important;
+      z-index:100000000 !important;
+      box-shadow:0 0 18px rgba(212,175,55,.28) !important;
+      pointer-events:auto !important;
       -webkit-appearance:none;
       appearance:none;
+    }
+
+    .a11y-fab i{
+      color:#d4af37 !important;
+      font-size:28px !important;
+      line-height:1 !important;
     }
 
     .a11y-fab:hover{transform:translateY(-2px);}
@@ -82,9 +103,9 @@ footer {
     .a11y-backdrop{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,0.18);
-      backdrop-filter:blur(3px);
-      -webkit-backdrop-filter:blur(3px);
+      background:transparent !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
       z-index:2147483644;
       opacity:0;
       pointer-events:none;
@@ -264,14 +285,6 @@ footer {
     }
 
     @media (max-width:700px){
-      .a11y-fab{
-        left:10px;
-        bottom:14px;
-        width:54px;
-        height:54px;
-        font-size:27px;
-      }
-
       .a11y-grid{
         grid-template-columns:repeat(2,1fr);
         gap:10px;
@@ -329,11 +342,13 @@ footer {
       background:#000;
     }
 
-    body.a11y-high-contrast .btn{
+    body.a11y-high-contrast .btn,
+    body.a11y-high-contrast .buy-now-btn,
+    body.a11y-high-contrast .product-details-btn{
       background:#ffd54a !important;
       color:#000 !important;
       box-shadow:none !important;
-      border:2px solid #fff;
+      border:2px solid #fff !important;
     }
 
     body.a11y-highlight-links a{
@@ -352,106 +367,188 @@ footer {
     body.a11y-readable-text p,
     body.a11y-readable-text .intro-section p,
     body.a11y-readable-text .email-text,
-    body.a11y-readable-text .site-footer{
+    body.a11y-readable-text .site-footer,
+    body.a11y-readable-text .product-desc{
       line-height:2 !important;
     }
 
+    body.a11y-grayscale .container{
+      filter:grayscale(100%) !important;
+    }
+
+    body.a11y-blackwhite .container{
+      filter:grayscale(100%) contrast(140%) brightness(115%) !important;
+    }
+
+.hero::before,
+.hero::after,
+.hero-section::before,
+.hero-section::after{
+  pointer-events:none !important;
+  z-index:1;
+}
+@media (max-width:900px){
+  body{background:none !important;}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;display:block !important;background:linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.82)),url("naya-bg-mobile.png") center center / cover no-repeat,#000;}
+}
+@media (max-width:768px){
+  body{padding-top:30px;}
+  .naya-sale-banner{height:30px;}
+  .naya-sale-track span{font-size:.72rem;padding-right:35px;}
+  .site-topbar{top:42px;}
+  .container{padding:86px 12px 24px;}
+  .terms-card{padding:22px 16px;border-radius:22px;}
+  h1{font-size:1.55rem;}
+  h2{font-size:1.08rem;}
+  p{font-size:.94rem;line-height:1.8;}
+  .logo{width:190px;}
+}
 </style>
 </head>
-
 <body>
+<div class="naya-sale-banner"><div class="naya-sale-track"><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span></div></div>
 
-<div class="container">
+<div class="a11y-backdrop" id="a11yBackdrop"></div>
 
-<h1>הצהרת נגישות</h1>
 
-<h2>1. כללי</h2>
-<p>אתר NAYA פועל לקידום נגישות השירותים הדיגיטליים שלו לכלל המשתמשים, לרבות אנשים עם מוגבלויות.</p>
-<p>אנו משקיעים מאמצים כדי לאפשר חוויית גלישה נוחה, ברורה ונגישה ככל האפשר.</p>
+<button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">
+  <i class="fas fa-universal-access"></i>
+</button>
 
-<h2>2. התאמות נגישות באתר</h2>
-<p>באתר בוצעו התאמות נגישות שונות, בין היתר:</p>
-<ul>
-  <li>אפשרות לשינוי גודל טקסט</li>
-  <li>מצב ניגודיות גבוהה</li>
-  <li>הדגשת קישורים</li>
-  <li>אפשרות לטקסט קריא וברור יותר</li>
-  <li>תמיכה בגלישה ממכשירים ניידים, טאבלטים ומחשבים</li>
-  <li>שימוש במבנה עמודים ברור ככל האפשר</li>
-</ul>
 
-<h2>3. רכיב נגישות באתר</h2>
-<p>באתר קיים רכיב נגישות המאפשר לבצע התאמות תצוגה שונות לפי הצורך.</p>
-<p>הרכיב נועד לסייע בשיפור חוויית הגלישה, אך ייתכן שחלק מהעמודים או הרכיבים עדיין אינם נגישים באופן מלא.</p>
+<aside class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
+  <div class="a11y-header">
+    <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
+    <div class="a11y-title" id="a11yTitle" data-he="כלי נגישות" data-en="Accessibility Tools">כלי נגישות</div>
+  </div>
 
-<h2>4. מאמצים ושיפורים עתידיים</h2>
-<p>אנו ממשיכים לפעול לשיפור נגישות האתר באופן שוטף.</p>
-<p>אם נתקלתם בבעיה, תקלה או קושי בגלישה באתר, נשמח שתעדכנו אותנו כדי שנוכל לבדוק ולטפל בנושא.</p>
+  <div class="a11y-body">
+    <div class="a11y-grid">
+      <button class="a11y-card" data-mode="a11y-grayscale">
+        <div class="a11y-icon">◐</div>
+        <div class="a11y-label" data-he="גווני אפור" data-en="Grayscale">גווני אפור</div>
+      </button>
 
-<h2>5. פנייה בנושא נגישות</h2>
-<p>לפניות, הערות או בקשות בנושא נגישות ניתן ליצור קשר בדוא"ל:</p>
-<p><a href="mailto:info@naya-jewelry.com">info@naya-jewelry.com</a></p>
+      <button class="a11y-card" data-mode="a11y-dark-mode">
+        <div class="a11y-icon">☾</div>
+        <div class="a11y-label" data-he="ניגודיות הפוכה" data-en="Inverted Contrast">ניגודיות הפוכה</div>
+      </button>
 
-<h2>6. פרטים שכדאי לצרף לפנייה</h2>
-<p>כדי שנוכל לטפל בפנייה בצורה טובה, מומלץ לצרף:</p>
-<ul>
-  <li>תיאור הבעיה</li>
-  <li>קישור לעמוד שבו הופיעה הבעיה</li>
-  <li>סוג המכשיר והדפדפן</li>
-  <li>צילום מסך, אם אפשר</li>
-</ul>
+      <button class="a11y-card" data-mode="a11y-high-contrast">
+        <div class="a11y-icon">☼</div>
+        <div class="a11y-label" data-he="ניגודיות גבוהה" data-en="High Contrast">ניגודיות גבוהה</div>
+      </button>
 
-<h2>7. תאריך עדכון ההצהרה</h2>
-<p>הצהרת נגישות זו עודכנה לאחרונה בתאריך: 27.04.2026</p>
+      <button class="a11y-card" data-mode="a11y-readable-text">
+        <div class="a11y-icon">〰</div>
+        <div class="a11y-label" data-he="טקסט קריא" data-en="Readable Text">טקסט קריא</div>
+      </button>
 
-<footer>
-© Naya Fine Jewelry 2006
-</footer>
+      <button class="a11y-card" data-mode="a11y-highlight-links">
+        <div class="a11y-icon">🔗</div>
+        <div class="a11y-label" data-he="הדגשת קישורים" data-en="Highlight Links">הדגשת קישורים</div>
+      </button>
 
+      <button class="a11y-card" data-mode="a11y-blackwhite">
+        <div class="a11y-icon">◑</div>
+        <div class="a11y-label" data-he="שחור לבן" data-en="Black & White">שחור לבן</div>
+      </button>
+    </div>
+
+    <div class="a11y-section-title" data-he="התאמת גודל גופן" data-en="Adjust Font Size">
+      התאמת גודל גופן
+    </div>
+
+    <div class="a11y-slider-wrap">
+      <div class="a11y-slider-row">
+        <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
+        <div class="a11y-bar-wrap">
+          <div class="a11y-value" id="fontValue">100%</div>
+          <div class="a11y-bar"></div>
+        </div>
+        <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
+      </div>
+    </div>
+
+    <div class="a11y-section-title" data-he="איפוס" data-en="Reset">
+      איפוס
+    </div>
+
+    <div class="a11y-slider-wrap">
+      <div class="a11y-footer-note"
+           data-he="אפשר להחזיר את כל ההגדרות למצב רגיל"
+           data-en="Restore all settings to default">
+        אפשר להחזיר את כל ההגדרות למצב רגיל
+      </div>
+
+      <button class="a11y-reset"
+              id="a11yReset"
+              data-he="איפוס מלא"
+              data-en="Full Reset"
+              style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">
+        איפוס מלא
+      </button>
+    </div>
+  </div>
+</aside>
+
+<div class="site-topbar">
+  <button class="back-btn" type="button" onclick="goBack()" data-he="← חזור לדף הקודם" data-en="← Back">← חזור לדף הקודם</button>
+  <button class="lang-toggle" id="langToggle" type="button">English</button>
 </div>
 
-  <div class="a11y-backdrop" id="a11yBackdrop"></div>
+<main class="container">
+  <div class="logo-wrap">
+    <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png" class="logo" alt="Naya Fine Jewelry">
+  </div>
+  <section class="terms-card">
+<h1 data-he="הצהרת נגישות" data-en="Accessibility Statement">הצהרת נגישות</h1>
 
-  <button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">♿</button>
+<h2 data-he="1. כללי" data-en="1. General">1. כללי</h2>
+<p data-he="אתר NAYA פועל לקידום נגישות השירותים הדיגיטליים שלו לכלל המשתמשים, לרבות אנשים עם מוגבלויות." data-en="The NAYA website works to promote accessibility of its digital services for all users, including people with disabilities.">אתר NAYA פועל לקידום נגישות השירותים הדיגיטליים שלו לכלל המשתמשים, לרבות אנשים עם מוגבלויות.</p>
+<p data-he="אנו משקיעים מאמצים כדי לאפשר חוויית גלישה נוחה, ברורה ונגישה ככל האפשר." data-en="We make efforts to provide a browsing experience that is as convenient, clear and accessible as possible.">אנו משקיעים מאמצים כדי לאפשר חוויית גלישה נוחה, ברורה ונגישה ככל האפשר.</p>
 
-  <aside class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
-    <div class="a11y-header">
-      <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
-      <div class="a11y-title" id="a11yTitle">כלי נגישות</div>
-    </div>
+<h2 data-he="2. התאמות נגישות באתר" data-en="2. Website Accessibility Adjustments">2. התאמות נגישות באתר</h2>
+<p data-he="באתר בוצעו התאמות נגישות שונות, בין היתר:" data-en="Various accessibility adjustments have been made on the website, including:">באתר בוצעו התאמות נגישות שונות, בין היתר:</p>
+<ul>
+<li data-he="אפשרות לשינוי גודל טקסט" data-en="Option to change text size">אפשרות לשינוי גודל טקסט</li>
+<li data-he="מצב ניגודיות גבוהה" data-en="High contrast mode">מצב ניגודיות גבוהה</li>
+<li data-he="הדגשת קישורים" data-en="Highlighting links">הדגשת קישורים</li>
+<li data-he="אפשרות לטקסט קריא וברור יותר" data-en="Option for clearer and more readable text">אפשרות לטקסט קריא וברור יותר</li>
+<li data-he="תמיכה בגלישה ממכשירים ניידים, טאבלטים ומחשבים" data-en="Support for browsing from mobile devices, tablets and computers">תמיכה בגלישה ממכשירים ניידים, טאבלטים ומחשבים</li>
+<li data-he="שימוש במבנה עמודים ברור ככל האפשר" data-en="Use of a page structure that is as clear as possible">שימוש במבנה עמודים ברור ככל האפשר</li>
+</ul>
 
-    <div class="a11y-body">
-      <div class="a11y-grid">
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◐</div><div class="a11y-label">גוני אפור</div></button>
-        <button class="a11y-card" data-mode="a11y-dark-mode"><div class="a11y-icon">☾</div><div class="a11y-label">ניגודיות הפוכה</div></button>
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">☼</div><div class="a11y-label">ניגודיות גבוהה</div></button>
-        <button class="a11y-card" data-mode="a11y-readable-text"><div class="a11y-icon">〰</div><div class="a11y-label">טקסט קריא</div></button>
-        <button class="a11y-card" data-mode="a11y-highlight-links"><div class="a11y-icon">🔗</div><div class="a11y-label">הדגשת קישורים</div></button>
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◑</div><div class="a11y-label">שחור לבן</div></button>
-      </div>
+<h2 data-he="3. רכיב נגישות באתר" data-en="3. Accessibility Component on the Website">3. רכיב נגישות באתר</h2>
+<p data-he="באתר קיים רכיב נגישות המאפשר לבצע התאמות תצוגה שונות לפי הצורך." data-en="The website includes an accessibility component that allows various display adjustments as needed.">באתר קיים רכיב נגישות המאפשר לבצע התאמות תצוגה שונות לפי הצורך.</p>
+<p data-he="הרכיב נועד לסייע בשיפור חוויית הגלישה, אך ייתכן שחלק מהעמודים או הרכיבים עדיין אינם נגישים באופן מלא." data-en="The component is intended to help improve the browsing experience, but some pages or components may still not be fully accessible.">הרכיב נועד לסייע בשיפור חוויית הגלישה, אך ייתכן שחלק מהעמודים או הרכיבים עדיין אינם נגישים באופן מלא.</p>
 
-      <div class="a11y-section-title">התאמת גודל גופן</div>
-      <div class="a11y-slider-wrap">
-        <div class="a11y-slider-row">
-          <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
-          <div class="a11y-bar-wrap">
-            <div class="a11y-value" id="fontValue">100%</div>
-            <div class="a11y-bar"></div>
-          </div>
-          <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
-        </div>
-      </div>
+<h2 data-he="4. מאמצים ושיפורים עתידיים" data-en="4. Ongoing Efforts and Future Improvements">4. מאמצים ושיפורים עתידיים</h2>
+<p data-he="אנו ממשיכים לפעול לשיפור נגישות האתר באופן שוטף." data-en="We continue to work on improving website accessibility on an ongoing basis.">אנו ממשיכים לפעול לשיפור נגישות האתר באופן שוטף.</p>
+<p data-he="אם נתקלתם בבעיה, תקלה או קושי בגלישה באתר, נשמח שתעדכנו אותנו כדי שנוכל לבדוק ולטפל בנושא." data-en="If you encounter a problem, malfunction or difficulty while browsing the website, please let us know so we can review and address the issue.">אם נתקלתם בבעיה, תקלה או קושי בגלישה באתר, נשמח שתעדכנו אותנו כדי שנוכל לבדוק ולטפל בנושא.</p>
 
-      <div class="a11y-section-title">איפוס</div>
-      <div class="a11y-slider-wrap">
-        <div class="a11y-footer-note">אפשר להחזיר את כל ההגדרות למצב רגיל</div>
-        <button class="a11y-reset" id="a11yReset" style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">איפוס מלא</button>
-      </div>
-    </div>
-  </aside>
+<h2 data-he="5. פנייה בנושא נגישות" data-en="5. Accessibility Contact">5. פנייה בנושא נגישות</h2>
+<p data-he="לפניות, הערות או בקשות בנושא נגישות ניתן ליצור קשר בדוא״ל:" data-en="For inquiries, comments or requests regarding accessibility, you may contact us by email:">לפניות, הערות או בקשות בנושא נגישות ניתן ליצור קשר בדוא״ל:</p>
+<p><a href="mailto:info@naya-jewelry.com">info@naya-jewelry.com</a></p>
 
+<h2 data-he="6. פרטים שכדאי לצרף לפנייה" data-en="6. Details Recommended to Include">6. פרטים שכדאי לצרף לפנייה</h2>
+<p data-he="כדי שנוכל לטפל בפנייה בצורה טובה, מומלץ לצרף:" data-en="To help us handle the inquiry properly, it is recommended to include:">כדי שנוכל לטפל בפנייה בצורה טובה, מומלץ לצרף:</p>
+<ul>
+<li data-he="תיאור הבעיה" data-en="A description of the issue">תיאור הבעיה</li>
+<li data-he="קישור לעמוד שבו הופיעה הבעיה" data-en="A link to the page where the issue appeared">קישור לעמוד שבו הופיעה הבעיה</li>
+<li data-he="סוג המכשיר והדפדפן" data-en="Device and browser type">סוג המכשיר והדפדפן</li>
+<li data-he="צילום מסך, אם אפשר" data-en="A screenshot, if possible">צילום מסך, אם אפשר</li>
+</ul>
 
-  <script>
+<h2 data-he="7. תאריך עדכון ההצהרה" data-en="7. Statement Update Date">7. תאריך עדכון ההצהרה</h2>
+<p data-he="הצהרת נגישות זו עודכנה לאחרונה בתאריך: 27.04.2026" data-en="This Accessibility Statement was last updated on: 27.04.2026">הצהרת נגישות זו עודכנה לאחרונה בתאריך: 27.04.2026</p>
+
+<footer>© Naya Fine Jewelry 2006</footer>
+  </section>
+</main>
+
+<script>
+
     const fab = document.getElementById('a11yFab');
     const panel = document.getElementById('a11yPanel');
     const backdrop = document.getElementById('a11yBackdrop');
@@ -508,7 +605,9 @@ footer {
         'a11y-bold-text',
         'a11y-high-contrast',
         'a11y-highlight-links',
-        'a11y-readable-text'
+        'a11y-readable-text',
+        'a11y-grayscale',
+        'a11y-blackwhite'
       );
       cards.forEach(card => card.classList.remove('active'));
       modes.forEach(mode => {
@@ -575,8 +674,31 @@ footer {
 
     applyModes();
     applyFont();
-  </script>
-
-
+  
+</script>
+<script>
+let currentLang = localStorage.getItem('naya_legal_lang') || 'he';
+const langToggle = document.getElementById('langToggle');
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('naya_legal_lang', lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.body.dir = document.documentElement.dir;
+  document.querySelectorAll('[data-he][data-en]').forEach(el => {
+    const value = el.getAttribute('data-' + lang);
+    if (value !== null) el.innerHTML = value;
+  });
+  langToggle.textContent = lang === 'he' ? 'English' : 'עברית';
+}
+langToggle.addEventListener('click', function() {
+  applyLanguage(currentLang === 'he' ? 'en' : 'he');
+});
+function goBack() {
+  if (document.referrer) window.history.back();
+  else window.location.href = 'mehadrin.html';
+}
+applyLanguage(currentLang);
+</script>
 </body>
 </html>

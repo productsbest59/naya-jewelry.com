@@ -3,78 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>מדיניות פרטיות | NAYA</title>
 <meta name="description" content="מדיניות הפרטיות של NAYA – איסוף מידע, שימוש בעוגיות, אבטחת מידע וזכויות המשתמשים.">
 <link rel="canonical" href="https://naya-jewelry.com/privacy.html">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: #f5f5f5;
-  line-height: 1.7;
-}
-.container {
-  max-width: 900px;
-  margin: auto;
-  padding: 40px 20px;
-}
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-}
-h2 {
-  color: #d4af37;
-  margin-top: 30px;
-}
-p, li {
-  font-size: 16px;
-}
-ul {
-  padding-right: 22px;
-}
-a {
-  color: #d4af37;
-  text-decoration: none;
-}
-footer {
-  text-align: center;
-  margin-top: 50px;
-  font-size: 14px;
-  color: #aaa;
-}
-
 :root{
+  --gold1:#f2b21b;
+  --gold2:#c88400;
   --blue1:#6f86ff;
   --blue2:#4f67f2;
   --panel-bg:#fbfbff;
   --panel-border:#d9def7;
   --panel-text:#7680a8;
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;min-height:100%;}
+body{
+  font-family:Arial, sans-serif;
+  color:#f5f0e6;
+  overflow-x:hidden;
+  background:
+    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.9)),
+    url("nayabg.png") center center / cover fixed no-repeat;
+  padding-top:34px;
+  transition:font-size .2s ease, background .2s ease, color .2s ease;
+}
+body::before{display:none;}
+.naya-sale-banner{
+  position:fixed;top:0;left:0;width:100%;height:34px;
+  background:linear-gradient(90deg,#000,#c8a44d,#000);
+  overflow:hidden;z-index:9999999;border-bottom:1px solid rgba(255,255,255,.18);
+  box-shadow:0 2px 12px rgba(0,0,0,.35);display:flex;align-items:center;white-space:nowrap;direction:rtl;
+}
+.naya-sale-track{display:flex;align-items:center;width:max-content;animation:nayaBannerMove 18s linear infinite;will-change:transform;}
+.naya-sale-track span{color:#fff8dc;font-size:.95rem;font-weight:700;padding-right:90px;flex-shrink:0;}
+@keyframes nayaBannerMove{from{transform:translateX(0);}to{transform:translateX(50%);}}
+.site-topbar{
+  position:fixed;top:46px;right:12px;left:12px;display:flex;align-items:center;justify-content:space-between;z-index:999999;pointer-events:none;
+}
+.site-topbar > *{pointer-events:auto;}
+.back-btn,.lang-toggle{
+  border:none;outline:none;cursor:pointer;border-radius:999px;min-height:46px;padding:10px 16px;
+  background:rgba(0,0,0,.58);color:#fff;border:1px solid rgba(242,178,27,.45);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  font-weight:800;text-decoration:none;font-size:.9rem;font-family:Arial, sans-serif;
+}
+.back-btn:hover,.lang-toggle:hover{background:rgba(242,178,27,.14);}
+.container{max-width:960px;margin:0 auto;padding:92px 18px 30px;}
+.logo-wrap{text-align:center;margin-bottom:8px;}
+.logo{width:230px;max-width:72%;filter:drop-shadow(0 12px 30px rgba(0,0,0,.7)) drop-shadow(0 0 10px rgba(255,200,0,.20));}
+.bsd-text{font-size:1.05rem;color:#f2c94c;margin:8px 0 18px;font-weight:800;text-align:center;}
+.terms-card{
+  background:linear-gradient(180deg,rgba(24,24,24,.72) 0%,rgba(16,16,16,.62) 100%);
+  border:1px solid rgba(242,178,27,.24);border-radius:26px;
+  box-shadow:0 18px 48px rgba(0,0,0,.42), inset 0 0 0 1px rgba(255,255,255,.03);
+  padding:26px 24px;text-align:right;
+}
+h1{text-align:center;color:#f2d28b;font-size:2rem;line-height:1.35;margin-bottom:24px;}
+h2{color:#f2d28b;font-size:1.2rem;margin:26px 0 10px;}
+p{color:rgba(255,255,255,.9);font-size:1rem;line-height:1.85;margin:9px 0;}
+.footer{text-align:center;margin-top:28px;color:rgba(255,255,255,.65);font-size:.85rem;}
+a{color:#d4af37;}
+/* ===== CLEAN ACCESSIBILITY PANEL ===== */
     .a11y-fab{
-      position:fixed;
-      left:12px;
-      bottom:16px;
-      z-index:2147483647;
-      width:58px;
-      height:58px;
-      border:none;
-      outline:none;
-      border-radius:16px;
-      background:linear-gradient(135deg,var(--blue1),var(--blue2));
-      color:#fff;
-      font-size:29px;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      box-shadow:0 14px 28px rgba(65,87,230,0.28), 0 8px 18px rgba(0,0,0,0.28);
-      transition:transform .18s ease, box-shadow .18s ease;
+      position:fixed !important;
+      right:0 !important;
+      left:auto !important;
+      bottom:24px !important;
+      width:58px !important;
+      height:58px !important;
+      background:#050505 !important;
+      border:1.5px solid #d4af37 !important;
+      border-right:none !important;
+      border-radius:16px 0 0 16px !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      cursor:pointer !important;
+      font-size:28px !important;
+      font-weight:900 !important;
+      color:#d4af37 !important;
+      z-index:100000000 !important;
+      box-shadow:0 0 18px rgba(212,175,55,.28) !important;
+      pointer-events:auto !important;
       -webkit-appearance:none;
       appearance:none;
+    }
+
+    .a11y-fab i{
+      color:#d4af37 !important;
+      font-size:28px !important;
+      line-height:1 !important;
     }
 
     .a11y-fab:hover{transform:translateY(-2px);}
@@ -82,9 +103,9 @@ footer {
     .a11y-backdrop{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,0.18);
-      backdrop-filter:blur(3px);
-      -webkit-backdrop-filter:blur(3px);
+      background:transparent !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
       z-index:2147483644;
       opacity:0;
       pointer-events:none;
@@ -264,14 +285,6 @@ footer {
     }
 
     @media (max-width:700px){
-      .a11y-fab{
-        left:10px;
-        bottom:14px;
-        width:54px;
-        height:54px;
-        font-size:27px;
-      }
-
       .a11y-grid{
         grid-template-columns:repeat(2,1fr);
         gap:10px;
@@ -329,11 +342,13 @@ footer {
       background:#000;
     }
 
-    body.a11y-high-contrast .btn{
+    body.a11y-high-contrast .btn,
+    body.a11y-high-contrast .buy-now-btn,
+    body.a11y-high-contrast .product-details-btn{
       background:#ffd54a !important;
       color:#000 !important;
       box-shadow:none !important;
-      border:2px solid #fff;
+      border:2px solid #fff !important;
     }
 
     body.a11y-highlight-links a{
@@ -352,125 +367,207 @@ footer {
     body.a11y-readable-text p,
     body.a11y-readable-text .intro-section p,
     body.a11y-readable-text .email-text,
-    body.a11y-readable-text .site-footer{
+    body.a11y-readable-text .site-footer,
+    body.a11y-readable-text .product-desc{
       line-height:2 !important;
     }
 
+    body.a11y-grayscale .container{
+      filter:grayscale(100%) !important;
+    }
+
+    body.a11y-blackwhite .container{
+      filter:grayscale(100%) contrast(140%) brightness(115%) !important;
+    }
+
+.hero::before,
+.hero::after,
+.hero-section::before,
+.hero-section::after{
+  pointer-events:none !important;
+  z-index:1;
+}
+@media (max-width:900px){
+  body{background:none !important;}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;display:block !important;background:linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.82)),url("naya-bg-mobile.png") center center / cover no-repeat,#000;}
+}
+@media (max-width:768px){
+  body{padding-top:30px;}
+  .naya-sale-banner{height:30px;}
+  .naya-sale-track span{font-size:.72rem;padding-right:35px;}
+  .site-topbar{top:42px;}
+  .container{padding:86px 12px 24px;}
+  .terms-card{padding:22px 16px;border-radius:22px;}
+  h1{font-size:1.55rem;}
+  h2{font-size:1.08rem;}
+  p{font-size:.94rem;line-height:1.8;}
+  .logo{width:190px;}
+}
 </style>
 </head>
-
 <body>
+<div class="naya-sale-banner"><div class="naya-sale-track"><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span></div></div>
 
-<div class="container">
+<div class="a11y-backdrop" id="a11yBackdrop"></div>
 
-<h1>מדיניות פרטיות</h1>
 
-<h2>1. כללי</h2>
-<p>אתר NAYA מכבד את פרטיות המשתמשים באתר ופועל לשמירה על המידע הנמסר לו בהתאם לדין.</p>
-<p>השימוש באתר מהווה הסכמה למדיניות פרטיות זו.</p>
+<button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">
+  <i class="fas fa-universal-access"></i>
+</button>
 
-<h2>2. איזה מידע נאסף</h2>
-<p>בעת שימוש באתר או ביצוע רכישה, ייתכן שייאסף מידע כגון:</p>
-<ul>
-  <li>שם מלא</li>
-  <li>כתובת דוא"ל</li>
-  <li>מספר טלפון</li>
-  <li>כתובת למשלוח</li>
-  <li>פרטי הזמנה ורכישה</li>
-  <li>מידע טכני כגון כתובת IP, סוג דפדפן, מכשיר ונתוני שימוש באתר</li>
-</ul>
 
-<h2>3. מטרות השימוש במידע</h2>
-<p>המידע ישמש לצרכים הבאים:</p>
-<ul>
-  <li>טיפול בהזמנות ורכישות</li>
-  <li>משלוח מוצרים ללקוחות</li>
-  <li>שירות לקוחות ומענה לפניות</li>
-  <li>שיפור חוויית המשתמש באתר</li>
-  <li>ניתוח נתוני שימוש ופעילות באתר</li>
-  <li>פרסום ושיווק, ככל שהדבר מותר לפי דין</li>
-</ul>
+<aside class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
+  <div class="a11y-header">
+    <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
+    <div class="a11y-title" id="a11yTitle" data-he="כלי נגישות" data-en="Accessibility Tools">כלי נגישות</div>
+  </div>
 
-<h2>4. עוגיות וכלי מדידה</h2>
-<p>האתר עשוי להשתמש בקובצי Cookies ובכלי מדידה ופרסום כגון Google Analytics, Google Ads, TikTok Pixel או כלים דומים.</p>
-<p>כלים אלה עשויים לאסוף מידע סטטיסטי וטכני על פעילות המשתמש באתר, לצורך מדידה, שיפור האתר, התאמת פרסום וניתוח ביצועים.</p>
-<p>ניתן לחסום או למחוק Cookies דרך הגדרות הדפדפן. חסימה כזו עשויה להשפיע על חלק מהשירותים באתר.</p>
+  <div class="a11y-body">
+    <div class="a11y-grid">
+      <button class="a11y-card" data-mode="a11y-grayscale">
+        <div class="a11y-icon">◐</div>
+        <div class="a11y-label" data-he="גווני אפור" data-en="Grayscale">גווני אפור</div>
+      </button>
 
-<h2>5. מסירת מידע לצדדים שלישיים</h2>
-<p>האתר לא יעביר פרטים אישיים לצד שלישי ללא הסכמת המשתמש, למעט במקרים הבאים:</p>
-<ul>
-  <li>לצורך תפעול האתר וביצוע הזמנות</li>
-  <li>לצורך משלוחים ושירותי סליקה</li>
-  <li>לספקי שירות טכניים, פרסום, מדידה ואחסון</li>
-  <li>כאשר קיימת חובה חוקית למסור את המידע</li>
-  <li>במקרה של מחלוקת משפטית או חשד לשימוש בלתי חוקי באתר</li>
-</ul>
+      <button class="a11y-card" data-mode="a11y-dark-mode">
+        <div class="a11y-icon">☾</div>
+        <div class="a11y-label" data-he="ניגודיות הפוכה" data-en="Inverted Contrast">ניגודיות הפוכה</div>
+      </button>
 
-<h2>6. אבטחת מידע</h2>
-<p>האתר נוקט באמצעים סבירים לשמירה על המידע האישי של המשתמשים.</p>
-<p>עם זאת, אין אפשרות להבטיח חסינות מוחלטת מפני חדירה או שימוש בלתי מורשה במערכות האתר.</p>
+      <button class="a11y-card" data-mode="a11y-high-contrast">
+        <div class="a11y-icon">☼</div>
+        <div class="a11y-label" data-he="ניגודיות גבוהה" data-en="High Contrast">ניגודיות גבוהה</div>
+      </button>
 
-<h2>7. שמירת מידע</h2>
-<p>המידע יישמר למשך הזמן הדרוש לצורך מתן השירות, עמידה בדרישות החוק, ניהול הזמנות, שירות לקוחות וצרכים עסקיים לגיטימיים.</p>
+      <button class="a11y-card" data-mode="a11y-readable-text">
+        <div class="a11y-icon">〰</div>
+        <div class="a11y-label" data-he="טקסט קריא" data-en="Readable Text">טקסט קריא</div>
+      </button>
 
-<h2>8. זכויות המשתמש</h2>
-<p>משתמש רשאי לפנות לאתר בבקשה לעיין במידע שנשמר עליו, לתקן אותו או לבקש את מחיקתו, בכפוף להוראות הדין.</p>
+      <button class="a11y-card" data-mode="a11y-highlight-links">
+        <div class="a11y-icon">🔗</div>
+        <div class="a11y-label" data-he="הדגשת קישורים" data-en="Highlight Links">הדגשת קישורים</div>
+      </button>
 
-<h2>9. יצירת קשר בנושא פרטיות</h2>
-<p>לפניות בנושא פרטיות ניתן לפנות בדוא"ל:</p>
-<p><a href="mailto:info@naya-jewelry.com">info@naya-jewelry.com</a></p>
+      <button class="a11y-card" data-mode="a11y-blackwhite">
+        <div class="a11y-icon">◑</div>
+        <div class="a11y-label" data-he="שחור לבן" data-en="Black & White">שחור לבן</div>
+      </button>
+    </div>
 
-<h2>10. שינויים במדיניות</h2>
-<p>האתר רשאי לעדכן מדיניות פרטיות זו מעת לעת. הנוסח המעודכן יפורסם באתר.</p>
+    <div class="a11y-section-title" data-he="התאמת גודל גופן" data-en="Adjust Font Size">
+      התאמת גודל גופן
+    </div>
 
-<footer>
-© Naya Fine Jewelry 2006
-</footer>
+    <div class="a11y-slider-wrap">
+      <div class="a11y-slider-row">
+        <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
+        <div class="a11y-bar-wrap">
+          <div class="a11y-value" id="fontValue">100%</div>
+          <div class="a11y-bar"></div>
+        </div>
+        <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
+      </div>
+    </div>
 
+    <div class="a11y-section-title" data-he="איפוס" data-en="Reset">
+      איפוס
+    </div>
+
+    <div class="a11y-slider-wrap">
+      <div class="a11y-footer-note"
+           data-he="אפשר להחזיר את כל ההגדרות למצב רגיל"
+           data-en="Restore all settings to default">
+        אפשר להחזיר את כל ההגדרות למצב רגיל
+      </div>
+
+      <button class="a11y-reset"
+              id="a11yReset"
+              data-he="איפוס מלא"
+              data-en="Full Reset"
+              style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">
+        איפוס מלא
+      </button>
+    </div>
+  </div>
+</aside>
+
+<div class="site-topbar">
+  <button class="back-btn" type="button" onclick="goBack()" data-he="← חזור לדף הקודם" data-en="← Back">← חזור לדף הקודם</button>
+  <button class="lang-toggle" id="langToggle" type="button">English</button>
 </div>
 
-  <div class="a11y-backdrop" id="a11yBackdrop"></div>
+<main class="container">
+  <div class="logo-wrap">
+    <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png" class="logo" alt="Naya Fine Jewelry">
+  </div>
+  <section class="terms-card">
+<h1 data-he="מדיניות פרטיות" data-en="Privacy Policy">מדיניות פרטיות</h1>
 
-  <button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">♿</button>
+<h2 data-he="1. כללי" data-en="1. General">1. כללי</h2>
+<p data-he="אתר NAYA מכבד את פרטיות המשתמשים באתר ופועל לשמירה על המידע הנמסר לו בהתאם לדין." data-en="The NAYA website respects users’ privacy and works to protect the information provided to it in accordance with applicable law.">אתר NAYA מכבד את פרטיות המשתמשים באתר ופועל לשמירה על המידע הנמסר לו בהתאם לדין.</p>
+<p data-he="השימוש באתר מהווה הסכמה למדיניות פרטיות זו." data-en="Use of the website constitutes agreement to this Privacy Policy.">השימוש באתר מהווה הסכמה למדיניות פרטיות זו.</p>
 
-  <aside class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
-    <div class="a11y-header">
-      <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
-      <div class="a11y-title" id="a11yTitle">כלי נגישות</div>
-    </div>
+<h2 data-he="2. איזה מידע נאסף" data-en="2. What Information Is Collected">2. איזה מידע נאסף</h2>
+<p data-he="בעת שימוש באתר או ביצוע רכישה, ייתכן שייאסף מידע כגון:" data-en="When using the website or making a purchase, information such as the following may be collected:">בעת שימוש באתר או ביצוע רכישה, ייתכן שייאסף מידע כגון:</p>
+<ul>
+<li data-he="שם מלא" data-en="Full name">שם מלא</li>
+<li data-he="כתובת דוא״ל" data-en="Email address">כתובת דוא״ל</li>
+<li data-he="מספר טלפון" data-en="Phone number">מספר טלפון</li>
+<li data-he="כתובת למשלוח" data-en="Shipping address">כתובת למשלוח</li>
+<li data-he="פרטי הזמנה ורכישה" data-en="Order and purchase details">פרטי הזמנה ורכישה</li>
+<li data-he="מידע טכני כגון כתובת IP, סוג דפדפן, מכשיר ונתוני שימוש באתר" data-en="Technical information such as IP address, browser type, device and website usage data">מידע טכני כגון כתובת IP, סוג דפדפן, מכשיר ונתוני שימוש באתר</li>
+</ul>
 
-    <div class="a11y-body">
-      <div class="a11y-grid">
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◐</div><div class="a11y-label">גוני אפור</div></button>
-        <button class="a11y-card" data-mode="a11y-dark-mode"><div class="a11y-icon">☾</div><div class="a11y-label">ניגודיות הפוכה</div></button>
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">☼</div><div class="a11y-label">ניגודיות גבוהה</div></button>
-        <button class="a11y-card" data-mode="a11y-readable-text"><div class="a11y-icon">〰</div><div class="a11y-label">טקסט קריא</div></button>
-        <button class="a11y-card" data-mode="a11y-highlight-links"><div class="a11y-icon">🔗</div><div class="a11y-label">הדגשת קישורים</div></button>
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◑</div><div class="a11y-label">שחור לבן</div></button>
-      </div>
+<h2 data-he="3. מטרות השימוש במידע" data-en="3. Purposes of Using the Information">3. מטרות השימוש במידע</h2>
+<p data-he="המידע ישמש לצרכים הבאים:" data-en="The information will be used for the following purposes:">המידע ישמש לצרכים הבאים:</p>
+<ul>
+<li data-he="טיפול בהזמנות ורכישות" data-en="Processing orders and purchases">טיפול בהזמנות ורכישות</li>
+<li data-he="משלוח מוצרים ללקוחות" data-en="Shipping products to customers">משלוח מוצרים ללקוחות</li>
+<li data-he="שירות לקוחות ומענה לפניות" data-en="Customer service and responding to inquiries">שירות לקוחות ומענה לפניות</li>
+<li data-he="שיפור חוויית המשתמש באתר" data-en="Improving the user experience on the website">שיפור חוויית המשתמש באתר</li>
+<li data-he="ניתוח נתוני שימוש ופעילות באתר" data-en="Analyzing usage data and website activity">ניתוח נתוני שימוש ופעילות באתר</li>
+<li data-he="פרסום ושיווק, ככל שהדבר מותר לפי דין" data-en="Advertising and marketing, where permitted by law">פרסום ושיווק, ככל שהדבר מותר לפי דין</li>
+</ul>
 
-      <div class="a11y-section-title">התאמת גודל גופן</div>
-      <div class="a11y-slider-wrap">
-        <div class="a11y-slider-row">
-          <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
-          <div class="a11y-bar-wrap">
-            <div class="a11y-value" id="fontValue">100%</div>
-            <div class="a11y-bar"></div>
-          </div>
-          <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
-        </div>
-      </div>
+<h2 data-he="4. עוגיות וכלי מדידה" data-en="4. Cookies and Measurement Tools">4. עוגיות וכלי מדידה</h2>
+<p data-he="האתר עשוי להשתמש בקובצי Cookies ובכלי מדידה ופרסום כגון Google Analytics, Google Ads, TikTok Pixel או כלים דומים." data-en="The website may use cookies and measurement or advertising tools such as Google Analytics, Google Ads, TikTok Pixel or similar tools.">האתר עשוי להשתמש בקובצי Cookies ובכלי מדידה ופרסום כגון Google Analytics, Google Ads, TikTok Pixel או כלים דומים.</p>
+<p data-he="כלים אלה עשויים לאסוף מידע סטטיסטי וטכני על פעילות המשתמש באתר, לצורך מדידה, שיפור האתר, התאמת פרסום וניתוח ביצועים." data-en="These tools may collect statistical and technical information about user activity on the website for measurement, site improvement, advertising personalization and performance analysis.">כלים אלה עשויים לאסוף מידע סטטיסטי וטכני על פעילות המשתמש באתר, לצורך מדידה, שיפור האתר, התאמת פרסום וניתוח ביצועים.</p>
+<p data-he="ניתן לחסום או למחוק Cookies דרך הגדרות הדפדפן. חסימה כזו עשויה להשפיע על חלק מהשירותים באתר." data-en="Cookies can be blocked or deleted through browser settings. Such blocking may affect some website services.">ניתן לחסום או למחוק Cookies דרך הגדרות הדפדפן. חסימה כזו עשויה להשפיע על חלק מהשירותים באתר.</p>
 
-      <div class="a11y-section-title">איפוס</div>
-      <div class="a11y-slider-wrap">
-        <div class="a11y-footer-note">אפשר להחזיר את כל ההגדרות למצב רגיל</div>
-        <button class="a11y-reset" id="a11yReset" style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">איפוס מלא</button>
-      </div>
-    </div>
-  </aside>
+<h2 data-he="5. מסירת מידע לצדדים שלישיים" data-en="5. Sharing Information with Third Parties">5. מסירת מידע לצדדים שלישיים</h2>
+<p data-he="האתר לא יעביר פרטים אישיים לצד שלישי ללא הסכמת המשתמש, למעט במקרים הבאים:" data-en="The website will not transfer personal details to a third party without the user’s consent, except in the following cases:">האתר לא יעביר פרטים אישיים לצד שלישי ללא הסכמת המשתמש, למעט במקרים הבאים:</p>
+<ul>
+<li data-he="לצורך תפעול האתר וביצוע הזמנות" data-en="For operating the website and fulfilling orders">לצורך תפעול האתר וביצוע הזמנות</li>
+<li data-he="לצורך משלוחים ושירותי סליקה" data-en="For shipping and payment processing services">לצורך משלוחים ושירותי סליקה</li>
+<li data-he="לספקי שירות טכניים, פרסום, מדידה ואחסון" data-en="To technical, advertising, measurement and hosting service providers">לספקי שירות טכניים, פרסום, מדידה ואחסון</li>
+<li data-he="כאשר קיימת חובה חוקית למסור את המידע" data-en="When there is a legal obligation to provide the information">כאשר קיימת חובה חוקית למסור את המידע</li>
+<li data-he="במקרה של מחלוקת משפטית או חשד לשימוש בלתי חוקי באתר" data-en="In case of a legal dispute or suspected unlawful use of the website">במקרה של מחלוקת משפטית או חשד לשימוש בלתי חוקי באתר</li>
+</ul>
 
+<h2 data-he="6. אבטחת מידע" data-en="6. Information Security">6. אבטחת מידע</h2>
+<p data-he="האתר נוקט באמצעים סבירים לשמירה על המידע האישי של המשתמשים." data-en="The website takes reasonable measures to protect users’ personal information.">האתר נוקט באמצעים סבירים לשמירה על המידע האישי של המשתמשים.</p>
+<p data-he="עם זאת, אין אפשרות להבטיח חסינות מוחלטת מפני חדירה או שימוש בלתי מורשה במערכות האתר." data-en="However, absolute protection against intrusion or unauthorized use of the website systems cannot be guaranteed.">עם זאת, אין אפשרות להבטיח חסינות מוחלטת מפני חדירה או שימוש בלתי מורשה במערכות האתר.</p>
 
-  <script>
+<h2 data-he="7. שמירת מידע" data-en="7. Data Retention">7. שמירת מידע</h2>
+<p data-he="המידע יישמר למשך הזמן הדרוש לצורך מתן השירות, עמידה בדרישות החוק, ניהול הזמנות, שירות לקוחות וצרכים עסקיים לגיטימיים." data-en="Information will be retained for the time required to provide the service, comply with legal requirements, manage orders, provide customer service and support legitimate business needs.">המידע יישמר למשך הזמן הדרוש לצורך מתן השירות, עמידה בדרישות החוק, ניהול הזמנות, שירות לקוחות וצרכים עסקיים לגיטימיים.</p>
+
+<h2 data-he="8. זכויות המשתמש" data-en="8. User Rights">8. זכויות המשתמש</h2>
+<p data-he="משתמש רשאי לפנות לאתר בבקשה לעיין במידע שנשמר עליו, לתקן אותו או לבקש את מחיקתו, בכפוף להוראות הדין." data-en="A user may contact the website to request access to information stored about them, correct it or request its deletion, subject to applicable law.">משתמש רשאי לפנות לאתר בבקשה לעיין במידע שנשמר עליו, לתקן אותו או לבקש את מחיקתו, בכפוף להוראות הדין.</p>
+
+<h2 data-he="9. יצירת קשר בנושא פרטיות" data-en="9. Contact Regarding Privacy">9. יצירת קשר בנושא פרטיות</h2>
+<p data-he="לפניות בנושא פרטיות ניתן לפנות בדוא״ל:" data-en="For privacy-related inquiries, you may contact us by email:">לפניות בנושא פרטיות ניתן לפנות בדוא״ל:</p>
+<p><a href="mailto:info@naya-jewelry.com">info@naya-jewelry.com</a></p>
+
+<h2 data-he="10. שינויים במדיניות" data-en="10. Changes to This Policy">10. שינויים במדיניות</h2>
+<p data-he="האתר רשאי לעדכן מדיניות פרטיות זו מעת לעת. הנוסח המעודכן יפורסם באתר." data-en="The website may update this Privacy Policy from time to time. The updated version will be published on the website.">האתר רשאי לעדכן מדיניות פרטיות זו מעת לעת. הנוסח המעודכן יפורסם באתר.</p>
+
+<footer>© Naya Fine Jewelry 2006</footer>
+  </section>
+</main>
+
+<script>
+
     const fab = document.getElementById('a11yFab');
     const panel = document.getElementById('a11yPanel');
     const backdrop = document.getElementById('a11yBackdrop');
@@ -527,7 +624,9 @@ footer {
         'a11y-bold-text',
         'a11y-high-contrast',
         'a11y-highlight-links',
-        'a11y-readable-text'
+        'a11y-readable-text',
+        'a11y-grayscale',
+        'a11y-blackwhite'
       );
       cards.forEach(card => card.classList.remove('active'));
       modes.forEach(mode => {
@@ -594,8 +693,31 @@ footer {
 
     applyModes();
     applyFont();
-  </script>
-
-
+  
+</script>
+<script>
+let currentLang = localStorage.getItem('naya_legal_lang') || 'he';
+const langToggle = document.getElementById('langToggle');
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('naya_legal_lang', lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.body.dir = document.documentElement.dir;
+  document.querySelectorAll('[data-he][data-en]').forEach(el => {
+    const value = el.getAttribute('data-' + lang);
+    if (value !== null) el.innerHTML = value;
+  });
+  langToggle.textContent = lang === 'he' ? 'English' : 'עברית';
+}
+langToggle.addEventListener('click', function() {
+  applyLanguage(currentLang === 'he' ? 'en' : 'he');
+});
+function goBack() {
+  if (document.referrer) window.history.back();
+  else window.location.href = 'mehadrin.html';
+}
+applyLanguage(currentLang);
+</script>
 </body>
 </html>

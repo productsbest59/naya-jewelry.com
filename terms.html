@@ -3,85 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>תקנון האתר | NAYA</title>
-
-<meta name="description" content="תקנון האתר של NAYA – תנאי שימוש, רכישה, משלוחים והחזרות.">
+<meta name="description" content="תקנון האתר של NAYA – תנאי שימוש, רכישה, משלוחים, החזרות ופרטיות.">
 <link rel="canonical" href="https://naya-jewelry.com/terms.html">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
 <style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b0b0b;
-    color: #f5f5f5;
-    line-height: 1.7;
-}
-
-.container {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-h2 {
-    color: #d4af37;
-    margin-top: 30px;
-}
-
-p {
-    margin: 10px 0;
-}
-
-ul {
-    padding-right: 20px;
-}
-
-footer {
-    text-align: center;
-    margin-top: 50px;
-    font-size: 14px;
-    color: #aaa;
-}
-a {
-    color: #d4af37;
-    text-decoration: none;
-}
-
 :root{
+  --gold1:#f2b21b;
+  --gold2:#c88400;
   --blue1:#6f86ff;
   --blue2:#4f67f2;
   --panel-bg:#fbfbff;
   --panel-border:#d9def7;
   --panel-text:#7680a8;
 }
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{width:100%;min-height:100%;}
+body{
+  font-family:Arial, sans-serif;
+  color:#f5f0e6;
+  overflow-x:hidden;
+  background:
+    linear-gradient(rgba(0,0,0,.82), rgba(0,0,0,.9)),
+    url("nayabg.png") center center / cover fixed no-repeat;
+  padding-top:34px;
+  transition:font-size .2s ease, background .2s ease, color .2s ease;
+}
+body::before{display:none;}
+.naya-sale-banner{
+  position:fixed;top:0;left:0;width:100%;height:34px;
+  background:linear-gradient(90deg,#000,#c8a44d,#000);
+  overflow:hidden;z-index:9999999;border-bottom:1px solid rgba(255,255,255,.18);
+  box-shadow:0 2px 12px rgba(0,0,0,.35);display:flex;align-items:center;white-space:nowrap;direction:rtl;
+}
+.naya-sale-track{display:flex;align-items:center;width:max-content;animation:nayaBannerMove 18s linear infinite;will-change:transform;}
+.naya-sale-track span{color:#fff8dc;font-size:.95rem;font-weight:700;padding-right:90px;flex-shrink:0;}
+@keyframes nayaBannerMove{from{transform:translateX(0);}to{transform:translateX(50%);}}
+.site-topbar{
+  position:fixed;top:46px;right:12px;left:12px;display:flex;align-items:center;justify-content:space-between;z-index:999999;pointer-events:none;
+}
+.site-topbar > *{pointer-events:auto;}
+.back-btn,.lang-toggle{
+  border:none;outline:none;cursor:pointer;border-radius:999px;min-height:46px;padding:10px 16px;
+  background:rgba(0,0,0,.58);color:#fff;border:1px solid rgba(242,178,27,.45);
+  box-shadow:0 10px 24px rgba(0,0,0,.22);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  font-weight:800;text-decoration:none;font-size:.9rem;font-family:Arial, sans-serif;
+}
+.back-btn:hover,.lang-toggle:hover{background:rgba(242,178,27,.14);}
+.container{max-width:960px;margin:0 auto;padding:92px 18px 30px;}
+.logo-wrap{text-align:center;margin-bottom:8px;}
+.logo{width:230px;max-width:72%;filter:drop-shadow(0 12px 30px rgba(0,0,0,.7)) drop-shadow(0 0 10px rgba(255,200,0,.20));}
+.bsd-text{font-size:1.05rem;color:#f2c94c;margin:8px 0 18px;font-weight:800;text-align:center;}
+.terms-card{
+  background:linear-gradient(180deg,rgba(24,24,24,.72) 0%,rgba(16,16,16,.62) 100%);
+  border:1px solid rgba(242,178,27,.24);border-radius:26px;
+  box-shadow:0 18px 48px rgba(0,0,0,.42), inset 0 0 0 1px rgba(255,255,255,.03);
+  padding:26px 24px;text-align:right;
+}
+h1{text-align:center;color:#f2d28b;font-size:2rem;line-height:1.35;margin-bottom:24px;}
+h2{color:#f2d28b;font-size:1.2rem;margin:26px 0 10px;}
+p{color:rgba(255,255,255,.9);font-size:1rem;line-height:1.85;margin:9px 0;}
+.footer{text-align:center;margin-top:28px;color:rgba(255,255,255,.65);font-size:.85rem;}
+a{color:#d4af37;}
+/* ===== CLEAN ACCESSIBILITY PANEL ===== */
     .a11y-fab{
-      position:fixed;
-      left:12px;
-      bottom:16px;
-      z-index:2147483647;
-      width:58px;
-      height:58px;
-      border:none;
-      outline:none;
-      border-radius:16px;
-      background:linear-gradient(135deg,var(--blue1),var(--blue2));
-      color:#fff;
-      font-size:29px;
-      font-weight:700;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      box-shadow:0 14px 28px rgba(65,87,230,0.28), 0 8px 18px rgba(0,0,0,0.28);
-      transition:transform .18s ease, box-shadow .18s ease;
+      position:fixed !important;
+      right:0 !important;
+      left:auto !important;
+      bottom:24px !important;
+      width:58px !important;
+      height:58px !important;
+      background:#050505 !important;
+      border:1.5px solid #d4af37 !important;
+      border-right:none !important;
+      border-radius:16px 0 0 16px !important;
+      display:flex !important;
+      align-items:center !important;
+      justify-content:center !important;
+      cursor:pointer !important;
+      font-size:28px !important;
+      font-weight:900 !important;
+      color:#d4af37 !important;
+      z-index:100000000 !important;
+      box-shadow:0 0 18px rgba(212,175,55,.28) !important;
+      pointer-events:auto !important;
       -webkit-appearance:none;
       appearance:none;
+    }
+
+    .a11y-fab i{
+      color:#d4af37 !important;
+      font-size:28px !important;
+      line-height:1 !important;
     }
 
     .a11y-fab:hover{transform:translateY(-2px);}
@@ -89,9 +103,9 @@ a {
     .a11y-backdrop{
       position:fixed;
       inset:0;
-      background:rgba(0,0,0,0.18);
-      backdrop-filter:blur(3px);
-      -webkit-backdrop-filter:blur(3px);
+      background:transparent !important;
+      backdrop-filter:none !important;
+      -webkit-backdrop-filter:none !important;
       z-index:2147483644;
       opacity:0;
       pointer-events:none;
@@ -271,14 +285,6 @@ a {
     }
 
     @media (max-width:700px){
-      .a11y-fab{
-        left:10px;
-        bottom:14px;
-        width:54px;
-        height:54px;
-        font-size:27px;
-      }
-
       .a11y-grid{
         grid-template-columns:repeat(2,1fr);
         gap:10px;
@@ -336,11 +342,13 @@ a {
       background:#000;
     }
 
-    body.a11y-high-contrast .btn{
+    body.a11y-high-contrast .btn,
+    body.a11y-high-contrast .buy-now-btn,
+    body.a11y-high-contrast .product-details-btn{
       background:#ffd54a !important;
       color:#000 !important;
       box-shadow:none !important;
-      border:2px solid #fff;
+      border:2px solid #fff !important;
     }
 
     body.a11y-highlight-links a{
@@ -359,144 +367,202 @@ a {
     body.a11y-readable-text p,
     body.a11y-readable-text .intro-section p,
     body.a11y-readable-text .email-text,
-    body.a11y-readable-text .site-footer{
+    body.a11y-readable-text .site-footer,
+    body.a11y-readable-text .product-desc{
       line-height:2 !important;
     }
 
+    body.a11y-grayscale .container{
+      filter:grayscale(100%) !important;
+    }
+
+    body.a11y-blackwhite .container{
+      filter:grayscale(100%) contrast(140%) brightness(115%) !important;
+    }
+
+.hero::before,
+.hero::after,
+.hero-section::before,
+.hero-section::after{
+  pointer-events:none !important;
+  z-index:1;
+}
+@media (max-width:900px){
+  body{background:none !important;}
+  body::before{content:"";position:fixed;inset:0;z-index:-1;display:block !important;background:linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.82)),url("naya-bg-mobile.png") center center / cover no-repeat,#000;}
+}
+@media (max-width:768px){
+  body{padding-top:30px;}
+  .naya-sale-banner{height:30px;}
+  .naya-sale-track span{font-size:.72rem;padding-right:35px;}
+  .site-topbar{top:42px;}
+  .container{padding:86px 12px 24px;}
+  .terms-card{padding:22px 16px;border-radius:22px;}
+  h1{font-size:1.55rem;}
+  h2{font-size:1.08rem;}
+  p{font-size:.94rem;line-height:1.8;}
+  .logo{width:190px;}
+}
 </style>
 </head>
-
 <body>
+<div class="naya-sale-banner"><div class="naya-sale-track"><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span></div></div>
 
-<div class="container">
+<div class="a11y-backdrop" id="a11yBackdrop"></div>
 
-<h1>תקנון האתר</h1>
 
-<h2>1. כללי</h2>
-<p>ברוכים הבאים לאתר NAYA (להלן: "האתר").</p>
-<p>השימוש באתר, לרבות רכישת מוצרים, כפוף לתנאים המפורטים בתקנון זה.</p>
-<p>עצם השימוש באתר מהווה הסכמה מלאה מצד המשתמש לכל תנאי התקנון.</p>
-<p>הנהלת האתר שומרת לעצמה את הזכות לעדכן את התקנון בכל עת, ללא הודעה מוקדמת.</p>
+<button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">
+  <i class="fas fa-universal-access"></i>
+</button>
 
-<h2>2. פרטי העסק</h2>
-<p>שם העסק: NAYA</p>
 
-<h2>3. המוצרים באתר</h2>
-<p>האתר מציע למכירה תכשיטים כגון:</p>
-<ul>
-<li>שרשראות</li>
-<li>טבעות</li>
-<li>צמידים</li>
-<li>תכשיטים עם סממנים יהודיים (כגון מגן דוד, תפילות וכדומה)</li>
-</ul>
-<p>ייתכנו הבדלים קלים בין תמונות המוצרים לבין המוצר בפועל, עקב תנאי צילום ותצוגה.</p>
+<aside class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
+  <div class="a11y-header">
+    <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
+    <div class="a11y-title" id="a11yTitle" data-he="כלי נגישות" data-en="Accessibility Tools">כלי נגישות</div>
+  </div>
 
-<h2>4. הזמנות ורכישות</h2>
-<p>ביצוע הזמנה מותנה בהזנת פרטים נכונים ומלאים.</p>
-<p>האתר רשאי לבטל הזמנה במקרה של טעות, חוסר מלאי או חשד לשימוש לא תקין.</p>
-<p>אישור הזמנה יישלח במייל לאחר השלמת הרכישה.</p>
+  <div class="a11y-body">
+    <div class="a11y-grid">
+      <button class="a11y-card" data-mode="a11y-grayscale">
+        <div class="a11y-icon">◐</div>
+        <div class="a11y-label" data-he="גווני אפור" data-en="Grayscale">גווני אפור</div>
+      </button>
 
-<h2>5. מחירים ותשלומים</h2>
-<p>כל המחירים מוצגים בשקלים ישראלים חדשים וכוללים מע"מ.</p>
-<p>הנהלת האתר רשאית לעדכן מחירים בכל עת.</p>
-<p>התשלום מתבצע באמצעי תשלום מאובטחים.</p>
+      <button class="a11y-card" data-mode="a11y-dark-mode">
+        <div class="a11y-icon">☾</div>
+        <div class="a11y-label" data-he="ניגודיות הפוכה" data-en="Inverted Contrast">ניגודיות הפוכה</div>
+      </button>
 
-<h2>6. משלוחים</h2>
-<p><strong>זמן טיפול בהזמנה:</strong> 1–3 ימי עסקים לאחר אישור הרכישה.</p>
+      <button class="a11y-card" data-mode="a11y-high-contrast">
+        <div class="a11y-icon">☼</div>
+        <div class="a11y-label" data-he="ניגודיות גבוהה" data-en="High Contrast">ניגודיות גבוהה</div>
+      </button>
 
-<p><strong>זמן אספקה משוער בישראל:</strong> 7–20 ימי עסקים, בהתאם למוצר, יעד המשלוח וספק השילוח.</p>
+      <button class="a11y-card" data-mode="a11y-readable-text">
+        <div class="a11y-icon">〰</div>
+        <div class="a11y-label" data-he="טקסט קריא" data-en="Readable Text">טקסט קריא</div>
+      </button>
 
-<p><strong>מוצרים בהזמנה מיוחדת / הזמנה מראש:</strong> חלק מהמוצרים מיוצרים, נארזים או נשלחים לפי הזמנה, ולכן זמן האספקה עבורם עשוי להיות 7–25 ימי עסקים.</p>
+      <button class="a11y-card" data-mode="a11y-highlight-links">
+        <div class="a11y-icon">🔗</div>
+        <div class="a11y-label" data-he="הדגשת קישורים" data-en="Highlight Links">הדגשת קישורים</div>
+      </button>
 
-<p><strong>עלות משלוח:</strong> עלויות משלוח יוצגו בעת הרכישה, אלא אם צוין אחרת במבצע מיוחד כגון משלוח חינם.</p>
+      <button class="a11y-card" data-mode="a11y-blackwhite">
+        <div class="a11y-icon">◑</div>
+        <div class="a11y-label" data-he="שחור לבן" data-en="Black & White">שחור לבן</div>
+      </button>
+    </div>
 
-<p><strong>משלוחים מחוץ לישראל:</strong> עלויות וזמני אספקה בינלאומיים עשויים להשתנות בהתאם למדינת היעד.</p>
+    <div class="a11y-section-title" data-he="התאמת גודל גופן" data-en="Adjust Font Size">
+      התאמת גודל גופן
+    </div>
 
-<p>ייתכנו עיכובים שאינם בשליטת האתר, לרבות חגים, עומסי שילוח, עיכובי דואר, מכס או כוח עליון.</p>
+    <div class="a11y-slider-wrap">
+      <div class="a11y-slider-row">
+        <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
+        <div class="a11y-bar-wrap">
+          <div class="a11y-value" id="fontValue">100%</div>
+          <div class="a11y-bar"></div>
+        </div>
+        <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
+      </div>
+    </div>
 
-<p>המוצרים עשויים להגיע באריזה בסיסית ולא ממותגת, בהתאם לזמינות הספק, לצורך שמירה על מחירים נגישים.</p>
+    <div class="a11y-section-title" data-he="איפוס" data-en="Reset">
+      איפוס
+    </div>
 
-<h2>7. ביטולים והחזרות</h2>
-<p>בהתאם לחוק הגנת הצרכן:</p>
-<ul>
-<li>ניתן לבטל עסקה תוך 14 ימים מיום קבלת המוצר.</li>
-<li>החזר כספי יינתן לאחר החזרת המוצר כשהוא חדש, לא נעשה בו שימוש ובאריזתו המקורית.</li>
-<li>החזר או זיכוי יינתן רק לאחר קבלת המוצר בחזרה.</li>
-</ul>
+    <div class="a11y-slider-wrap">
+      <div class="a11y-footer-note"
+           data-he="אפשר להחזיר את כל ההגדרות למצב רגיל"
+           data-en="Restore all settings to default">
+        אפשר להחזיר את כל ההגדרות למצב רגיל
+      </div>
 
-<p><strong>לא ניתן להחזיר:</strong></p>
-<ul>
-<li>תכשיטים בהתאמה אישית</li>
-<li>פריטים שנעשה בהם שימוש</li>
-</ul>
+      <button class="a11y-reset"
+              id="a11yReset"
+              data-he="איפוס מלא"
+              data-en="Full Reset"
+              style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">
+        איפוס מלא
+      </button>
+    </div>
+  </div>
+</aside>
 
-<p>דמי משלוח לא יוחזרו.</p>
-
-<h2>8. אחריות</h2>
-<p>האתר אינו אחראי לנזקים עקיפים או תקלות שאינן בשליטתו.</p>
-<p>האחריות למוצר מוגבלת לשימוש סביר בלבד.</p>
-<p>אין אחריות על נזק כתוצאה משימוש לא נכון.</p>
-<p>האתר אינו אחראי למשלוח שלא נאסף מנקודת חלוקה.</p>
-
-<h2>9. פרטיות ואבטחת מידע</h2>
-<p>האתר מתחייב לשמור על פרטיות המשתמשים.</p>
-<p>פרטי לקוחות לא יועברו לצד שלישי ללא הסכמה, למעט לצורך תפעול האתר, משלוחים ושירות לקוחות.</p>
-
-<h2>10. קניין רוחני</h2>
-<p>כל התוכן באתר (טקסטים, תמונות, לוגו, עיצוב) הינו רכוש האתר בלבד.</p>
-<p>אין להעתיק, לשכפל או להשתמש ללא אישור מראש.</p>
-
-<h2>11. דין וסמכות שיפוט</h2>
-<p>על תקנון זה יחולו דיני מדינת ישראל בלבד.</p>
-
-<footer>
-© Naya Fine Jewelry 2006
-</footer>
-
+<div class="site-topbar">
+  <button class="back-btn" type="button" onclick="goBack()" data-he="← חזור לדף הקודם" data-en="← Back">← חזור לדף הקודם</button>
+  <button class="lang-toggle" id="langToggle" type="button">English</button>
 </div>
 
-  <div class="a11y-backdrop" id="a11yBackdrop"></div>
+<main class="container">
+  <div class="logo-wrap">
+    <img src="https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/logo%20trans.png" class="logo" alt="Naya Fine Jewelry">
+  </div>
+  <section class="terms-card">
+    
+<h1 data-he="תקנון האתר" data-en="Terms & Conditions">תקנון האתר</h1>
 
-  <button class="a11y-fab" id="a11yFab" aria-label="פתח תפריט נגישות" aria-expanded="false" aria-controls="a11yPanel">♿</button>
+<h2 data-he="1. כללי" data-en="1. General">1. כללי</h2>
+<p data-he="ברוכים הבאים לאתר NAYA. האתר מציג תכשיטים, שרשראות, טבעות, צמידים ופריטים נוספים לרכישה אונליין." data-en="Welcome to NAYA. The website presents jewelry, necklaces, rings, bracelets and additional items for online purchase.">ברוכים הבאים לאתר NAYA. האתר מציג תכשיטים, שרשראות, טבעות, צמידים ופריטים נוספים לרכישה אונליין.</p>
+<p data-he="השימוש באתר ורכישת מוצרים באמצעותו מהווים הסכמה מלאה לתנאי תקנון זה." data-en="Using the website and purchasing products through it constitutes full agreement to these terms.">השימוש באתר ורכישת מוצרים באמצעותו מהווים הסכמה מלאה לתנאי תקנון זה.</p>
+<p data-he="הנהלת האתר רשאית לעדכן את התקנון מעת לעת לפי שיקול דעתה." data-en="The website management may update these terms from time to time at its discretion.">הנהלת האתר רשאית לעדכן את התקנון מעת לעת לפי שיקול דעתה.</p>
 
-  <aside class="a11y-panel" id="a11yPanel" role="dialog" aria-modal="false" aria-labelledby="a11yTitle">
-    <div class="a11y-header">
-      <button class="a11y-close" id="a11yClose" aria-label="סגור">×</button>
-      <div class="a11y-title" id="a11yTitle">כלי נגישות</div>
-    </div>
+<h2 data-he="2. המוצרים באתר" data-en="2. Products on the Website">2. המוצרים באתר</h2>
+<p data-he="האתר מציג מגוון תכשיטים, שרשראות, טבעות, צמידים ופריטים נוספים הכוללים סממנים יהודיים, תפילות, ברכות וסמלי אמונה." data-en="The website displays a variety of jewelry, necklaces, rings, bracelets and additional items featuring Jewish symbols, prayers, blessings and symbols of faith.">האתר מציג מגוון תכשיטים, שרשראות, טבעות, צמידים ופריטים נוספים הכוללים סממנים יהודיים, תפילות, ברכות וסמלי אמונה.</p>
+<p data-he="התמונות באתר נועדו להמחשה בלבד. ייתכנו הבדלים קלים בגוון, צבע, אריזה או מראה המוצר בהתאם למסך המשתמש ולספק הייצור." data-en="Images on the website are for illustration only. Slight differences may occur in shade, color, packaging or product appearance depending on the user’s screen and manufacturing supplier.">התמונות באתר נועדו להמחשה בלבד. ייתכנו הבדלים קלים בגוון, צבע, אריזה או מראה המוצר בהתאם למסך המשתמש ולספק הייצור.</p>
 
-    <div class="a11y-body">
-      <div class="a11y-grid">
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◐</div><div class="a11y-label">גוני אפור</div></button>
-        <button class="a11y-card" data-mode="a11y-dark-mode"><div class="a11y-icon">☾</div><div class="a11y-label">ניגודיות הפוכה</div></button>
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">☼</div><div class="a11y-label">ניגודיות גבוהה</div></button>
-        <button class="a11y-card" data-mode="a11y-readable-text"><div class="a11y-icon">〰</div><div class="a11y-label">טקסט קריא</div></button>
-        <button class="a11y-card" data-mode="a11y-highlight-links"><div class="a11y-icon">🔗</div><div class="a11y-label">הדגשת קישורים</div></button>
-        <button class="a11y-card" data-mode="a11y-high-contrast"><div class="a11y-icon">◑</div><div class="a11y-label">שחור לבן</div></button>
-      </div>
+<h2 data-he="3. הזמנות ותשלום" data-en="3. Orders and Payment">3. הזמנות ותשלום</h2>
+<p data-he="הרכישה מתבצעת באמצעות קישורי תשלום מאובטחים, לרבות PayPal או אמצעי תשלום נוספים ככל שיוצגו באתר." data-en="Purchases are made through secure payment links, including PayPal or other payment methods as displayed on the website.">הרכישה מתבצעת באמצעות קישורי תשלום מאובטחים, לרבות PayPal או אמצעי תשלום נוספים ככל שיוצגו באתר.</p>
+<p data-he="הזמנה תיחשב כמושלמת רק לאחר אישור התשלום על ידי חברת הסליקה או ספק התשלום." data-en="An order is considered completed only after payment approval by the payment processor or payment provider.">הזמנה תיחשב כמושלמת רק לאחר אישור התשלום על ידי חברת הסליקה או ספק התשלום.</p>
+<p data-he="במקרה של תקלה טכנית, טעות במחיר, חוסר מלאי או חשש לשימוש בלתי תקין, הנהלת האתר רשאית לבטל את ההזמנה ולהשיב את מלוא התשלום ששולם." data-en="In case of a technical issue, pricing error, lack of stock, or suspected improper use, the website management may cancel the order and refund the full amount paid.">במקרה של תקלה טכנית, טעות במחיר, חוסר מלאי או חשש לשימוש בלתי תקין, הנהלת האתר רשאית לבטל את ההזמנה ולהשיב את מלוא התשלום ששולם.</p>
 
-      <div class="a11y-section-title">התאמת גודל גופן</div>
-      <div class="a11y-slider-wrap">
-        <div class="a11y-slider-row">
-          <button class="a11y-circle-btn" id="fontMinus" aria-label="הקטנת טקסט">−</button>
-          <div class="a11y-bar-wrap">
-            <div class="a11y-value" id="fontValue">100%</div>
-            <div class="a11y-bar"></div>
-          </div>
-          <button class="a11y-circle-btn" id="fontPlus" aria-label="הגדלת טקסט">+</button>
-        </div>
-      </div>
+<h2 data-he="4. מחירים" data-en="4. Prices">4. מחירים</h2>
+<p data-he="כל המחירים באתר מוצגים בשקלים חדשים, אלא אם צוין אחרת." data-en="All prices on the website are displayed in Israeli New Shekels unless stated otherwise.">כל המחירים באתר מוצגים בשקלים חדשים, אלא אם צוין אחרת.</p>
+<p data-he="הנהלת האתר רשאית לעדכן מחירים, מבצעים והטבות בכל עת וללא הודעה מוקדמת." data-en="The website management may update prices, promotions and benefits at any time without prior notice.">הנהלת האתר רשאית לעדכן מחירים, מבצעים והטבות בכל עת וללא הודעה מוקדמת.</p>
 
-      <div class="a11y-section-title">איפוס</div>
-      <div class="a11y-slider-wrap">
-        <div class="a11y-footer-note">אפשר להחזיר את כל ההגדרות למצב רגיל</div>
-        <button class="a11y-reset" id="a11yReset" style="width:100%;border:none;border-radius:16px;background:linear-gradient(135deg,var(--blue1),var(--blue2));color:#fff;padding:14px 16px;font-size:1rem;font-weight:800;cursor:pointer;margin-top:14px;box-shadow:0 12px 24px rgba(65,87,230,0.20);">איפוס מלא</button>
-      </div>
-    </div>
-  </aside>
+<h2 data-he="5. משלוחים ואספקה" data-en="5. Shipping and Delivery">5. משלוחים ואספקה</h2>
+<p data-he="זמן הטיפול בהזמנה הינו בדרך כלל 1–5 ימי עסקים." data-en="Order handling time is usually 1–5 business days.">זמן הטיפול בהזמנה הינו בדרך כלל 1–5 ימי עסקים.</p>
+<p data-he="זמן האספקה המשוער הינו 7–25 ימי עסקים, בהתאם למוצר, יעד המשלוח ועומסי השילוח." data-en="Estimated delivery time is 7–25 business days, depending on the product, shipping destination and shipping load.">זמן האספקה המשוער הינו 7–25 ימי עסקים, בהתאם למוצר, יעד המשלוח ועומסי השילוח.</p>
+<p data-he="במקרים חריגים כגון חגים, שביתות, מלחמה, כוח עליון, עיכובי דואר או עיכובים מצד ספקים חיצוניים, זמני האספקה עשויים להתארך." data-en="In exceptional cases such as holidays, strikes, war, force majeure, postal delays or delays by external suppliers, delivery times may be extended.">במקרים חריגים כגון חגים, שביתות, מלחמה, כוח עליון, עיכובי דואר או עיכובים מצד ספקים חיצוניים, זמני האספקה עשויים להתארך.</p>
+<p data-he="האתר אינו אחראי לעיכובים הנובעים מגורמים שאינם בשליטתו." data-en="The website is not responsible for delays caused by factors beyond its control.">האתר אינו אחראי לעיכובים הנובעים מגורמים שאינם בשליטתו.</p>
 
+<h2 data-he="6. ביטול עסקה והחזרות" data-en="6. Cancellations and Returns">6. ביטול עסקה והחזרות</h2>
+<p data-he="ביטול עסקה יתבצע בהתאם להוראות חוק הגנת הצרכן." data-en="Cancellation of a transaction will be handled in accordance with the Israeli Consumer Protection Law.">ביטול עסקה יתבצע בהתאם להוראות חוק הגנת הצרכן.</p>
+<p data-he="ניתן לבקש ביטול עסקה תוך 14 ימים ממועד קבלת המוצר." data-en="A cancellation request may be submitted within 14 days from receipt of the product.">ניתן לבקש ביטול עסקה תוך 14 ימים ממועד קבלת המוצר.</p>
+<p data-he="המוצר יוחזר כשהוא חדש, שלם, ללא שימוש ובמצבו המקורי." data-en="The product must be returned new, complete, unused and in its original condition.">המוצר יוחזר כשהוא חדש, שלם, ללא שימוש ובמצבו המקורי.</p>
+<p data-he="החזר כספי יבוצע לאחר קבלת המוצר ובדיקתו." data-en="A refund will be issued after the product is received and inspected.">החזר כספי יבוצע לאחר קבלת המוצר ובדיקתו.</p>
+<p data-he="עלות משלוח ההחזרה תחול על הלקוח, אלא אם נקבע אחרת על פי דין." data-en="Return shipping costs will apply to the customer unless otherwise required by law.">עלות משלוח ההחזרה תחול על הלקוח, אלא אם נקבע אחרת על פי דין.</p>
+<p data-he="לא ניתן להחזיר מוצרים שיוצרו או הוזמנו בהתאמה אישית." data-en="Custom-made or specially ordered products cannot be returned.">לא ניתן להחזיר מוצרים שיוצרו או הוזמנו בהתאמה אישית.</p>
 
-  <script>
+<h2 data-he="7. אחריות" data-en="7. Warranty">7. אחריות</h2>
+<p data-he="האחריות למוצרים חלה על פגמי ייצור בלבד." data-en="Warranty applies to manufacturing defects only.">האחריות למוצרים חלה על פגמי ייצור בלבד.</p>
+<p data-he="האחריות אינה חלה על בלאי טבעי, שבר, שריטות, חשיפה לחומרים כימיים, שימוש בלתי סביר או נזק שנגרם כתוצאה משימוש שאינו בהתאם להוראות." data-en="Warranty does not apply to natural wear, breakage, scratches, exposure to chemicals, unreasonable use or damage caused by use not in accordance with instructions.">האחריות אינה חלה על בלאי טבעי, שבר, שריטות, חשיפה לחומרים כימיים, שימוש בלתי סביר או נזק שנגרם כתוצאה משימוש שאינו בהתאם להוראות.</p>
+<p data-he="מומלץ להסיר תכשיטים לפני רחצה, שחייה, פעילות ספורטיבית או שימוש בחומרי ניקוי." data-en="It is recommended to remove jewelry before bathing, swimming, sports activity or using cleaning materials.">מומלץ להסיר תכשיטים לפני רחצה, שחייה, פעילות ספורטיבית או שימוש בחומרי ניקוי.</p>
+
+<h2 data-he="8. פרטיות" data-en="8. Privacy">8. פרטיות</h2>
+<p data-he="פרטי הלקוחות נשמרים בהתאם למדיניות הפרטיות של האתר." data-en="Customer details are kept in accordance with the website privacy policy.">פרטי הלקוחות נשמרים בהתאם למדיניות הפרטיות של האתר.</p>
+<p data-he="המידע לא יימכר לצדדים שלישיים וייעשה בו שימוש אך ורק לצורך אספקת השירות, משלוחים, תמיכה ושיפור חוויית המשתמש." data-en="Information will not be sold to third parties and will be used only for providing service, shipping, support and improving the user experience.">המידע לא יימכר לצדדים שלישיים וייעשה בו שימוש אך ורק לצורך אספקת השירות, משלוחים, תמיכה ושיפור חוויית המשתמש.</p>
+
+<h2 data-he="9. קניין רוחני" data-en="9. Intellectual Property">9. קניין רוחני</h2>
+<p data-he="כל הטקסטים, התמונות, העיצובים, הלוגו והתכנים באתר הינם רכושה של NAYA." data-en="All texts, images, designs, logos and content on the website are the property of NAYA.">כל הטקסטים, התמונות, העיצובים, הלוגו והתכנים באתר הינם רכושה של NAYA.</p>
+<p data-he="אין להעתיק, לשכפל, לפרסם או להשתמש בתוכן האתר ללא אישור מראש ובכתב." data-en="No website content may be copied, reproduced, published or used without prior written permission.">אין להעתיק, לשכפל, לפרסם או להשתמש בתוכן האתר ללא אישור מראש ובכתב.</p>
+
+<h2 data-he="10. יצירת קשר" data-en="10. Contact">10. יצירת קשר</h2>
+<p data-he="לכל שאלה, בקשה או פנייה ניתן ליצור קשר באמצעות טופס יצירת הקשר באתר או דרך אמצעי הקשר המופיעים באתר." data-en="For any question, request or inquiry, you may contact us through the website contact form or through the contact methods displayed on the website.">לכל שאלה, בקשה או פנייה ניתן ליצור קשר באמצעות טופס יצירת הקשר באתר או דרך אמצעי הקשר המופיעים באתר.</p>
+
+<h2 data-he="11. סמכות שיפוט" data-en="11. Jurisdiction">11. סמכות שיפוט</h2>
+<p data-he="על תקנון זה יחולו דיני מדינת ישראל בלבד." data-en="These terms are governed exclusively by the laws of the State of Israel.">על תקנון זה יחולו דיני מדינת ישראל בלבד.</p>
+<p data-he="סמכות השיפוט הבלעדית בכל מחלוקת תהיה לבתי המשפט המוסמכים בישראל." data-en="The exclusive jurisdiction for any dispute shall be the competent courts in Israel.">סמכות השיפוט הבלעדית בכל מחלוקת תהיה לבתי המשפט המוסמכים בישראל.</p>
+
+    <div class="footer">© Naya Fine Jewelry 2006</div>
+  </section>
+</main>
+
+<script>
+
     const fab = document.getElementById('a11yFab');
     const panel = document.getElementById('a11yPanel');
     const backdrop = document.getElementById('a11yBackdrop');
@@ -553,7 +619,9 @@ a {
         'a11y-bold-text',
         'a11y-high-contrast',
         'a11y-highlight-links',
-        'a11y-readable-text'
+        'a11y-readable-text',
+        'a11y-grayscale',
+        'a11y-blackwhite'
       );
       cards.forEach(card => card.classList.remove('active'));
       modes.forEach(mode => {
@@ -620,8 +688,31 @@ a {
 
     applyModes();
     applyFont();
-  </script>
-
-
+  
+</script>
+<script>
+let currentLang = localStorage.getItem('naya_terms_lang') || 'he';
+const langToggle = document.getElementById('langToggle');
+function applyLanguage(lang) {
+  currentLang = lang;
+  localStorage.setItem('naya_terms_lang', lang);
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+  document.body.dir = document.documentElement.dir;
+  document.querySelectorAll('[data-he][data-en]').forEach(el => {
+    const value = el.getAttribute('data-' + lang);
+    if (value !== null) el.innerHTML = value;
+  });
+  langToggle.textContent = lang === 'he' ? 'English' : 'עברית';
+}
+langToggle.addEventListener('click', function() {
+  applyLanguage(currentLang === 'he' ? 'en' : 'he');
+});
+function goBack() {
+  if (document.referrer) window.history.back();
+  else window.location.href = 'mehadrin.html';
+}
+applyLanguage(currentLang);
+</script>
 </body>
 </html>
