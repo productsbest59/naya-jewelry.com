@@ -1212,7 +1212,7 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
     transform:translateX(50%);
   }
 }
-@media (max-width:900px){
+@media (max-width:900px) and (orientation:portrait){
 
   body{
     background:none !important;
@@ -1571,7 +1571,31 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
   .product-modal-gallery{
     grid-template-columns:1fr;
   }
-}</style>
+}
+
+/* ===== IPAD LANDSCAPE BACKGROUND FIX - ONLY LANDSCAPE ===== */
+@media (min-width:700px) and (max-width:1366px) and (orientation:landscape){
+
+  body{
+    background:
+      linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.82)),
+      url("nayabg.png") center top / 100% auto repeat-y !important;
+    background-color:#000 !important;
+    background-attachment:scroll !important;
+  }
+
+  body::before{
+    display:none !important;
+    content:none !important;
+    background:none !important;
+  }
+
+  .header{
+    background:url("https://cdn.jsdelivr.net/gh/productsbest59/naya-jewelry.com/header%20desktop.png") center center / cover no-repeat !important;
+    background-color:#111 !important;
+  }
+}
+</style>
 </head>
 <body>
   <!-- NAYA TOP SALE BANNER - ADDED -->
