@@ -444,7 +444,7 @@ a{color:#d4af37;}
   pointer-events:none !important;
   z-index:1;
 }
-@media (max-width:900px){
+@media (max-width:900px) and (orientation:portrait){
   body{background:none !important;}
   body::before{content:"";position:fixed;inset:0;z-index:-1;display:block !important;background:linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.82)),url("naya-bg-mobile.png") center center / cover no-repeat,#000;}
 }
@@ -460,6 +460,25 @@ a{color:#d4af37;}
   p{font-size:.94rem;line-height:1.8;}
   .logo{width:190px;}
 }
+
+/* iPad / tablet landscape - same background fix as Mehadrin */
+@media (min-width:700px) and (max-width:1366px) and (orientation:landscape){
+
+  body{
+    background:
+      linear-gradient(rgba(0,0,0,.68), rgba(0,0,0,.82)),
+      url("nayabg.png") center top / 100% auto repeat-y !important;
+    background-color:#000 !important;
+    background-attachment:scroll !important;
+  }
+
+  body::before{
+    display:none !important;
+    content:none !important;
+    background:none !important;
+  }
+}
+
 </style>
 </head>
 <body>
