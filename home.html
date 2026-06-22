@@ -1650,6 +1650,129 @@ body::before{
 }
 
 </style>
+
+<style>
+/* ===== NAYA FAQ SECTION ===== */
+.faq-section,
+.faq-section *{
+  font-family:Arial, sans-serif !important;
+}
+
+.faq-section{
+  max-width:1000px;
+  margin:40px auto 24px;
+  padding:0 20px;
+  color:#fff;
+}
+
+.faq-title{
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:24px;
+  color:#d4af37;
+  font-weight:900;
+}
+
+.faq-list{
+  display:grid;
+  gap:12px;
+}
+
+.faq-item{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(212,175,55,.28);
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 10px 26px rgba(0,0,0,.18);
+}
+
+.faq-item summary{
+  cursor:pointer;
+  list-style:none;
+  padding:16px 48px 16px 18px;
+  color:#d4af37;
+  font-weight:900;
+  font-size:1.02rem;
+  line-height:1.55;
+  position:relative;
+  text-align:right;
+}
+
+body[dir="ltr"] .faq-item summary{
+  text-align:left;
+  padding:16px 18px 16px 48px;
+}
+
+.faq-item summary::-webkit-details-marker{
+  display:none;
+}
+
+.faq-item summary::before{
+  content:"+";
+  position:absolute;
+  right:18px;
+  top:50%;
+  transform:translateY(-50%);
+  width:24px;
+  height:24px;
+  border-radius:50%;
+  border:1px solid rgba(212,175,55,.65);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#d4af37;
+  font-weight:900;
+  line-height:1;
+}
+
+body[dir="ltr"] .faq-item summary::before{
+  right:auto;
+  left:18px;
+}
+
+.faq-item[open] summary::before{
+  content:"−";
+}
+
+.faq-answer{
+  padding:0 18px 18px;
+  color:rgba(255,255,255,.88);
+  line-height:1.85;
+  text-align:right;
+}
+
+body[dir="ltr"] .faq-answer{
+  text-align:left;
+}
+
+.faq-answer p{
+  margin:0 0 10px;
+}
+
+.faq-answer p:last-child{
+  margin-bottom:0;
+}
+
+@media(max-width:700px){
+  .faq-section{
+    margin:30px auto 18px;
+    padding:0 12px;
+  }
+
+  .faq-title{
+    font-size:1.55rem;
+  }
+
+  .faq-item summary{
+    font-size:.93rem;
+  }
+
+  .faq-answer{
+    font-size:.9rem;
+  }
+}
+</style>
+
 </head>
 <body>
   <!-- NAYA TOP SALE BANNER - ADDED -->
@@ -1885,6 +2008,64 @@ body::before{
   <img src="payments.png" alt="Payment methods">
   <div class="payments-secure">🔒 Secure Payment</div>
 </div>
+
+
+<section class="faq-section" id="faq">
+  <h2 class="faq-title" data-he="שאלות נפוצות" data-en="Frequently Asked Questions">שאלות נפוצות</h2>
+
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary data-he="האם יש אחריות על המוצרים?" data-en="Do the products come with a warranty?">האם יש אחריות על המוצרים?</summary>
+      <div class="faq-answer">
+        <p data-he="כן, כמובן! כל המוצרים מגיעים עם 12 חודשי אחריות מלאה." data-en="Yes, of course! All products come with a full 12-month warranty.">כן, כמובן! כל המוצרים מגיעים עם 12 חודשי אחריות מלאה.</p>
+        <p data-he="האחריות תינתן כנגד הצגת חשבונית והוכחת שימוש סביר 😊" data-en="The warranty is provided upon presentation of an invoice and proof of reasonable use 😊">האחריות תינתן כנגד הצגת חשבונית והוכחת שימוש סביר 😊</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary data-he="מה הזמן הממוצע לקבלת המשלוח?" data-en="What is the average delivery time?">מה הזמן הממוצע לקבלת המשלוח?</summary>
+      <div class="faq-answer">
+        <p data-he="זמן האספקה הוא בין 7 ל-20 ימי עסקים מיום הרכישה." data-en="Delivery time is between 7 and 20 business days from the date of purchase.">זמן האספקה הוא בין 7 ל-20 ימי עסקים מיום הרכישה.</p>
+        <p data-he="בדרך כלל המשלוח מגיע הרבה יותר מהר, אך אנחנו תלויים בגורמים חיצוניים כמו דואר ישראל, שליחים, מצבים בטחוניים, חגים וכדומה." data-en="In most cases, orders arrive much faster, but delivery may depend on external factors such as postal services, couriers, security situations, holidays and similar delays.">בדרך כלל המשלוח מגיע הרבה יותר מהר, אך אנחנו תלויים בגורמים חיצוניים כמו דואר ישראל, שליחים, מצבים בטחוניים, חגים וכדומה.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary data-he="קניתי תכשיט אבל הוא גדול או קטן לי. מה ניתן לעשות?" data-en="I bought jewelry but it is too big or too small. What can I do?">קניתי תכשיט אבל הוא גדול או קטן לי. מה ניתן לעשות?</summary>
+      <div class="faq-answer">
+        <p data-he="לכל מוצר יש תמונה או תיאור עם מידות מדויקות, ומומלץ לבדוק את המידה הרצויה לפני הרכישה 😊" data-en="Each product includes an image or description with accurate measurements, and we recommend checking the desired size before purchasing 😊">לכל מוצר יש תמונה או תיאור עם מידות מדויקות, ומומלץ לבדוק את המידה הרצויה לפני הרכישה 😊</p>
+        <p data-he="כמובן שאנחנו עובדים בהתאם לחוק הגנת הצרכן, וניתן לבטל עסקה תוך 14 ימים מיום קבלת המוצר." data-en="Of course, we operate in accordance with consumer protection law, and an order may be canceled within 14 days from receiving the product.">כמובן שאנחנו עובדים בהתאם לחוק הגנת הצרכן, וניתן לבטל עסקה תוך 14 ימים מיום קבלת המוצר.</p>
+        <p data-he="מוזמנים להעיף מבט בתקנון ובמדיניות המלאה שלנו בדף התקנון." data-en="You are welcome to review our full terms and policy on the Terms page.">מוזמנים להעיף מבט בתקנון ובמדיניות המלאה שלנו בדף התקנון.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary data-he="האם אתם משלחים בחו״ל?" data-en="Do you ship internationally?">האם אתם משלחים בחו״ל?</summary>
+      <div class="faq-answer">
+        <p data-he="כן, ניתן לבצע הזמנה מחוץ למדינת ישראל." data-en="Yes, orders can be placed from outside Israel.">כן, ניתן לבצע הזמנה מחוץ למדינת ישראל.</p>
+        <p data-he="מחירי השילוח משתנים ממדינה למדינה ולכן מומלץ לדבר איתנו לפני 😊" data-en="Shipping costs vary from country to country, so we recommend contacting us before placing an international order 😊">מחירי השילוח משתנים ממדינה למדינה ולכן מומלץ לדבר איתנו לפני 😊</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary data-he="האם המוצרים מגיעים באריזה מהודרת או יוקרתית?" data-en="Do the products arrive in luxury packaging?">האם המוצרים מגיעים באריזה מהודרת או יוקרתית?</summary>
+      <div class="faq-answer">
+        <p data-he="המוצרים מגיעים באריזה בסיסית על מנת לשמור על מחירים נמוכים ומשתלמים." data-en="The products arrive in basic packaging in order to keep prices low and affordable.">המוצרים מגיעים באריזה בסיסית על מנת לשמור על מחירים נמוכים ומשתלמים.</p>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary data-he="האם מותר להיכנס עם התכשיטים שלכם לשירותים?" data-en="Is it permitted to enter a restroom while wearing your jewelry?">האם מותר להיכנס עם התכשיטים שלכם לשירותים?</summary>
+      <div class="faq-answer">
+        <p data-he="על פי ההלכה אין מניעה להיכנס לחדר השירותים עם התכשיט." data-en="According to Jewish law, there is generally no prohibition against entering a restroom while wearing the jewelry.">על פי ההלכה אין מניעה להיכנס לחדר השירותים עם התכשיט.</p>
+        <p data-he="עם זאת, מתוך כבוד לתכשיטים הנושאים פסוקים, תפילות או סמלים בעלי משמעות יהודית, מומלץ להצניע אותם בזמן השהייה בשירותים. ניתן למשל להכניס שרשרת מתחת לחולצה, לכסות צמיד בשרוול או להסתיר את התכשיט בדרך אחרת." data-en="However, out of respect for jewelry that contains verses, prayers, or symbols with Jewish significance, it is recommended to keep the jewelry covered or concealed while in the restroom. For example, a necklace may be placed under a shirt, or a bracelet may be covered by a sleeve.">עם זאת, מתוך כבוד לתכשיטים הנושאים פסוקים, תפילות או סמלים בעלי משמעות יהודית, מומלץ להצניע אותם בזמן השהייה בשירותים. ניתן למשל להכניס שרשרת מתחת לחולצה, לכסות צמיד בשרוול או להסתיר את התכשיט בדרך אחרת.</p>
+        <p data-he="במקרה של שאלה הלכתית ספציפית, מומלץ להתייעץ עם רב בהתאם למנהג האישי." data-en="For specific religious guidance, we recommend consulting a qualified rabbi according to your personal tradition and practice.">במקרה של שאלה הלכתית ספציפית, מומלץ להתייעץ עם רב בהתאם למנהג האישי.</p>
+      </div>
+    </details>
+
+  </div>
+</section>
 
 <footer class="site-footer">
 
