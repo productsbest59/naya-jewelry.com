@@ -1628,11 +1628,41 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
 
 @media (max-width:700px){
   .product-modal{
-    padding:18px;
+    top:calc(50% + 22px);
+    width:calc(100vw - 20px);
+    max-height:calc(100dvh - 92px);
+    padding:10px 12px 18px;
+    border-radius:18px;
+    overscroll-behavior:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .product-modal-close{
+    position:sticky;
+    top:0;
+    left:auto;
+    z-index:4;
+    display:block;
+    margin:0 auto 8px 0;
+    width:46px;
+    height:46px;
+    min-width:46px;
+    min-height:46px;
+    line-height:42px;
+    background:#0b0907 !important;
+    border:2px solid #d4af37;
+    box-shadow:0 6px 20px rgba(0,0,0,.75);
   }
 
   .product-modal-gallery{
     grid-template-columns:1fr;
+  }
+
+  .product-modal-gallery img,
+  .product-modal-gallery video{
+    width:100%;
+    max-height:58dvh;
+    object-fit:contain;
   }
 }
 
@@ -2910,7 +2940,7 @@ function openNayaA11yPanel(){
 <div class="product-modal-backdrop" id="productModalBackdrop" onclick="closeProductModal()"></div>
 
 <div class="product-modal" id="productModal">
-  <button class="product-modal-close" onclick="closeProductModal()">×</button>
+  <button type="button" class="product-modal-close" onclick="closeProductModal()" aria-label="סגירת חלון המוצר">×</button>
 
   <h2 id="productModalTitle">שרשרת בן פורת יוסף</h2>
 
