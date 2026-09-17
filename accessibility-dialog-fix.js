@@ -132,6 +132,7 @@
       .a11y-panel {
         top:12px !important;
         right:8px !important;
+        transform:translateX(calc(100% + 16px)) !important;
         width:min(340px,80vw) !important;
         height:auto !important;
         max-height:calc(100dvh - 24px) !important;
@@ -139,6 +140,7 @@
         border-radius:20px !important;
         overflow:hidden !important;
       }
+      .a11y-panel.open { transform:translateX(0) !important; }
       .a11y-panel .a11y-body { flex:0 0 auto !important; }
       .a11y-panel .a11y-grid {
         flex:0 0 auto !important;
