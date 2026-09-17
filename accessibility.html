@@ -62,9 +62,11 @@ gtag('config', 'G-BNDC35M5GY');
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>הצהרת נגישות | NAYA</title>
 <meta name="description" content="הצהרת הנגישות של NAYA – מידע על התאמות נגישות באתר ודרכי פנייה בנושא נגישות.">
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://naya-jewelry.com/accessibility.html">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2"><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png?v=2"><link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <style>
 :root{
   --gold1:#f2b21b;
@@ -177,13 +179,14 @@ a{color:#d4af37;}
     .a11y-panel{
       position:fixed;
       top:0;
-      left:0;
+      left:auto;
+      right:0;
       height:100vh;
       width:min(420px, 92vw);
       background:var(--panel-bg);
       color:#1d2340;
       z-index:2147483646;
-      transform:translateX(-100%);
+      transform:translateX(100%);
       transition:transform .28s ease;
       box-shadow:20px 0 60px rgba(0,0,0,.28);
       display:flex;
@@ -342,6 +345,15 @@ a{color:#d4af37;}
     }
 
     @media (max-width:700px){
+      .a11y-panel{
+        top:12px;
+        right:8px;
+        width:min(340px,80vw);
+        height:auto;
+        max-height:calc(100vh - 24px);
+        border-radius:20px;
+      }
+
       .a11y-grid{
         grid-template-columns:repeat(2,1fr);
         gap:10px;
@@ -480,9 +492,24 @@ a{color:#d4af37;}
 }
 
 </style>
+<style>
+.site-topbar{direction:ltr!important}
+.site-topbar .back-btn{order:2!important;margin-left:auto!important}
+.site-topbar .language-picker{order:1!important}
+.language-picker{position:relative;pointer-events:auto}
+.lang-toggle{display:grid!important;place-items:center!important;width:48px!important;height:48px!important;padding:0!important;border:1px solid rgba(242,178,27,.62)!important;border-radius:50%!important;background:rgba(5,5,5,.9)!important;color:#f2c35a!important;font-size:1.35rem!important}
+.language-menu{position:absolute;top:56px;left:0;min-width:130px;padding:6px;background:#0b0906;border:1px solid rgba(242,178,27,.5);border-radius:13px;box-shadow:0 14px 32px #000c}
+.language-menu[hidden]{display:none!important}
+.language-menu button{display:block;width:100%;padding:10px;border:0;border-radius:8px;background:transparent;color:#f5e8c7;font:700 .95rem Arial,sans-serif;cursor:pointer}
+.language-menu button:hover{background:#b98219;color:#080604}
+</style>
+<style>
+.a11y-panel{background:linear-gradient(180deg,#15110a 0%,#070605 100%)!important;color:#f6e9c7!important;border-right:1px solid rgba(212,175,55,.55)!important}.a11y-header{background:linear-gradient(135deg,#211707,#090705)!important;border-bottom:1px solid rgba(212,175,55,.5)!important}.a11y-title,.a11y-section-title,.a11y-icon{color:#e2b64f!important}.a11y-body{background:transparent!important}.a11y-card{background:#15110d!important;border-color:#5f4822!important;color:#f4e7c7!important;box-shadow:0 8px 20px rgba(0,0,0,.32)!important}.a11y-card:hover{border-color:#d4af37!important;background:#21180b!important}.a11y-card.active{background:linear-gradient(135deg,#b67b12,#e0b343)!important;border-color:#f1d27a!important;color:#100b04!important}.a11y-card.active .a11y-icon{color:#100b04!important}.a11y-circle-btn,.a11y-value{background:#0b0906!important;border-color:#8c6a2a!important;color:#e4b94f!important}.a11y-bar{background:linear-gradient(90deg,#5e3d08,#d4af37,#fff0a0)!important}.a11y-footer-note{color:#cdbd9f!important}.a11y-reset{background:linear-gradient(135deg,#8b5b0b,#d7a82f)!important;color:#100b04!important;box-shadow:0 10px 24px rgba(0,0,0,.38)!important}
+</style>
+<link rel="stylesheet" href="hebrew-font-fix.css?v=1">
 </head>
 <body>
-<div class="naya-sale-banner"><div class="naya-sale-track"><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span></div></div>
+<div class="naya-sale-banner"><div class="naya-sale-track"><span data-he="🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥" data-en="🔥 Huge deals and discounts on all jewelry + free shipping to all available destinations 🔥">🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥</span><span data-he="🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥" data-en="🔥 Huge deals and discounts on all jewelry + free shipping to all available destinations 🔥">🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥</span><span data-he="🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥" data-en="🔥 Huge deals and discounts on all jewelry + free shipping to all available destinations 🔥">🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥</span></div></div>
 
 <div class="a11y-backdrop" id="a11yBackdrop"></div>
 
@@ -525,9 +552,24 @@ a{color:#d4af37;}
         <div class="a11y-label" data-he="הדגשת קישורים" data-en="Highlight Links">הדגשת קישורים</div>
       </button>
 
-      <button class="a11y-card" data-mode="a11y-blackwhite">
-        <div class="a11y-icon">◑</div>
-        <div class="a11y-label" data-he="שחור לבן" data-en="Black & White">שחור לבן</div>
+      <button class="a11y-card" data-mode="a11y-stop-motion">
+        <div class="a11y-icon">⏸</div>
+        <div class="a11y-label" data-he="עצירת אנימציות" data-en="Stop Animations">עצירת אנימציות</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-large-cursor">
+        <div class="a11y-icon">🖱️</div>
+        <div class="a11y-label" data-he="סמן מוגדל" data-en="Large Cursor">סמן מוגדל</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-text-spacing">
+        <div class="a11y-icon">↔</div>
+        <div class="a11y-label" data-he="ריווח טקסט" data-en="Text Spacing">ריווח טקסט</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-focus-visible">
+        <div class="a11y-icon">▣</div>
+        <div class="a11y-label" data-he="מיקוד ברור" data-en="Visible Focus">מיקוד ברור</div>
       </button>
     </div>
 
@@ -570,7 +612,7 @@ a{color:#d4af37;}
 
 <div class="site-topbar">
   <button class="back-btn" type="button" onclick="goBack()" data-he="← חזור לדף הקודם" data-en="← Back">← חזור לדף הקודם</button>
-  <button class="lang-toggle" id="langToggle" type="button">English</button>
+  <div class="language-picker"><button class="lang-toggle" id="langToggle" type="button" aria-label="בחירת שפה">🌐</button><div class="language-menu" id="languageMenu" hidden><button type="button" data-language="he">עברית</button><button type="button" data-language="en">English</button></div></div>
 </div>
 
 <main class="container">
@@ -583,29 +625,40 @@ a{color:#d4af37;}
 <h2 data-he="1. כללי" data-en="1. General">1. כללי</h2>
 <p data-he="אתר NAYA פועל לקידום נגישות השירותים הדיגיטליים שלו לכלל המשתמשים, לרבות אנשים עם מוגבלויות." data-en="The NAYA website works to promote accessibility of its digital services for all users, including people with disabilities.">אתר NAYA פועל לקידום נגישות השירותים הדיגיטליים שלו לכלל המשתמשים, לרבות אנשים עם מוגבלויות.</p>
 <p data-he="אנו משקיעים מאמצים כדי לאפשר חוויית גלישה נוחה, ברורה ונגישה ככל האפשר." data-en="We make efforts to provide a browsing experience that is as convenient, clear and accessible as possible.">אנו משקיעים מאמצים כדי לאפשר חוויית גלישה נוחה, ברורה ונגישה ככל האפשר.</p>
+<p data-he="האתר שואף לעמוד בדרישות תקן ישראלי 5568 ובהנחיות WCAG ברמה AA. האתר נמצא בתהליך בדיקה ושיפור, ולכן אין בנוסח זה הצהרה כי כל רכיב נבדק או נמצא תואם באופן מלא." data-en="The website aims to meet Israeli Standard 5568 and WCAG Level AA guidelines. The website is undergoing review and improvement, so this statement does not claim that every component has been tested or is fully compliant.">האתר שואף לעמוד בדרישות תקן ישראלי 5568 ובהנחיות WCAG ברמה AA. האתר נמצא בתהליך בדיקה ושיפור, ולכן אין בנוסח זה הצהרה כי כל רכיב נבדק או נמצא תואם באופן מלא.</p>
 
 <h2 data-he="2. התאמות נגישות באתר" data-en="2. Website Accessibility Adjustments">2. התאמות נגישות באתר</h2>
 <p data-he="באתר בוצעו התאמות נגישות שונות, בין היתר:" data-en="Various accessibility adjustments have been made on the website, including:">באתר בוצעו התאמות נגישות שונות, בין היתר:</p>
 <ul>
 <li data-he="אפשרות לשינוי גודל טקסט" data-en="Option to change text size">אפשרות לשינוי גודל טקסט</li>
+<li data-he="הצגת האתר בגווני אפור" data-en="Display in grayscale">הצגת האתר בגווני אפור</li>
+<li data-he="מצב ניגודיות הפוכה" data-en="Inverted contrast mode">מצב ניגודיות הפוכה</li>
 <li data-he="מצב ניגודיות גבוהה" data-en="High contrast mode">מצב ניגודיות גבוהה</li>
 <li data-he="הדגשת קישורים" data-en="Highlighting links">הדגשת קישורים</li>
 <li data-he="אפשרות לטקסט קריא וברור יותר" data-en="Option for clearer and more readable text">אפשרות לטקסט קריא וברור יותר</li>
+<li data-he="התאמת ריווח הטקסט" data-en="Text spacing adjustment">התאמת ריווח הטקסט</li>
+<li data-he="עצירת אנימציות ותנועות באתר" data-en="Stopping animations and motion on the website">עצירת אנימציות ותנועות באתר</li>
+<li data-he="סמן עכבר מוגדל ומיקוד ברור ברכיבים אינטראקטיביים" data-en="Large mouse cursor and visible focus on interactive components">סמן עכבר מוגדל ומיקוד ברור ברכיבים אינטראקטיביים</li>
 <li data-he="תמיכה בגלישה ממכשירים ניידים, טאבלטים ומחשבים" data-en="Support for browsing from mobile devices, tablets and computers">תמיכה בגלישה ממכשירים ניידים, טאבלטים ומחשבים</li>
 <li data-he="שימוש במבנה עמודים ברור ככל האפשר" data-en="Use of a page structure that is as clear as possible">שימוש במבנה עמודים ברור ככל האפשר</li>
+<li data-he="אפשרות לניווט באמצעות מקלדת ברכיבים הנתמכים" data-en="Keyboard navigation for supported components">אפשרות לניווט באמצעות מקלדת ברכיבים הנתמכים</li>
+<li data-he="תוויות וטקסט חלופי ברכיבי תוכן מרכזיים" data-en="Labels and alternative text for key content components">תוויות וטקסט חלופי ברכיבי תוכן מרכזיים</li>
 </ul>
 
 <h2 data-he="3. רכיב נגישות באתר" data-en="3. Accessibility Component on the Website">3. רכיב נגישות באתר</h2>
-<p data-he="באתר קיים רכיב נגישות המאפשר לבצע התאמות תצוגה שונות לפי הצורך." data-en="The website includes an accessibility component that allows various display adjustments as needed.">באתר קיים רכיב נגישות המאפשר לבצע התאמות תצוגה שונות לפי הצורך.</p>
+<p data-he="באתר קיים רכיב נגישות המאפשר שינוי גודל גופן, מצבי ניגודיות וצבע, טקסט קריא, הדגשת קישורים, עצירת אנימציות, סמן מוגדל, ריווח טקסט ומיקוד ברור. ניתן גם לאפס את כל ההתאמות בלחיצה אחת." data-en="The website includes an accessibility component that provides font-size adjustment, contrast and color modes, readable text, link highlighting, animation stopping, a large cursor, text spacing and visible focus. All adjustments can also be reset with one click.">באתר קיים רכיב נגישות המאפשר שינוי גודל גופן, מצבי ניגודיות וצבע, טקסט קריא, הדגשת קישורים, עצירת אנימציות, סמן מוגדל, ריווח טקסט ומיקוד ברור. ניתן גם לאפס את כל ההתאמות בלחיצה אחת.</p>
 <p data-he="הרכיב נועד לסייע בשיפור חוויית הגלישה, אך ייתכן שחלק מהעמודים או הרכיבים עדיין אינם נגישים באופן מלא." data-en="The component is intended to help improve the browsing experience, but some pages or components may still not be fully accessible.">הרכיב נועד לסייע בשיפור חוויית הגלישה, אך ייתכן שחלק מהעמודים או הרכיבים עדיין אינם נגישים באופן מלא.</p>
 
 <h2 data-he="4. מאמצים ושיפורים עתידיים" data-en="4. Ongoing Efforts and Future Improvements">4. מאמצים ושיפורים עתידיים</h2>
 <p data-he="אנו ממשיכים לפעול לשיפור נגישות האתר באופן שוטף." data-en="We continue to work on improving website accessibility on an ongoing basis.">אנו ממשיכים לפעול לשיפור נגישות האתר באופן שוטף.</p>
 <p data-he="אם נתקלתם בבעיה, תקלה או קושי בגלישה באתר, נשמח שתעדכנו אותנו כדי שנוכל לבדוק ולטפל בנושא." data-en="If you encounter a problem, malfunction or difficulty while browsing the website, please let us know so we can review and address the issue.">אם נתקלתם בבעיה, תקלה או קושי בגלישה באתר, נשמח שתעדכנו אותנו כדי שנוכל לבדוק ולטפל בנושא.</p>
+<p data-he="חלק מהשירותים, ובהם עמודי תשלום, עשויים להיפתח באתר חיצוני המופעל על ידי ספק הסליקה. אם נתקלתם בקושי נגישות בשירות חיצוני, ניתן לפנות אלינו וננסה לסייע או להציע דרך חלופית ככל האפשר." data-en="Some services, including payment pages, may open on an external website operated by the payment provider. If you encounter an accessibility difficulty in an external service, contact us and we will try to assist or offer an alternative where possible.">חלק מהשירותים, ובהם עמודי תשלום, עשויים להיפתח באתר חיצוני המופעל על ידי ספק הסליקה. אם נתקלתם בקושי נגישות בשירות חיצוני, ניתן לפנות אלינו וננסה לסייע או להציע דרך חלופית ככל האפשר.</p>
+<p data-he="האתר מיועד לגלישה בדפדפנים מודרניים ובמחשבים, בטאבלטים ובטלפונים ניידים. ייתכנו הבדלים בתצוגה או בתפקוד בגרסאות דפדפן ישנות." data-en="The website is intended for use with modern browsers on computers, tablets and mobile phones. Display or functionality may differ in older browser versions.">האתר מיועד לגלישה בדפדפנים מודרניים ובמחשבים, בטאבלטים ובטלפונים ניידים. ייתכנו הבדלים בתצוגה או בתפקוד בגרסאות דפדפן ישנות.</p>
 
 <h2 data-he="5. פנייה בנושא נגישות" data-en="5. Accessibility Contact">5. פנייה בנושא נגישות</h2>
-<p data-he="לפניות, הערות או בקשות בנושא נגישות ניתן ליצור קשר בדוא״ל:" data-en="For inquiries, comments or requests regarding accessibility, you may contact us by email:">לפניות, הערות או בקשות בנושא נגישות ניתן ליצור קשר בדוא״ל:</p>
+<p data-he="איש הקשר לנגישות מטעם אלקטרושופ, NAYA, זמין בטלפון 055-9992255 ובדוא״ל:" data-en="The accessibility contact for Electroshop, NAYA, is available by telephone at 055-9992255 and by email:">איש הקשר לנגישות מטעם אלקטרושופ, NAYA, זמין בטלפון 055-9992255 ובדוא״ל:</p>
 <p><a href="mailto:info@naya-jewelry.com">info@naya-jewelry.com</a></p>
+<p data-he="הפעילות מתקיימת באופן מקוון בלבד ואין קבלת קהל." data-en="The business operates online only and does not receive visitors.">הפעילות מתקיימת באופן מקוון בלבד ואין קבלת קהל.</p>
 
 <h2 data-he="6. פרטים שכדאי לצרף לפנייה" data-en="6. Details Recommended to Include">6. פרטים שכדאי לצרף לפנייה</h2>
 <p data-he="כדי שנוכל לטפל בפנייה בצורה טובה, מומלץ לצרף:" data-en="To help us handle the inquiry properly, it is recommended to include:">כדי שנוכל לטפל בפנייה בצורה טובה, מומלץ לצרף:</p>
@@ -617,7 +670,7 @@ a{color:#d4af37;}
 </ul>
 
 <h2 data-he="7. תאריך עדכון ההצהרה" data-en="7. Statement Update Date">7. תאריך עדכון ההצהרה</h2>
-<p data-he="הצהרת נגישות זו עודכנה לאחרונה בתאריך: 27.04.2026" data-en="This Accessibility Statement was last updated on: 27.04.2026">הצהרת נגישות זו עודכנה לאחרונה בתאריך: 27.04.2026</p>
+<p data-he="הצהרת נגישות זו עודכנה לאחרונה בתאריך: 15.09.2026" data-en="This Accessibility Statement was last updated on: September 15, 2026">הצהרת נגישות זו עודכנה לאחרונה בתאריך: 15.09.2026</p>
 
 <footer>© Naya Fine Jewelry 2006</footer>
   </section>
@@ -765,16 +818,18 @@ function applyLanguage(lang) {
     const value = el.getAttribute('data-' + lang);
     if (value !== null) el.innerHTML = value;
   });
-  langToggle.textContent = lang === 'he' ? 'English' : 'עברית';
 }
 langToggle.addEventListener('click', function() {
-  applyLanguage(currentLang === 'he' ? 'en' : 'he');
+  const languageMenu = document.getElementById('languageMenu');
+  languageMenu.hidden = !languageMenu.hidden;
 });
+document.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click',()=>{applyLanguage(button.dataset.language);document.getElementById('languageMenu').hidden=true}));
 function goBack() {
   if (document.referrer) window.history.back();
   else window.location.href = 'mehadrin.html';
 }
 applyLanguage(currentLang);
 </script>
+<script src="accessibility-dialog-fix.js?v=16"></script>
 </body>
 </html>

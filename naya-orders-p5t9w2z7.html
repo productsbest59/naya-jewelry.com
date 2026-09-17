@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <link rel="icon" href="favicon.ico?v=2" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg?v=2"><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png?v=2"><link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Naya - ניהול הזמנות</title>
+  <link rel="stylesheet" href="styles.css?v=49">
+  <link rel="stylesheet" href="hebrew-font-fix.css?v=4">
+</head>
+<body>
+  <header class="site-head">
+    <img class="brand" src="../logo trans.png" alt="Naya">
+    <div class="head-actions">
+      <a class="button secondary" href="naya-products-c8v3r6x1.html">ניהול מוצרים</a>
+      <a class="button secondary" href="index.html">החנות</a>
+    </div>
+  </header>
+  <main class="admin-shell">
+    <div class="admin-top">
+      <div><h1>ניהול הזמנות</h1><p>תשלום ומשלוח מנוהלים בנפרד כדי למנוע טעויות</p></div>
+    </div>
+    <div class="orders-toolbar">
+      <input id="orderSearch" type="search" placeholder="חיפוש לפי מספר הזמנה, שם, טלפון או אימייל">
+      <input id="orderDate" type="date" aria-label="סינון לפי תאריך">
+      <select id="paymentFilter"><option value="">כל מצבי התשלום</option><option value="paid">שולם</option><option value="pending">ממתין לתשלום</option><option value="failed">נכשל</option><option value="refunded">הוחזר</option></select>
+      <select id="fulfillmentFilter"><option value="">כל מצבי הטיפול</option><option value="new">הזמנה חדשה</option><option value="preparing">בהכנה</option><option value="awaiting_shipment">ממתין למשלוח</option><option value="shipped">נשלח</option><option value="delivered">נמסר</option><option value="returning">נשלח בחזרה</option><option value="returned">הוחזר</option><option value="cancelled">בוטל</option></select>
+    </div>
+    <div class="orders-table-head"><span></span><span>מספר הזמנה</span><span>לקוח</span><span>טלפון</span><span>סכום כולל</span><span>תאריך ושעה</span><span>מצב תשלום</span><span>טיפול ומשלוח</span></div>
+    <div id="orderList" class="orders-list"></div>
+  </main>
+  <script src="orders.js?v=4"></script>
+  <script src="admin-orders.js?v=39"></script>
+</body>
+</html>

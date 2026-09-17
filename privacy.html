@@ -62,9 +62,11 @@ gtag('config', 'G-BNDC35M5GY');
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>מדיניות פרטיות | NAYA</title>
 <meta name="description" content="מדיניות הפרטיות של NAYA – איסוף מידע, שימוש בעוגיות, אבטחת מידע וזכויות המשתמשים.">
+<meta name="robots" content="index,follow">
 <link rel="canonical" href="https://naya-jewelry.com/privacy.html">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="favicon.ico?v=2" sizes="any">
+<link rel="icon" type="image/svg+xml" href="favicon.svg?v=2"><link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png?v=2"><link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
 <style>
 :root{
   --gold1:#f2b21b;
@@ -177,13 +179,14 @@ a{color:#d4af37;}
     .a11y-panel{
       position:fixed;
       top:0;
-      left:0;
+      left:auto;
+      right:0;
       height:100vh;
       width:min(420px, 92vw);
       background:var(--panel-bg);
       color:#1d2340;
       z-index:2147483646;
-      transform:translateX(-100%);
+      transform:translateX(100%);
       transition:transform .28s ease;
       box-shadow:20px 0 60px rgba(0,0,0,.28);
       display:flex;
@@ -342,6 +345,15 @@ a{color:#d4af37;}
     }
 
     @media (max-width:700px){
+      .a11y-panel{
+        top:12px;
+        right:8px;
+        width:min(340px,80vw);
+        height:auto;
+        max-height:calc(100vh - 24px);
+        border-radius:20px;
+      }
+
       .a11y-grid{
         grid-template-columns:repeat(2,1fr);
         gap:10px;
@@ -480,9 +492,24 @@ a{color:#d4af37;}
 }
 
 </style>
+<style>
+.site-topbar{direction:ltr!important}
+.site-topbar .back-btn{order:2!important;margin-left:auto!important}
+.site-topbar .language-picker{order:1!important}
+.language-picker{position:relative;pointer-events:auto}
+.lang-toggle{display:grid!important;place-items:center!important;width:48px!important;height:48px!important;padding:0!important;border:1px solid rgba(242,178,27,.62)!important;border-radius:50%!important;background:rgba(5,5,5,.9)!important;color:#f2c35a!important;font-size:1.35rem!important}
+.language-menu{position:absolute;top:56px;left:0;min-width:130px;padding:6px;background:#0b0906;border:1px solid rgba(242,178,27,.5);border-radius:13px;box-shadow:0 14px 32px #000c}
+.language-menu[hidden]{display:none!important}
+.language-menu button{display:block;width:100%;padding:10px;border:0;border-radius:8px;background:transparent;color:#f5e8c7;font:700 .95rem Arial,sans-serif;cursor:pointer}
+.language-menu button:hover{background:#b98219;color:#080604}
+</style>
+<style>
+.a11y-panel{background:linear-gradient(180deg,#15110a 0%,#070605 100%)!important;color:#f6e9c7!important;border-right:1px solid rgba(212,175,55,.55)!important}.a11y-header{background:linear-gradient(135deg,#211707,#090705)!important;border-bottom:1px solid rgba(212,175,55,.5)!important}.a11y-title,.a11y-section-title,.a11y-icon{color:#e2b64f!important}.a11y-body{background:transparent!important}.a11y-card{background:#15110d!important;border-color:#5f4822!important;color:#f4e7c7!important;box-shadow:0 8px 20px rgba(0,0,0,.32)!important}.a11y-card:hover{border-color:#d4af37!important;background:#21180b!important}.a11y-card.active{background:linear-gradient(135deg,#b67b12,#e0b343)!important;border-color:#f1d27a!important;color:#100b04!important}.a11y-card.active .a11y-icon{color:#100b04!important}.a11y-circle-btn,.a11y-value{background:#0b0906!important;border-color:#8c6a2a!important;color:#e4b94f!important}.a11y-bar{background:linear-gradient(90deg,#5e3d08,#d4af37,#fff0a0)!important}.a11y-footer-note{color:#cdbd9f!important}.a11y-reset{background:linear-gradient(135deg,#8b5b0b,#d7a82f)!important;color:#100b04!important;box-shadow:0 10px 24px rgba(0,0,0,.38)!important}
+</style>
+<link rel="stylesheet" href="hebrew-font-fix.css?v=1">
 </head>
 <body>
-<div class="naya-sale-banner"><div class="naya-sale-track"><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span><span>🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל הארץ 🔥</span></div></div>
+<div class="naya-sale-banner"><div class="naya-sale-track"><span data-he="🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥" data-en="🔥 Huge deals and discounts on all jewelry + free shipping to all available destinations 🔥">🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥</span><span data-he="🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥" data-en="🔥 Huge deals and discounts on all jewelry + free shipping to all available destinations 🔥">🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥</span><span data-he="🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥" data-en="🔥 Huge deals and discounts on all jewelry + free shipping to all available destinations 🔥">🔥 מבצעים והנחות ענק על כל התכשיטים באתר + משלוח חינם לכל יעד 🔥</span></div></div>
 
 <div class="a11y-backdrop" id="a11yBackdrop"></div>
 
@@ -525,9 +552,24 @@ a{color:#d4af37;}
         <div class="a11y-label" data-he="הדגשת קישורים" data-en="Highlight Links">הדגשת קישורים</div>
       </button>
 
-      <button class="a11y-card" data-mode="a11y-blackwhite">
-        <div class="a11y-icon">◑</div>
-        <div class="a11y-label" data-he="שחור לבן" data-en="Black & White">שחור לבן</div>
+      <button class="a11y-card" data-mode="a11y-stop-motion">
+        <div class="a11y-icon">⏸</div>
+        <div class="a11y-label" data-he="עצירת אנימציות" data-en="Stop Animations">עצירת אנימציות</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-large-cursor">
+        <div class="a11y-icon">🖱️</div>
+        <div class="a11y-label" data-he="סמן מוגדל" data-en="Large Cursor">סמן מוגדל</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-text-spacing">
+        <div class="a11y-icon">↔</div>
+        <div class="a11y-label" data-he="ריווח טקסט" data-en="Text Spacing">ריווח טקסט</div>
+      </button>
+
+      <button class="a11y-card" data-mode="a11y-focus-visible">
+        <div class="a11y-icon">▣</div>
+        <div class="a11y-label" data-he="מיקוד ברור" data-en="Visible Focus">מיקוד ברור</div>
       </button>
     </div>
 
@@ -570,7 +612,7 @@ a{color:#d4af37;}
 
 <div class="site-topbar">
   <button class="back-btn" type="button" onclick="goBack()" data-he="← חזור לדף הקודם" data-en="← Back">← חזור לדף הקודם</button>
-  <button class="lang-toggle" id="langToggle" type="button">English</button>
+  <div class="language-picker"><button class="lang-toggle" id="langToggle" type="button" aria-label="בחירת שפה">🌐</button><div class="language-menu" id="languageMenu" hidden><button type="button" data-language="he">עברית</button><button type="button" data-language="en">English</button></div></div>
 </div>
 
 <main class="container">
@@ -582,6 +624,7 @@ a{color:#d4af37;}
 
 <h2 data-he="1. כללי" data-en="1. General">1. כללי</h2>
 <p data-he="אתר NAYA מכבד את פרטיות המשתמשים באתר ופועל לשמירה על המידע הנמסר לו בהתאם לדין." data-en="The NAYA website respects users’ privacy and works to protect the information provided to it in accordance with applicable law.">אתר NAYA מכבד את פרטיות המשתמשים באתר ופועל לשמירה על המידע הנמסר לו בהתאם לדין.</p>
+<p data-he="בעל השליטה במידע הוא אלקטרושופ, עוסק מורשה 032293417, המפעיל את האתר תחת השם המסחרי NAYA. ניתן ליצור קשר בטלפון 055-9992255 או בדוא״ל info@naya-jewelry.com." data-en="The controller of the information is Electroshop, Israeli authorized dealer number 032293417, operating the website under the trade name NAYA. Contact is available by telephone at 055-9992255 or by email at info@naya-jewelry.com.">בעל השליטה במידע הוא אלקטרושופ, עוסק מורשה 032293417, המפעיל את האתר תחת השם המסחרי NAYA. ניתן ליצור קשר בטלפון 055-9992255 או בדוא״ל info@naya-jewelry.com.</p>
 <p data-he="השימוש באתר מהווה הסכמה למדיניות פרטיות זו." data-en="Use of the website constitutes agreement to this Privacy Policy.">השימוש באתר מהווה הסכמה למדיניות פרטיות זו.</p>
 
 <h2 data-he="2. איזה מידע נאסף" data-en="2. What Information Is Collected">2. איזה מידע נאסף</h2>
@@ -594,6 +637,7 @@ a{color:#d4af37;}
 <li data-he="פרטי הזמנה ורכישה" data-en="Order and purchase details">פרטי הזמנה ורכישה</li>
 <li data-he="מידע טכני כגון כתובת IP, סוג דפדפן, מכשיר ונתוני שימוש באתר" data-en="Technical information such as IP address, browser type, device and website usage data">מידע טכני כגון כתובת IP, סוג דפדפן, מכשיר ונתוני שימוש באתר</li>
 </ul>
+<p data-he="מסירת שם, פרטי קשר, כתובת משלוח ופרטי הזמנה נדרשת לצורך השלמת רכישה ואספקת המוצר. אין חובה חוקית למסור את המידע, אך ללא הפרטים הנדרשים לא נוכל להשלים את ההזמנה או לספק שירות הקשור אליה." data-en="Providing a name, contact details, shipping address and order details is required to complete a purchase and deliver the product. There is no legal obligation to provide this information, but without the required details we cannot complete the order or provide related service.">מסירת שם, פרטי קשר, כתובת משלוח ופרטי הזמנה נדרשת לצורך השלמת רכישה ואספקת המוצר. אין חובה חוקית למסור את המידע, אך ללא הפרטים הנדרשים לא נוכל להשלים את ההזמנה או לספק שירות הקשור אליה.</p>
 
 <h2 data-he="3. מטרות השימוש במידע" data-en="3. Purposes of Using the Information">3. מטרות השימוש במידע</h2>
 <p data-he="המידע ישמש לצרכים הבאים:" data-en="The information will be used for the following purposes:">המידע ישמש לצרכים הבאים:</p>
@@ -605,9 +649,10 @@ a{color:#d4af37;}
 <li data-he="ניתוח נתוני שימוש ופעילות באתר" data-en="Analyzing usage data and website activity">ניתוח נתוני שימוש ופעילות באתר</li>
 <li data-he="פרסום ושיווק, ככל שהדבר מותר לפי דין" data-en="Advertising and marketing, where permitted by law">פרסום ושיווק, ככל שהדבר מותר לפי דין</li>
 </ul>
+<p data-he="הודעות תפעוליות הנוגעות להזמנה, לתשלום, למשלוח או לשירות אינן דיוור שיווקי. דיוור שיווקי יישלח רק בהתאם לדין ולהסכמות שניתנו, וניתן לבקש להסיר את פרטי הקשר מרשימת הדיוור." data-en="Operational messages concerning an order, payment, delivery or service are not marketing communications. Marketing messages will be sent only in accordance with law and the consents provided, and removal from the marketing list may be requested.">הודעות תפעוליות הנוגעות להזמנה, לתשלום, למשלוח או לשירות אינן דיוור שיווקי. דיוור שיווקי יישלח רק בהתאם לדין ולהסכמות שניתנו, וניתן לבקש להסיר את פרטי הקשר מרשימת הדיוור.</p>
 
 <h2 data-he="4. עוגיות וכלי מדידה" data-en="4. Cookies and Measurement Tools">4. עוגיות וכלי מדידה</h2>
-<p data-he="האתר עשוי להשתמש בקובצי Cookies ובכלי מדידה ופרסום כגון Google Analytics, Google Ads, TikTok Pixel או כלים דומים." data-en="The website may use cookies and measurement or advertising tools such as Google Analytics, Google Ads, TikTok Pixel or similar tools.">האתר עשוי להשתמש בקובצי Cookies ובכלי מדידה ופרסום כגון Google Analytics, Google Ads, TikTok Pixel או כלים דומים.</p>
+<p data-he="האתר משתמש או עשוי להשתמש בקובצי Cookies הנדרשים להפעלת החנות, שמירת העגלה, בחירת שפה ואבטחת השירות. אם יופעלו כלי מדידה או פרסום נוספים, כגון Google Analytics, Google Ads או TikTok Pixel, מדיניות זו ומנגנון ההסכמה באתר יעודכנו בהתאם לצורך." data-en="The website uses or may use cookies required to operate the store, retain the shopping cart, remember language selection and secure the service. If additional analytics or advertising tools such as Google Analytics, Google Ads or TikTok Pixel are activated, this policy and the website consent mechanism will be updated as required.">האתר משתמש או עשוי להשתמש בקובצי Cookies הנדרשים להפעלת החנות, שמירת העגלה, בחירת שפה ואבטחת השירות. אם יופעלו כלי מדידה או פרסום נוספים, כגון Google Analytics, Google Ads או TikTok Pixel, מדיניות זו ומנגנון ההסכמה באתר יעודכנו בהתאם לצורך.</p>
 <p data-he="כלים אלה עשויים לאסוף מידע סטטיסטי וטכני על פעילות המשתמש באתר, לצורך מדידה, שיפור האתר, התאמת פרסום וניתוח ביצועים." data-en="These tools may collect statistical and technical information about user activity on the website for measurement, site improvement, advertising personalization and performance analysis.">כלים אלה עשויים לאסוף מידע סטטיסטי וטכני על פעילות המשתמש באתר, לצורך מדידה, שיפור האתר, התאמת פרסום וניתוח ביצועים.</p>
 <p data-he="ניתן לחסום או למחוק Cookies דרך הגדרות הדפדפן. חסימה כזו עשויה להשפיע על חלק מהשירותים באתר." data-en="Cookies can be blocked or deleted through browser settings. Such blocking may affect some website services.">ניתן לחסום או למחוק Cookies דרך הגדרות הדפדפן. חסימה כזו עשויה להשפיע על חלק מהשירותים באתר.</p>
 
@@ -620,16 +665,19 @@ a{color:#d4af37;}
 <li data-he="כאשר קיימת חובה חוקית למסור את המידע" data-en="When there is a legal obligation to provide the information">כאשר קיימת חובה חוקית למסור את המידע</li>
 <li data-he="במקרה של מחלוקת משפטית או חשד לשימוש בלתי חוקי באתר" data-en="In case of a legal dispute or suspected unlawful use of the website">במקרה של מחלוקת משפטית או חשד לשימוש בלתי חוקי באתר</li>
 </ul>
+<p data-he="האתר נעזר בין היתר ב-Supabase לצורך אחסון וניהול נתוני הזמנות, ב-Brevo לצורך שליחת הודעות דוא״ל וב-Tranzila או PayPal לצורך עיבוד תשלומים. ספקי שירות אלה מקבלים רק את המידע הדרוש לביצוע תפקידם ופועלים בהתאם לתנאים ולמדיניות הפרטיות שלהם." data-en="The website uses, among other providers, Supabase for storing and managing order data, Brevo for sending email messages, and Tranzila or PayPal for payment processing. These providers receive only the information needed to perform their role and operate under their own terms and privacy policies.">האתר נעזר בין היתר ב-Supabase לצורך אחסון וניהול נתוני הזמנות, ב-Brevo לצורך שליחת הודעות דוא״ל וב-Tranzila או PayPal לצורך עיבוד תשלומים. ספקי שירות אלה מקבלים רק את המידע הדרוש לביצוע תפקידם ופועלים בהתאם לתנאים ולמדיניות הפרטיות שלהם.</p>
+<p data-he="חלק מספקי השירות עשויים לעבד או לאחסן מידע מחוץ לישראל. העברת מידע כזו תיעשה לצורך הפעלת השירות ובהתאם להוראות הדין החלות." data-en="Some service providers may process or store information outside Israel. Such transfers will be made for operating the service and in accordance with applicable law.">חלק מספקי השירות עשויים לעבד או לאחסן מידע מחוץ לישראל. העברת מידע כזו תיעשה לצורך הפעלת השירות ובהתאם להוראות הדין החלות.</p>
 
 <h2 data-he="6. אבטחת מידע" data-en="6. Information Security">6. אבטחת מידע</h2>
 <p data-he="האתר נוקט באמצעים סבירים לשמירה על המידע האישי של המשתמשים." data-en="The website takes reasonable measures to protect users’ personal information.">האתר נוקט באמצעים סבירים לשמירה על המידע האישי של המשתמשים.</p>
+<p data-he="תשלומים בכרטיס מתבצעים בעמודי ספק הסליקה. פרטי כרטיס האשראי אינם נשמרים במערכת NAYA." data-en="Card payments are completed on the payment provider’s pages. Credit card details are not stored in the NAYA system.">תשלומים בכרטיס מתבצעים בעמודי ספק הסליקה. פרטי כרטיס האשראי אינם נשמרים במערכת NAYA.</p>
 <p data-he="עם זאת, אין אפשרות להבטיח חסינות מוחלטת מפני חדירה או שימוש בלתי מורשה במערכות האתר." data-en="However, absolute protection against intrusion or unauthorized use of the website systems cannot be guaranteed.">עם זאת, אין אפשרות להבטיח חסינות מוחלטת מפני חדירה או שימוש בלתי מורשה במערכות האתר.</p>
 
 <h2 data-he="7. שמירת מידע" data-en="7. Data Retention">7. שמירת מידע</h2>
 <p data-he="המידע יישמר למשך הזמן הדרוש לצורך מתן השירות, עמידה בדרישות החוק, ניהול הזמנות, שירות לקוחות וצרכים עסקיים לגיטימיים." data-en="Information will be retained for the time required to provide the service, comply with legal requirements, manage orders, provide customer service and support legitimate business needs.">המידע יישמר למשך הזמן הדרוש לצורך מתן השירות, עמידה בדרישות החוק, ניהול הזמנות, שירות לקוחות וצרכים עסקיים לגיטימיים.</p>
 
 <h2 data-he="8. זכויות המשתמש" data-en="8. User Rights">8. זכויות המשתמש</h2>
-<p data-he="משתמש רשאי לפנות לאתר בבקשה לעיין במידע שנשמר עליו, לתקן אותו או לבקש את מחיקתו, בכפוף להוראות הדין." data-en="A user may contact the website to request access to information stored about them, correct it or request its deletion, subject to applicable law.">משתמש רשאי לפנות לאתר בבקשה לעיין במידע שנשמר עליו, לתקן אותו או לבקש את מחיקתו, בכפוף להוראות הדין.</p>
+<p data-he="אדם רשאי לפנות בבקשה לעיין במידע אישי שנשמר עליו, לתקנו אם הוא אינו נכון, שלם, ברור או מעודכן, או לבקש את מחיקתו, והכול בכפוף להוראות הדין ולחובות שמירת מסמכים החלות על העסק. לצורך אימות זהות עשוי להידרש מידע נוסף." data-en="A person may request access to personal information held about them, correction where it is inaccurate, incomplete, unclear or outdated, or deletion, all subject to applicable law and the business’s document retention obligations. Additional information may be required to verify identity.">אדם רשאי לפנות בבקשה לעיין במידע אישי שנשמר עליו, לתקנו אם הוא אינו נכון, שלם, ברור או מעודכן, או לבקש את מחיקתו, והכול בכפוף להוראות הדין ולחובות שמירת מסמכים החלות על העסק. לצורך אימות זהות עשוי להידרש מידע נוסף.</p>
 
 <h2 data-he="9. יצירת קשר בנושא פרטיות" data-en="9. Contact Regarding Privacy">9. יצירת קשר בנושא פרטיות</h2>
 <p data-he="לפניות בנושא פרטיות ניתן לפנות בדוא״ל:" data-en="For privacy-related inquiries, you may contact us by email:">לפניות בנושא פרטיות ניתן לפנות בדוא״ל:</p>
@@ -637,6 +685,7 @@ a{color:#d4af37;}
 
 <h2 data-he="10. שינויים במדיניות" data-en="10. Changes to This Policy">10. שינויים במדיניות</h2>
 <p data-he="האתר רשאי לעדכן מדיניות פרטיות זו מעת לעת. הנוסח המעודכן יפורסם באתר." data-en="The website may update this Privacy Policy from time to time. The updated version will be published on the website.">האתר רשאי לעדכן מדיניות פרטיות זו מעת לעת. הנוסח המעודכן יפורסם באתר.</p>
+<p data-he="עודכן לאחרונה: 15.09.2026" data-en="Last updated: September 15, 2026">עודכן לאחרונה: 15.09.2026</p>
 
 <footer>© Naya Fine Jewelry 2006</footer>
   </section>
@@ -784,16 +833,18 @@ function applyLanguage(lang) {
     const value = el.getAttribute('data-' + lang);
     if (value !== null) el.innerHTML = value;
   });
-  langToggle.textContent = lang === 'he' ? 'English' : 'עברית';
 }
 langToggle.addEventListener('click', function() {
-  applyLanguage(currentLang === 'he' ? 'en' : 'he');
+  const languageMenu = document.getElementById('languageMenu');
+  languageMenu.hidden = !languageMenu.hidden;
 });
+document.querySelectorAll('[data-language]').forEach(button => button.addEventListener('click',()=>{applyLanguage(button.dataset.language);document.getElementById('languageMenu').hidden=true}));
 function goBack() {
   if (document.referrer) window.history.back();
   else window.location.href = 'mehadrin.html';
 }
 applyLanguage(currentLang);
 </script>
+<script src="accessibility-dialog-fix.js?v=16"></script>
 </body>
 </html>
