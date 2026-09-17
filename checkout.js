@@ -64,6 +64,25 @@ import('./api-module.js?v=4').then(async api => {
   const form = document.querySelector('#checkoutForm');
   const message = document.querySelector('#message');
   const orderItems = () => lines.map(({ item, product }) => ({ productId: product.id, quantity: item.qty, color: item.color || '', size: item.size || '', style: item.style || '' }));
+  const rememberPendingPurchase = order => {
+    const purchase = {
+      transaction_id: String(order.order_number || order.id),
+      value: Number(total.toFixed(2)),
+      currency: english ? 'USD' : 'ILS',
+      shipping: 0,
+      items: lines.map(({ item, product }, index) => ({
+        item_id: product.sku || product.id,
+        item_name: english ? product.nameEn : product.nameHe,
+        item_brand: 'NAYA',
+        item_category: product.category || 'jewelry',
+        item_variant: [item.color, item.size, item.style].filter(Boolean).map(optionText).join(' | '),
+        index,
+        price: Number(linePrice(product)),
+        quantity: Number(item.qty) || 1
+      }))
+    };
+    sessionStorage.setItem('naya_ga_pending_purchase_v1', JSON.stringify(purchase));
+  };
   let paypalStoreOrder = null;
   let paypalFundingSource = 'paypal';
 
@@ -74,6 +93,7 @@ import('./api-module.js?v=4').then(async api => {
     const customer = Object.fromEntries(new FormData(form));
     delete customer.paymentProvider;
     const order = await api.createOrder(customer, orderItems());
+    rememberPendingPurchase(order);
     const payment = await api.startPayPalPayment(order.id);
     if (!payment?.paypal_order_id) throw new Error(copy.paypalError);
     sessionStorage.setItem('naya_pending_order_number', order.order_number);
@@ -158,6 +178,7 @@ import('./api-module.js?v=4').then(async api => {
       delete customer.paymentProvider;
       const items = orderItems();
       const order = await api.createOrder(customer, items);
+      rememberPendingPurchase(order);
       const payment = provider === 'paypal' ? await api.startPayPalPayment(order.id) : await api.startTranzilaPayment(order.id);
       const paymentLink = provider === 'paypal' ? payment?.approval_url : payment?.pr_link;
       if (!paymentLink) throw new Error(provider === 'paypal' ? copy.paypalError : copy.tranzilaError);

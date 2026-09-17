@@ -4,6 +4,7 @@ if (orderId) {
     try {
       const result = await api.request('/functions/v1/naya-tranzila', { method: 'POST', body: { action: 'status', order_id: orderId } });
       if (result?.payment_status === 'paid') {
+        await window.NayaPurchaseAnalytics?.send?.();
         localStorage.removeItem('naya_new_store_cart_v2');
         sessionStorage.removeItem('naya_pending_order_id');
         sessionStorage.removeItem('naya_pending_order_number');
