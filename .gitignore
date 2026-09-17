@@ -1,0 +1,13 @@
+# Local environment files and secrets must never be committed.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+supabase/.temp/
+supabase/.branches/
+
+# Local working copies and editor files.
+new-store/
+.DS_Store
+Thumbs.db
