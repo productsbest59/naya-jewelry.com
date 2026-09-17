@@ -107,6 +107,18 @@ body{background:transparent;color:#fff}.mehadrin-gallery{display:none!important}
 #addGalleryImage{padding:8px 12px!important;font-size:.78rem!important}
 @media(max-width:560px){.admin-gallery-manager{padding:10px!important}.gallery-admin-grid{grid-template-columns:repeat(2,minmax(0,135px))!important}.gallery-admin-card{width:135px!important}.gallery-admin-card>img{height:108px!important}}
 
+/* Product management header actions */
+.product-admin-header{flex-wrap:wrap}
+.product-admin-header .head-actions{display:flex;align-items:center;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+.product-admin-header .button{min-height:42px;padding:9px 13px;white-space:nowrap}
+.product-admin-header button:disabled{opacity:.48;cursor:wait}
+@media(max-width:650px){
+  .product-admin-header{display:grid;grid-template-columns:42px minmax(0,1fr);align-items:center;padding:8px 10px;gap:8px}
+  .product-admin-header .brand{width:42px;max-width:42px;height:42px}
+  .product-admin-header .head-actions{grid-column:1/-1;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:100%;gap:6px}
+  .product-admin-header .head-actions .button{display:flex!important;align-items:center;justify-content:center;width:100%;min-width:0;min-height:40px;padding:7px 5px;font-size:.74rem;line-height:1.2;text-align:center;white-space:normal}
+}
+
 /* Keep product management actions inside the table */
 .admin-table{width:100%!important;overflow:hidden!important}
 .admin-row{grid-template-columns:70px minmax(240px,2fr) 105px minmax(130px,1fr) 90px minmax(250px,auto)!important;padding:10px 14px!important}
