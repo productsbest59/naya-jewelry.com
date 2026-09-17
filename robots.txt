@@ -1,11 +1,10 @@
 User-agent: *
 Allow: /
-Disallow: /admin.html
-Disallow: /orders.html
-Disallow: /login.html
+Disallow: /naya-products-c8v3r6x1.html
+Disallow: /naya-orders-p5t9w2z7.html
+Disallow: /naya-login-b7k4m9q2.html
 Disallow: /checkout.html
 Disallow: /payment-success.html
 Disallow: /payment-failed.html
-Disallow: /_mehadrin-reference.html
 
 Sitemap: https://naya-jewelry.com/sitemap.xml
