@@ -24,7 +24,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <title>NAYA תכשיטים עם משמעות | תכשיטים יהודיים אונליין</title>
   <link rel="stylesheet" href="styles.css?v=53">
   <meta name="description" content="NAYA תכשיטים עם משמעות - שרשראות, טבעות וצמידים בעיצובים יהודיים ייחודיים. משלוח חינם, שירות אישי ורכישה מאובטחת אונליין." />
@@ -39,6 +39,7 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
   <link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
   <link rel="manifest" href="/site.webmanifest">
   <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
@@ -106,7 +107,20 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
     }
 
     *{margin:0;padding:0;box-sizing:border-box;}
-    html,body{width:100%;min-height:100%;}
+    html{
+      width:100%;
+      min-height:100%;
+      min-height:-webkit-fill-available;
+      background:#000!important;
+      overscroll-behavior-y:none;
+    }
+    body{
+      width:100%;
+      min-height:100vh;
+      min-height:100dvh;
+      min-height:-webkit-fill-available;
+      background-color:#000!important;
+    }
     .seo-h1{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}
 
     body{
