@@ -33,10 +33,10 @@ body{background:transparent;color:#fff}.mehadrin-gallery{display:none!important}
 
 /* Admin headers keep their navigation buttons visible on mobile. */
 @media(max-width:650px){
-  body:has(.admin-shell) .site-head{gap:8px;padding:8px 10px}
-  body:has(.admin-shell) .site-head .brand{width:42px;max-width:42px;object-fit:contain}
-  body:has(.admin-shell) .site-head .head-actions{display:flex;gap:6px;flex:1;justify-content:flex-end}
-  body:has(.admin-shell) .site-head .head-actions .button.secondary{display:inline-flex!important;align-items:center;justify-content:center;min-height:40px;padding:8px 10px;font-size:.78rem;white-space:nowrap}
+  .site-head:has(+ .admin-shell){gap:8px;padding:8px 10px}
+  .site-head:has(+ .admin-shell) .brand{width:42px;max-width:42px;object-fit:contain}
+  .site-head .head-actions{display:flex;gap:6px;flex:1;justify-content:flex-end}
+  .site-head .head-actions .button.secondary{display:inline-flex!important;align-items:center;justify-content:center;min-height:40px;padding:8px 10px;font-size:.78rem;white-space:nowrap}
 }
 
 /* Keep the cart below the fixed navigation controls and center its heading. */
