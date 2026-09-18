@@ -5,14 +5,11 @@
     const english = document.documentElement.lang === 'en';
     const label = total.querySelector('span');
     const checkout = document.querySelector('#checkout');
-    const continueShopping = document.querySelector('#continueShopping');
     const notice = document.querySelector('#cartDrawer .notice');
     const wanted = english ? 'Total to pay' : 'סה״כ לתשלום';
     if (label && label.textContent !== wanted) label.textContent = wanted;
     const checkoutText = english ? 'Continue to payment' : 'המשך לתשלום';
     if (checkout && checkout.textContent !== checkoutText) checkout.textContent = checkoutText;
-    const continueText = english ? 'Continue shopping' : 'חזרה לחנות';
-    if (continueShopping && continueShopping.textContent !== continueText) continueShopping.textContent = continueText;
     const noticeText = '';
     if (notice) {
       notice.hidden = true;
