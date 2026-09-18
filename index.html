@@ -187,6 +187,12 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
       color:rgba(255,255,255,0.78);
       line-height:1.8;
     }
+
+    .trust-check{
+      color:#2fd06f;
+      font-weight:900;
+      text-shadow:0 0 8px rgba(47,208,111,0.32);
+    }
 .gallery{
       display:grid;
       grid-template-columns:1fr;
@@ -329,6 +335,14 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
       opacity:0;
       visibility:hidden;
       pointer-events:none;
+    }
+
+    @media (max-width:768px){
+      body.main-menu-is-open .topbar-left-controls{
+        opacity:0;
+        visibility:hidden;
+        pointer-events:none;
+      }
     }
 
     .lang-toggle{
@@ -2011,9 +2025,9 @@ body[dir="ltr"] .faq-answer{
   </p>
 
   <div class="trust-line trans-html"
-       data-he="✔ משלוח חינם לכל הארץ &nbsp;&nbsp; ✔ שירות אישי וזמין &nbsp;&nbsp; ✔ רכישה מאובטחת"
-       data-en="✔ Free shipping across Israel &nbsp;&nbsp; ✔ Personal support &nbsp;&nbsp; ✔ Secure purchase">
-    ✔ משלוח חינם לכל הארץ &nbsp;&nbsp; ✔ שירות אישי וזמין &nbsp;&nbsp; ✔ רכישה מאובטחת
+       data-he="<span class='trust-check'>✔</span> משלוח חינם &nbsp;&nbsp; <span class='trust-check'>✔</span> שירות אישי וזמין &nbsp;&nbsp; <span class='trust-check'>✔</span> רכישה מאובטחת"
+       data-en="<span class='trust-check'>✔</span> Free shipping across Israel &nbsp;&nbsp; <span class='trust-check'>✔</span> Personal support &nbsp;&nbsp; <span class='trust-check'>✔</span> Secure purchase">
+    <span class="trust-check">✔</span> משלוח חינם &nbsp;&nbsp; <span class="trust-check">✔</span> שירות אישי וזמין &nbsp;&nbsp; <span class="trust-check">✔</span> רכישה מאובטחת
   </div>
 
   <div class="love-line">
