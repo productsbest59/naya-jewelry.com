@@ -1,4 +1,4 @@
-import('./api-module.js?v=4').then(async api => {
+import('./api-module.js?v=6').then(async api => {
   const language = localStorage.getItem('naya_store_language') === 'en' ? 'en' : 'he';
   const english = language === 'en';
   document.documentElement.lang = language;
@@ -44,26 +44,30 @@ import('./api-module.js?v=4').then(async api => {
     const manual = Number(product.priceUsd);
     return manual > 0 ? Math.round(manual) : Math.max(1, Math.round(Number(product.price) / 3.7));
   };
-  const linePrice = product => english ? usdPrice(product) : Number(product.price);
+  const linePrice = ({ item, product }) => {
+    const ils = Number(item.price ?? product.price);
+    if (!english) return ils;
+    return item.price == null ? usdPrice(product) : Math.max(1, Math.round(ils / 3.7));
+  };
   const money = amount => english ? `$${Number(amount).toFixed(2)}` : `${Number(amount).toLocaleString('he-IL')} ש״ח`;
   const optionTranslations = {'זהב':'Gold','צבע זהב':'Gold','מוזהב':'Gold','כסף':'Silver','צבע כסף':'Silver','מוכסף':'Silver','רוז גולד':'Rose Gold','זהב ורוד':'Rose Gold','שחור':'Black','לבן':'White','כחול':'Blue','אדום':'Red','ירוק':'Green','קצר':'Short','קצרה':'Short','ארוך':'Long','ארוכה':'Long','קטן':'Small','קטנה':'Small','בינוני':'Medium','בינונית':'Medium','גדול':'Large','גדולה':'Large','מתכוונן':'Adjustable','מתכווננת':'Adjustable','נשים':'Women','גברים':'Men'};
   const optionText = value => { const raw=String(value).trim(); return english ? (optionTranslations[raw] || raw.replace(/מילימטרים/g,'millimeters').replace(/מילימטר/g,'millimeter').replace(/ס\s*["״']?\s*מ/g,'cm').replace(/מ\s*["״']?\s*מ/g,'mm')) : raw; };
-  const total = lines.reduce((sum, line) => sum + linePrice(line.product) * line.item.qty, 0);
+  const total = lines.reduce((sum, line) => sum + linePrice(line) * line.item.qty, 0);
 
   document.querySelector('#summaryLines').innerHTML = lines.map(({ item, product }) => `
     <div class="summary-line">
-      <img src="${product.images[0]}" alt="">
+      <img src="${item.image || product.images[0]}" alt="">
       <div>
         <strong>${english ? product.nameEn : product.nameHe}</strong>
         <small>${[item.color, item.size, item.style].filter(Boolean).map(optionText).join(' | ')}</small>
-        <span>${item.qty} × ${money(linePrice(product))}</span>
+        <span>${item.qty} × ${money(linePrice({ item, product }))}</span>
       </div>
     </div>`).join('') || `<p>${copy.empty}</p>`;
   document.querySelector('#summaryTotal').innerHTML = `<span>${copy.total}</span><strong>${money(total)}</strong>`;
 
   const form = document.querySelector('#checkoutForm');
   const message = document.querySelector('#message');
-  const orderItems = () => lines.map(({ item, product }) => ({ productId: product.id, quantity: item.qty, color: item.color || '', size: item.size || '', style: item.style || '' }));
+  const orderItems = () => lines.map(line => ({ productId: line.product.id, quantity: line.item.qty, color: line.item.color || '', size: line.item.size || '', style: line.item.style || '', unitPrice: linePrice(line), image: line.item.image || line.product.images[0] || '' }));
   const rememberPendingPurchase = order => {
     const purchase = {
       transaction_id: String(order.order_number || order.id),
@@ -77,7 +81,7 @@ import('./api-module.js?v=4').then(async api => {
         item_category: product.category || 'jewelry',
         item_variant: [item.color, item.size, item.style].filter(Boolean).map(optionText).join(' | '),
         index,
-        price: Number(linePrice(product)),
+        price: Number(linePrice({ item, product })),
         quantity: Number(item.qty) || 1
       }))
     };
