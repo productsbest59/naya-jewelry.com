@@ -1,4 +1,4 @@
-import('./api-module.js?v=6').then(async api => {
+import('./api-module.js?v=7').then(async api => {
   const language = localStorage.getItem('naya_store_language') === 'en' ? 'en' : 'he';
   const english = language === 'en';
   document.documentElement.lang = language;
@@ -38,6 +38,8 @@ import('./api-module.js?v=6').then(async api => {
   document.querySelector('.order-summary h2').textContent = copy.summary;
 
   const products = await api.getProducts();
+  let promotionEnabled = true;
+  try { promotionEnabled = (await api.getPromotionSettings()).enabled; } catch {}
   const cart = JSON.parse(localStorage.getItem('naya_new_store_cart_v2') || '{}');
   const lines = Object.values(cart).map(item => ({ item, product: products.find(product => product.id === item.productId) })).filter(line => line.product);
   const usdPrice = product => {
@@ -52,7 +54,11 @@ import('./api-module.js?v=6').then(async api => {
   const money = amount => english ? `$${Number(amount).toFixed(2)}` : `${Number(amount).toLocaleString('he-IL')} ש״ח`;
   const optionTranslations = {'זהב':'Gold','צבע זהב':'Gold','מוזהב':'Gold','כסף':'Silver','צבע כסף':'Silver','מוכסף':'Silver','רוז גולד':'Rose Gold','זהב ורוד':'Rose Gold','שחור':'Black','לבן':'White','כחול':'Blue','אדום':'Red','ירוק':'Green','קצר':'Short','קצרה':'Short','ארוך':'Long','ארוכה':'Long','קטן':'Small','קטנה':'Small','בינוני':'Medium','בינונית':'Medium','גדול':'Large','גדולה':'Large','מתכוונן':'Adjustable','מתכווננת':'Adjustable','נשים':'Women','גברים':'Men'};
   const optionText = value => { const raw=String(value).trim(); return english ? (optionTranslations[raw] || raw.replace(/מילימטרים/g,'millimeters').replace(/מילימטר/g,'millimeter').replace(/ס\s*["״']?\s*מ/g,'cm').replace(/מ\s*["״']?\s*מ/g,'mm')) : raw; };
-  const total = lines.reduce((sum, line) => sum + linePrice(line) * line.item.qty, 0);
+  const unitPrices = lines.flatMap(line => Array.from({length:line.item.qty},()=>linePrice(line)));
+  const subtotal = unitPrices.reduce((sum, price) => sum + price, 0);
+  const cheapest = unitPrices.length ? Math.min(...unitPrices) : 0;
+  const promotionDiscount = promotionEnabled ? (unitPrices.length >= 5 ? cheapest : unitPrices.length >= 4 ? cheapest * .5 : 0) : 0;
+  const total = subtotal - promotionDiscount;
 
   document.querySelector('#summaryLines').innerHTML = lines.map(({ item, product }) => `
     <div class="summary-line">
@@ -63,7 +69,9 @@ import('./api-module.js?v=6').then(async api => {
         <span>${item.qty} × ${money(linePrice({ item, product }))}</span>
       </div>
     </div>`).join('') || `<p>${copy.empty}</p>`;
-  document.querySelector('#summaryTotal').innerHTML = `<span>${copy.total}</span><strong>${money(total)}</strong>`;
+  document.querySelector('#summaryTotal').innerHTML = promotionDiscount
+    ? `<small>${english?'Subtotal':'סכום לפני הנחה'}: ${money(subtotal)}</small><small class="discount">${english?'Offer discount':'הנחת מבצע'}: −${money(promotionDiscount)}</small><span>${copy.total}</span><strong>${money(total)}</strong>`
+    : `<span>${copy.total}</span><strong>${money(total)}</strong>`;
 
   const form = document.querySelector('#checkoutForm');
   const message = document.querySelector('#message');
