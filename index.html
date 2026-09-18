@@ -186,10 +186,21 @@ src="https://www.facebook.com/tr?id=26306303675658299&ev=PageView&noscript=1"
     .intro-copy-line{display:block;margin:0 0 0.65rem;}
     .intro-copy-line:last-child{margin-bottom:0;}
 .trust-line{
-      margin-top:12px;
+      margin-top:26px;
       font-size:0.85rem;
       color:rgba(255,255,255,0.78);
       line-height:1.8;
+    }
+
+    .trust-line::before{
+      content:"";
+      display:block;
+      width:min(180px,45%);
+      height:2px;
+      margin:0 auto 14px;
+      border-radius:999px;
+      background:linear-gradient(90deg,transparent,#d8aa3d,transparent);
+      box-shadow:0 0 10px rgba(216,170,61,0.38);
     }
 
     .trust-check{
