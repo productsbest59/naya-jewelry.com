@@ -381,6 +381,7 @@ body.product-detail-open{position:fixed!important;right:0;left:0;width:100%;over
   filter: blur(3px);
   transform: skewX(-18deg);
   animation: saleBannerShine 5.5s ease-in-out infinite;
+  z-index: 2;
 }
 
 @keyframes saleBannerShine {
@@ -421,6 +422,23 @@ html[lang="en"] .sale-banner-en {
   .sale-banner {
     border-radius: 9px;
   }
+
+  .sale-banner-wrap::after {
+    top: -65%;
+    bottom: -65%;
+    left: -55%;
+    width: 34%;
+    background: linear-gradient(90deg, transparent, rgba(255, 244, 199, 0.82), transparent);
+    filter: blur(2px);
+    animation: saleBannerShineMobile 3.4s linear infinite;
+  }
+}
+
+@keyframes saleBannerShineMobile {
+  0% { left: -55%; opacity: 0; }
+  8% { opacity: 1; }
+  76% { left: 125%; opacity: 1; }
+  88%, 100% { left: 125%; opacity: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
