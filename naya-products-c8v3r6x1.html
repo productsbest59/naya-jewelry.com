@@ -3,7 +3,7 @@
 <head>
   <link rel="icon" href="favicon.ico?v=2" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg?v=2"><link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
-  <title>Naya - ניהול מוצרים</title><link rel="stylesheet" href="styles.css?v=66">
+  <title>Naya - ניהול מוצרים</title><link rel="stylesheet" href="styles.css?v=67">
 </head>
 <body>
   <header class="site-head product-admin-header"><img class="brand" src="../logo trans.png" alt="Naya"><div class="head-actions"><button id="add" class="button" type="button">+ מוצר חדש</button><button id="addGalleryHeader" class="button" type="button" disabled>+ תמונת מודל</button><a class="button secondary" href="index.html">תצוגת החנות</a></div></header>
@@ -27,8 +27,8 @@
       <label class="field full upload-field"><span>תמונות נוספות</span><input id="additionalImageFiles" type="file" accept="image/*" multiple><small>לכל תמונה אפשר לשייך צבע; בחירת הצבע בחנות תחליף אליה.</small></label><div id="additionalImagesPreview" class="image-preview field full"></div>
       <div class="field full checks"><label><input name="active" type="checkbox"> מוצר מוצג בחנות</label></div>
     </div>
-    <div class="modal-actions"><button type="button" id="cancel" class="button secondary">ביטול</button><button class="button">שמירה</button></div>
+    <div class="modal-actions"><div id="formStatus" class="status form-status" role="status" aria-live="polite"></div><button type="button" id="cancel" class="button secondary">ביטול</button><button class="button">שמירה</button></div>
   </form></div>
-  <script src="catalog.js"></script><script src="admin.js?v=19"></script>
+  <script src="catalog.js"></script><script src="admin.js?v=20"></script>
 </body>
 </html>
