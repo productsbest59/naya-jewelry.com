@@ -686,3 +686,11 @@ body:has(#cartDrawer.open) #menuToggle {
 .store-products .variant-fields > :only-child{grid-column:1/-1!important}
 
 .store-products .variant-fields label{padding:0!important}
+
+/* Compact image action, aligned below the information badge. */
+.store-products .product-cart-add{position:absolute;top:52px;right:5px;z-index:2;display:grid;place-items:center;width:44px;height:44px;min-width:44px;min-height:44px;padding:9px;border:2px solid #f2cb7c;border-radius:50%;background:#17100ded;color:#f5d995;box-shadow:0 4px 14px #000a;cursor:pointer;touch-action:manipulation}
+.store-products .product-cart-add svg{display:block;width:24px;height:24px;pointer-events:none}
+.store-products .product-cart-add:hover{background:#b8873d;color:#fff}
+.store-products .product-cart-add:focus-visible{outline:3px solid white;outline-offset:3px}
+.store-products .product-body{height:162px!important;min-height:162px!important}
+@media(max-width:650px){.store-products .product-cart-add{top:44px;right:2px}.store-products .product-body{height:125px!important;min-height:125px!important}}
