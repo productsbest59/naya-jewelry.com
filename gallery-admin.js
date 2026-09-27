@@ -1,4 +1,4 @@
-export async function initGalleryAdmin({api,session,products,status}){
+export async function initGalleryAdmin({api,session,getProducts,status}){
   const section=document.createElement('section');
   section.className='admin-gallery-manager';
   section.innerHTML='<div class="gallery-admin-head"><div><h2>עריכת גלריית המודלים</h2><p>העלאה או החלפה של תמונה ושיוך אופציונלי למוצר</p></div><button class="button" type="button" id="addGalleryImage">+ תמונת מודל</button></div><div id="galleryAdminNotice" class="gallery-admin-notice"></div><div id="galleryAdminGrid" class="gallery-admin-grid"></div>';
@@ -6,8 +6,9 @@ export async function initGalleryAdmin({api,session,products,status}){
   const grid=section.querySelector('#galleryAdminGrid'),notice=section.querySelector('#galleryAdminNotice');
   let items=[];
   try{items=await api.getModelGallery(session)}catch{items=Array.from({length:15},(_,index)=>({id:null,image:`model${index+1}.jpg`,productId:null,sortOrder:index,active:true}));notice.textContent='הגלריה מוצגת במצב התחלתי. יש להפעיל פעם אחת את קובץ הגדרת הגלריה בסופאבייס כדי לשמור שינויים.'}
-  const productOptions=selected=>'<option value="">ללא קישור למוצר</option>'+products.map(product=>`<option value="${product.id}" ${product.id===selected?'selected':''}>${product.nameHe} - ${product.sku}</option>`).join('');
+  const productOptions=selected=>'<option value="">ללא קישור למוצר</option>'+getProducts().map(product=>`<option value="${product.id}" ${product.id===selected?'selected':''}>${product.nameHe} - ${product.sku}</option>`).join('');
   function render(){grid.innerHTML=items.map((item,index)=>`<article class="gallery-admin-card" data-gallery-index="${index}"><img src="${item.image}" alt="תמונת מודל ${index+1}"><label class="gallery-replace">החלפת תמונה<input type="file" accept="image/*" data-gallery-file="${index}"></label><label>קישור למוצר<select data-gallery-product="${index}">${productOptions(item.productId)}</select></label><label class="gallery-active"><input type="checkbox" data-gallery-active="${index}" ${item.active!==false?'checked':''}> מוצגת בגלריה</label><div class="gallery-admin-actions"><button class="button secondary" type="button" data-gallery-up="${index}" ${index===0?'disabled':''}>↑</button><button class="button secondary" type="button" data-gallery-down="${index}" ${index===items.length-1?'disabled':''}>↓</button><button class="button" type="button" data-gallery-save="${index}">שמירה</button><button class="button danger" type="button" data-gallery-delete="${index}">מחיקה</button></div></article>`).join('')}
+  document.addEventListener('naya-products-updated',()=>{grid.querySelectorAll('[data-gallery-product]').forEach(select=>{select.innerHTML=productOptions(items[Number(select.dataset.galleryProduct)].productId);});});
   const readFile=file=>new Promise((resolve,reject)=>{const reader=new FileReader();reader.onload=()=>resolve(reader.result);reader.onerror=reject;reader.readAsDataURL(file)});
   async function saveItem(index,message='תמונת הגלריה נשמרה'){const item=items[index];if(!item?.image){status('יש לבחור תמונה','error');return}status('שומר את תמונת הגלריה...');const saved=await api.saveModelGalleryItem(session,{...item,sortOrder:index});items[index]=saved;notice.textContent='';render();status(message)}
   const headerAdd=document.querySelector('#addGalleryHeader');
