@@ -675,3 +675,5 @@ body:has(#cartDrawer.open) #menuToggle {
     padding-right: 0;
   }
 }
+
+.product-detail-copy .product-description{white-space:normal;line-height:1.65;color:#e0d2bf}.product-detail-copy .product-description p,.product-detail-copy .product-description div{margin:0;padding:0;white-space:normal;line-height:inherit}.product-detail-copy .product-description ul,.product-detail-copy .product-description ol{margin:.35em 0;padding-inline-start:1.4em}.product-detail-copy .product-description li{margin:0;padding:0;line-height:inherit}
