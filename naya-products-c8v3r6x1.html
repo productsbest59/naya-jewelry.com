@@ -16,7 +16,7 @@
       <div class="field full rich-field" data-rich-field="descriptionHe"><span>תיאור המוצר בעברית</span><div class="rich-toolbar" role="toolbar"><button type="button" data-command="bold"><b>B</b></button><button type="button" data-command="italic"><i>I</i></button><button type="button" data-command="underline"><u>U</u></button><button type="button" data-command="insertUnorderedList">• רשימה</button><button type="button" data-command="insertOrderedList">1. רשימה</button><button type="button" data-command="createLink">🔗</button><button type="button" data-command="removeFormat">ניקוי</button></div><div class="rich-editor" contenteditable="true" dir="rtl" data-placeholder="תיאור, חומר, מידות ופרטים נוספים"></div><textarea name="descriptionHe" hidden></textarea></div>
       <div class="field full rich-field" data-rich-field="descriptionEn"><span>תיאור המוצר באנגלית</span><div class="rich-toolbar" role="toolbar"><button type="button" data-command="bold"><b>B</b></button><button type="button" data-command="italic"><i>I</i></button><button type="button" data-command="underline"><u>U</u></button><button type="button" data-command="insertUnorderedList">• List</button><button type="button" data-command="insertOrderedList">1. List</button><button type="button" data-command="createLink">🔗</button><button type="button" data-command="removeFormat">Clear</button></div><div class="rich-editor" contenteditable="true" dir="ltr" data-placeholder="Product description, materials and measurements"></div><textarea name="descriptionEn" hidden></textarea></div>
       <label class="field"><span>מק״ט</span><input name="sku" required></label>
-      <label class="field"><span>קטגוריה</span><select name="category"><option value="necklaces">שרשראות</option><option value="rings">טבעות</option><option value="bracelets">צמידים</option><option value="other">אחר</option></select></label>
+      <label class="field"><span>קטגוריה</span><select name="category"><option value="necklaces">שרשראות</option><option value="rings">טבעות</option><option value="bracelets">צמידים</option><option value="earrings">עגילים</option><option value="judaica">יודאיקה</option><option value="other">אחר</option></select></label>
       <label class="field"><span>מחיר</span><input name="regularPrice" type="number" min="0" step="0.01" required></label>
       <label class="field"><span>מחיר מבצע - אופציונלי</span><input name="price" type="number" min="0" step="0.01" placeholder="להשאיר ריק כשאין מבצע"></label>
       <label class="field"><span>צבעים</span><textarea name="colors" rows="3" placeholder="זהב&#10;כסף"></textarea><small>אפשרות אחת בכל שורה, או הפרדה בפסיק</small></label>
@@ -29,6 +29,6 @@
     </div>
     <div class="modal-actions"><div id="formStatus" class="status form-status" role="status" aria-live="polite"></div><button type="button" id="cancel" class="button secondary">ביטול</button><button class="button">שמירה</button></div>
   </form></div>
-  <script src="catalog.js"></script><script src="admin.js?v=21"></script>
+  <script src="catalog.js"></script><script src="admin.js?v=22"></script>
 </body>
 </html>
