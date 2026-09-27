@@ -192,17 +192,17 @@ html[lang="en"] #cartDrawer .cart-actions .button{font-size:.78rem!important;pad
 html[lang="he"] .checkout-shell,
 html[lang="he"] .checkout-shell :where(h1,h2,h3,p,div,span,strong,small,label,input,textarea,select,option,button){font-family:Arial,sans-serif!important}
 
-/* Uniform storefront cards: title, two option rows, price and CTA stay aligned. */
-.store-products .product-body{height:250px!important;min-height:250px!important;display:flex!important;flex-direction:column!important;gap:8px!important}
+/* Uniform storefront cards: title, one compact option row, price and CTA stay aligned. */
+.store-products .product-body{height:210px!important;min-height:210px!important;padding:12px!important;display:flex!important;flex-direction:column!important;gap:6px!important}
 .store-products .product h2{flex:0 0 2.7em!important;min-height:2.7em!important;max-height:2.7em!important}
-.store-products .variant-fields{display:grid!important;grid-template-columns:1fr!important;grid-template-rows:repeat(2,42px)!important;gap:6px!important;height:90px!important;min-height:90px!important;max-height:90px!important;overflow:hidden!important}
-.store-products .variant-fields label,.store-products .variant-fields select{height:42px!important;min-height:42px!important;margin:0!important}
+.store-products .variant-fields{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:38px!important;gap:6px!important;height:38px!important;min-height:38px!important;max-height:38px!important;overflow:hidden!important}
+.store-products .variant-fields label,.store-products .variant-fields select{height:38px!important;min-height:38px!important;margin:0!important;min-width:0!important;width:100%!important;padding:6px!important;}
 .store-products .price-row{flex:0 0 34px!important;height:34px!important;min-height:34px!important;margin-top:auto!important;align-items:center!important}
 .store-products .button.add{flex:0 0 42px!important;height:42px!important;min-height:42px!important;margin-top:0!important}
 @media(max-width:650px){
-  .store-products .product-body{height:205px!important;min-height:205px!important;padding:7px!important;gap:5px!important}
+  .store-products .product-body{height:166px!important;min-height:166px!important;padding:7px!important;gap:5px!important}
   .store-products .product h2{flex-basis:2.6em!important;min-height:2.6em!important;max-height:2.6em!important}
-  .store-products .variant-fields{grid-template-rows:repeat(2,34px)!important;height:73px!important;min-height:73px!important;max-height:73px!important;gap:5px!important}
+  .store-products .variant-fields{grid-template-rows:34px!important;height:34px!important;min-height:34px!important;max-height:34px!important;gap:5px!important}
   .store-products .variant-fields label,.store-products .variant-fields select{height:34px!important;min-height:34px!important}
   .store-products .price-row{flex-basis:30px!important;height:30px!important;min-height:30px!important}
   .store-products .button.add{flex-basis:36px!important;height:36px!important;min-height:36px!important}
@@ -682,3 +682,7 @@ body:has(#cartDrawer.open) #menuToggle {
 .product-detail-video-preview span::before{width:15px;height:19px;flex:0 0 15px;transform:none;filter:none}
 .product-detail-video-preview:hover span{background:rgba(0,0,0,.92)}
 .product-detail-video-preview:focus-visible span{outline:3px solid #d4af37;outline-offset:4px}
+
+.store-products .variant-fields > :only-child{grid-column:1/-1!important}
+
+.store-products .variant-fields label{padding:0!important}
