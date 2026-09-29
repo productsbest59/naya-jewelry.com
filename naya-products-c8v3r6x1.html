@@ -3,7 +3,7 @@
 <head>
   <link rel="icon" href="favicon.ico?v=2" sizes="any"><link rel="icon" type="image/svg+xml" href="favicon.svg?v=2"><link rel="apple-touch-icon" href="apple-touch-icon.png?v=2">
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
-  <title>Naya - ניהול מוצרים</title><link rel="stylesheet" href="styles.css?v=72">
+  <title>Naya - ניהול מוצרים</title><link rel="stylesheet" href="styles.css?v=73">
 </head>
 <body>
   <header class="site-head product-admin-header"><img class="brand" src="../logo trans.png" alt="Naya"><div class="head-actions"><button id="add" class="button" type="button">+ מוצר חדש</button><button id="addGalleryHeader" class="button" type="button" disabled>+ תמונת מודל</button><a class="button secondary" href="index.html">תצוגת החנות</a></div></header>
@@ -23,12 +23,12 @@
       <label class="field option-field"><span>מידות</span><textarea name="sizes" rows="2" placeholder="6&#10;7&#10;8"></textarea><small>מידה אחת בכל שורה, או הפרדה בפסיק</small></label>
       <label class="field full option-field"><span>אפשרויות נוספות - אורך או סגנון</span><textarea name="styles" rows="2" placeholder="קצרה&#10;ארוכה"></textarea><small>אפשרות אחת בכל שורה, או הפרדה בפסיק</small></label>
       <section class="field full variants-editor"><div class="variants-heading"><div><strong>מחירים לפי וריאציה</strong><small>כל שילוב של צבע × מידה × אפשרות יקבל שורה. מחיר ריק ישתמש במחיר הרגיל.</small></div><button id="generateVariants" class="button secondary" type="button">יצירת כל השילובים</button></div><div id="variantsList" class="variants-list"></div></section>
-      <div class="field full editor-media-row"><section class="editor-media-panel"><label class="field upload-field"><span>תמונה ראשית של המוצר</span><input id="primaryImageFile" type="file" accept="image/*"><small>תמונה זו תופיע בכרטיס המוצר ובעגלה</small></label><div id="primaryImagePreview" class="image-preview field"></div></section><section id="productVideoSlot" class="editor-media-panel"></section></div>
+      <div class="field full editor-media-row"><section class="editor-media-panel"><div class="field upload-field"><span>תמונה ראשית של המוצר</span><input id="primaryImageFile" type="file" accept="image/*"><small>תמונה זו תופיע בכרטיס המוצר ובעגלה</small></div><div id="primaryImagePreview" class="image-preview field"></div></section><section id="productVideoSlot" class="editor-media-panel"></section></div>
       <label class="field full upload-field"><span>תמונות נוספות</span><input id="additionalImageFiles" type="file" accept="image/*" multiple><small>לכל תמונה אפשר לשייך צבע; בחירת הצבע בחנות תחליף אליה.</small></label><div id="additionalImagesPreview" class="image-preview field full"></div>
       <div class="field full checks"><label><input name="active" type="checkbox"> מוצר מוצג בחנות</label></div>
     </div>
     <div class="modal-actions"><div id="formStatus" class="status form-status" role="status" aria-live="polite"></div><button type="button" id="cancel" class="button secondary">ביטול</button><button class="button">שמירה</button></div>
   </form></div>
-  <script src="catalog.js"></script><script src="admin.js?v=26"></script>
+  <script src="catalog.js"></script><script src="admin.js?v=27"></script>
 </body>
 </html>
