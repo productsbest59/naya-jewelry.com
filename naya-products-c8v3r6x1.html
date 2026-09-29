@@ -7,7 +7,7 @@
 </head>
 <body>
   <header class="site-head product-admin-header"><img class="brand" src="../logo trans.png" alt="Naya"><div class="head-actions"><button id="add" class="button" type="button">+ מוצר חדש</button><button id="addGalleryHeader" class="button" type="button" disabled>+ תמונת מודל</button><a class="button secondary" href="index.html">תצוגת החנות</a></div></header>
-  <main class="admin-shell"><div class="admin-top"><div><h1>ניהול מוצרים</h1><p>המוצרים נשמרים בחנות</p></div></div><section class="promotion-admin"><div><strong>מבצע כמות קבוע</strong><span>בקניית 3 פריטים קבל את המוצר הרביעי ב 50% הנחה - הזול מביניהם. בקניית 4 פריטים קבל את החמישי במתנה - הזול מביניהם!</span></div><label class="promotion-switch"><input id="promotionEnabled" type="checkbox"><span>המבצע פעיל</span></label></section><div id="status" class="status"></div><div id="list" class="admin-table"></div></main>
+  <main class="admin-shell"><div class="admin-top"><div><h1>ניהול מוצרים</h1><p>המוצרים נשמרים בחנות</p></div><label class="admin-category-filter"><span>תצוגה לפי קטגוריה</span><select id="adminCategoryFilter"><option value="all">כל הקטגוריות</option><option value="necklaces">שרשראות</option><option value="rings">טבעות</option><option value="bracelets">צמידים</option><option value="earrings">עגילים</option><option value="judaica">יודאיקה</option><option value="other">שונות</option></select></label></div><section class="promotion-admin"><div><strong>מבצע כמות קבוע</strong><span>בקניית 3 פריטים קבל את המוצר הרביעי ב 50% הנחה - הזול מביניהם. בקניית 4 פריטים קבל את החמישי במתנה - הזול מביניהם!</span></div><label class="promotion-switch"><input id="promotionEnabled" type="checkbox"><span>המבצע פעיל</span></label></section><div id="status" class="status"></div><div id="list" class="admin-table"></div></main>
   <div id="modal" class="modal"><form id="form" class="modal-card">
     <h2 id="modalTitle">מוצר</h2><input type="hidden" name="id">
     <div class="form-grid">
@@ -23,6 +23,6 @@
     </div>
     <div class="modal-actions"><div id="formStatus" class="status form-status" role="status" aria-live="polite"></div><button type="button" id="cancel" class="button secondary">ביטול</button><button class="button">שמירה</button></div>
   </form></div>
-  <script src="catalog.js"></script><script src="admin.js?v=29"></script>
+  <script src="catalog.js"></script><script src="admin.js?v=30"></script>
 </body>
 </html>
