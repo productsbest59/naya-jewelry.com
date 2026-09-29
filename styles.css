@@ -735,3 +735,4 @@ body:has(#cartDrawer.open) #menuToggle {
 #form .editor-media-panel{height:auto!important;min-height:0!important;align-self:start!important}
 #form .editor-media-panel .upload-field{height:auto!important;min-height:0!important}
 @media(max-width:600px){#form>.form-grid{grid-template-columns:1fr!important}#form>.form-grid>.field{grid-column:1!important}}
+.explicit-editor-row{display:grid!important;width:100%;align-items:start;gap:12px!important}.explicit-editor-row>.field{min-width:0;width:100%}.editor-row-two{grid-template-columns:repeat(2,minmax(0,1fr))!important}.editor-row-five{grid-template-columns:repeat(5,minmax(0,1fr))!important}.editor-row-three{grid-template-columns:repeat(3,minmax(0,1fr))!important}@media(max-width:760px){.editor-row-five{grid-template-columns:repeat(2,minmax(0,1fr))!important}.editor-row-three{grid-template-columns:1fr!important}}@media(max-width:600px){.editor-row-two,.editor-row-five{grid-template-columns:1fr!important}}
