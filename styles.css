@@ -721,3 +721,17 @@ body:has(#cartDrawer.open) #menuToggle {
 .store-products .product-cart-add{position:relative;overflow:visible}
 .store-products .product-cart-count{position:absolute;top:-8px;right:-8px;display:grid;place-items:center;min-width:21px;height:21px;padding:0 4px;border:1px solid #17100d;border-radius:999px;background:#f2b21b;color:#241400;font:800 12px/1 Arial,sans-serif;pointer-events:none}
 .store-products .product-cart-count[hidden]{display:none}
+
+/* Final product editor grid: direct selectors prevent legacy two-column rules from overriding it. */
+@media(min-width:601px){
+  #form>.form-grid{display:grid!important;grid-template-columns:repeat(30,minmax(0,1fr))!important;gap:10px 12px!important}
+  #form>.form-grid>.field:not(.full){grid-column:span 15!important}
+  #form>.form-grid>.rich-field{grid-column:span 15!important}
+  #form>.form-grid>.identity-field,#form>.form-grid>.price-field{grid-column:span 6!important}
+  #form>.form-grid>.field.option-field{grid-column:span 10!important}
+  #form>.form-grid>.field.full:not(.rich-field):not(.option-field){grid-column:1/-1!important}
+}
+#form .editor-media-row{height:auto!important;min-height:0!important;align-items:start!important}
+#form .editor-media-panel{height:auto!important;min-height:0!important;align-self:start!important}
+#form .editor-media-panel .upload-field{height:auto!important;min-height:0!important}
+@media(max-width:600px){#form>.form-grid{grid-template-columns:1fr!important}#form>.form-grid>.field{grid-column:1!important}}
