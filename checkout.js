@@ -79,13 +79,27 @@ import('./api-module.js?v=7').then(async api => {
     if (attempts < 300) paymentStatusTimer = setTimeout(() => watchTranzilaPayment(orderId, attempts + 1), 2000);
   }
 
-  function openTranzilaPayment(paymentLink, orderId) {
+  function openTranzilaPayment(payment, orderId) {
     paymentLoading.hidden = false;
     paymentFrame.onload = () => { paymentLoading.hidden = true; };
-    paymentExternal.href = paymentLink;
-    paymentFrame.src = paymentLink;
+    paymentExternal.hidden = true;
+    paymentFrame.src = 'about:blank';
     paymentOverlay.hidden = false;
     document.body.classList.add('payment-open');
+    const form = document.createElement('form');
+    form.method = 'POST';
+    form.action = payment.iframe_url;
+    form.target = paymentFrame.name || 'tranzilaSecureFrame';
+    paymentFrame.name = form.target;
+    Object.entries(payment.fields || {}).forEach(([name, value]) => {
+      const input = document.createElement('input');
+      input.type = 'hidden'; input.name = name; input.value = String(value ?? '');
+      form.appendChild(input);
+    });
+    form.hidden = true;
+    document.body.appendChild(form);
+    form.submit();
+    form.remove();
     watchTranzilaPayment(orderId);
   }
 
@@ -243,12 +257,12 @@ import('./api-module.js?v=7').then(async api => {
       const items = orderItems();
       const order = await api.createOrder(customer, items);
       rememberPendingPurchase(order);
-      const payment = provider === 'paypal' ? await api.startPayPalPayment(order.id) : await api.startTranzilaPayment(order.id);
-      const paymentLink = provider === 'paypal' ? payment?.approval_url : payment?.pr_link;
-      if (!paymentLink) throw new Error(provider === 'paypal' ? copy.paypalError : copy.tranzilaError);
+      const payment = provider === 'paypal' ? await api.startPayPalPayment(order.id) : await api.startTranzilaIframePayment(order.id);
+      const paymentLink = provider === 'paypal' ? payment?.approval_url : payment?.iframe_url;
+      if (!paymentLink || (provider === 'tranzila' && !payment?.fields?.thtk)) throw new Error(provider === 'paypal' ? copy.paypalError : copy.tranzilaError);
       sessionStorage.setItem('naya_pending_order_number', order.order_number);
       if (provider === 'tranzila') {
-        openTranzilaPayment(paymentLink, order.id);
+        openTranzilaPayment(payment, order.id);
         buttons.forEach(item => item.disabled = false);
         button.textContent = originalText;
       } else {

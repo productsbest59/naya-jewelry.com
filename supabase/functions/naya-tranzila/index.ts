@@ -121,6 +121,45 @@ async function createPayment(orderId: string) {
   return { ok: true, pr_id: String(data.pr_id), pr_link: data.pr_link };
 }
 
+async function createIframePayment(orderId: string) {
+  if (!ENABLED) throw new Error('Tranzila payments are safely disabled until setup is complete');
+  if (!TERMINAL || !APP_KEY || !APP_SECRET) throw new Error('Tranzila API credentials are missing');
+  if (!/^[0-9a-f-]{36}$/i.test(orderId)) throw new Error('Invalid order ID');
+
+  const rows = await db(`orders?id=eq.${encodeURIComponent(orderId)}&select=*&limit=1`);
+  const order = rows?.[0];
+  if (!order) throw new Error('Order not found');
+  if (order.payment_status === 'paid') throw new Error('Order is already paid');
+
+  const sum = Number(Number(order.total).toFixed(2));
+  if (!(sum > 0)) throw new Error('Invalid order total');
+  const response = await fetch('https://api.tranzila.com/v2/handshake/create', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', ...(await authHeaders()) },
+    body: JSON.stringify({ terminal_name: TERMINAL, sum, request_params: { order_id: order.id, order_number: order.order_number } })
+  });
+  const data = await response.json().catch(() => null);
+  if (!response.ok || Number(data?.error_code) !== 0 || !data?.thtk) {
+    throw new Error(`Tranzila handshake ${response.status}: ${data?.message || 'handshake failed'}`);
+  }
+
+  const callbackBase = `${SUPABASE_URL}/functions/v1/naya-tranzila`;
+  const fields = {
+    sum: String(sum), currency: '1', thtk: String(data.thtk), new_process: '1', tranmode: 'A', lang: 'il',
+    contact: order.customer_name || '', company: order.customer_name || '', email: order.customer_email || '',
+    country: order.country || 'ישראל', zip: order.postal_code || '', address: order.address || '', city: order.city || '',
+    pdesc: `NAYA order ${order.order_number || order.id}`,
+    success_url_address: `${callbackBase}?action=success`, fail_url_address: `${callbackBase}?action=fail`,
+    notify_url_address: `${callbackBase}?action=notify`
+  };
+  const iframeUrl = `https://directng.tranzila.com/${encodeURIComponent(TERMINAL)}/iframenew.php`;
+  await db(`orders?id=eq.${encodeURIComponent(order.id)}`, {
+    method: 'PATCH', headers: { Prefer: 'return=minimal' },
+    body: JSON.stringify({ payment_provider: 'tranzila', payment_request_id: String(data.thtk), payment_link: iframeUrl, payment_response_code: 'pending' })
+  });
+  return { ok: true, iframe_url: iframeUrl, fields };
+}
+
 function firstValue(body: Record<string, unknown>, names: string[]) {
   for (const name of names) {
     const value = body[name];
@@ -154,12 +193,22 @@ async function sendOrderEmails(orderId: string) {
 
 async function handleNotify(body: Record<string, unknown>) {
   if (!TERMINAL || !APP_KEY || !APP_SECRET) throw new Error('Tranzila API credentials are missing');
-  const paymentRequestId = firstValue(body, ['pr_id', 'payment_request_id']);
+  let requestParams: Record<string, unknown> = {};
+  const rawRequestParams = body.request_params;
+  if (rawRequestParams && typeof rawRequestParams === 'object') requestParams = rawRequestParams as Record<string, unknown>;
+  else if (typeof rawRequestParams === 'string') {
+    try { requestParams = JSON.parse(rawRequestParams); } catch {}
+  }
+  const paymentRequestId = firstValue(body, ['pr_id', 'payment_request_id', 'thtk']);
+  const orderId = firstValue({ ...requestParams, ...body }, ['order_id', 'orderId', 'OrderId']);
   const transactionIndex = firstValue(body, ['transaction_index', 'index', 'transaction_id']);
-  if (!paymentRequestId) throw new Error('Missing Tranzila payment request ID');
+  if (!paymentRequestId && !/^[0-9a-f-]{36}$/i.test(orderId)) throw new Error('Missing Tranzila order reference');
   if (!/^\d+$/.test(transactionIndex)) throw new Error('Missing or invalid Tranzila transaction index');
 
-  const rows = await db(`orders?payment_request_id=eq.${encodeURIComponent(paymentRequestId)}&select=*&limit=1`);
+  const lookup = /^[0-9a-f-]{36}$/i.test(orderId)
+    ? `orders?id=eq.${encodeURIComponent(orderId)}&select=*&limit=1`
+    : `orders?payment_request_id=eq.${encodeURIComponent(paymentRequestId)}&select=*&limit=1`;
+  const rows = await db(lookup);
   const order = rows?.[0];
   if (!order) throw new Error('Order for this payment request was not found');
   if (order.payment_status === 'paid') return { ok: true, already_processed: true };
@@ -204,6 +253,7 @@ Deno.serve(async request => {
     const body = await input(request);
     const action = String(body.action || new URL(request.url).searchParams.get('action') || 'start');
     if (action === 'start') return json(await createPayment(String(body.order_id || '')));
+    if (action === 'iframe') return json(await createIframePayment(String(body.order_id || '')));
     if (action === 'status') return json(await paymentStatus(String(body.order_id || '')));
     if (action === 'notify') { console.info('Tranzila Notify received', {format:request.headers.get('content-type'),fields:Object.keys(body)}); return json(await handleNotify(body)); }
     if (action === 'success' || action === 'fail') return paymentRedirect(action);

@@ -24,6 +24,7 @@ export async function updateProductDescription(session,id,descriptionHe){return 
 export async function deleteProductRemote(session,id){await request(`/rest/v1/products?id=eq.${id}`,{method:'DELETE',token:session.accessToken})}
 export async function createOrder(customer,items){let order=await request('/rest/v1/rpc/create_naya_order',{method:'POST',body:{p_customer:customer,p_items:items}});if(order?.id){sessionStorage.setItem('naya_pending_order_id',order.id);try{order=await request('/rest/v1/rpc/apply_naya_order_promotion',{method:'POST',body:{p_order_id:order.id}})||order}catch{}}return order}
 export async function startTranzilaPayment(orderId){return request('/functions/v1/naya-tranzila',{method:'POST',body:{action:'start',order_id:orderId}})}
+export async function startTranzilaIframePayment(orderId){return request('/functions/v1/naya-tranzila',{method:'POST',body:{action:'iframe',order_id:orderId}})}
 export async function getTranzilaPaymentStatus(orderId){return request('/functions/v1/naya-tranzila',{method:'POST',body:{action:'status',order_id:orderId}})}
 export async function startPayPalPayment(orderId){return request('/functions/v1/naya-paypal',{method:'POST',body:{action:'start',order_id:orderId}})}
 export async function getPayPalConfig(){return request('/functions/v1/naya-paypal?action=config')}
