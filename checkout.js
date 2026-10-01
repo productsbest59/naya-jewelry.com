@@ -81,7 +81,13 @@ import('./api-module.js?v=7').then(async api => {
 
   function openTranzilaPayment(payment, orderId) {
     paymentLoading.hidden = false;
-    paymentFrame.onload = () => { paymentLoading.hidden = true; };
+    let paymentLoaded = false;
+    const finishLoading = () => {
+      if (paymentLoaded) return;
+      paymentLoaded = true;
+      paymentLoading.hidden = true;
+    };
+    paymentFrame.onload = () => setTimeout(finishLoading, 250);
     paymentExternal.hidden = true;
     paymentFrame.src = 'about:blank';
     paymentOverlay.hidden = false;
@@ -100,6 +106,7 @@ import('./api-module.js?v=7').then(async api => {
     document.body.appendChild(form);
     form.submit();
     form.remove();
+    setTimeout(finishLoading, 1800);
     watchTranzilaPayment(orderId);
   }
 
