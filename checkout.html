@@ -7,7 +7,7 @@
   <meta name="robots" content="noindex,nofollow">
   <title>השלמת הזמנה | NAYA</title>
   <script src="ga4.js?v=1"></script>
-  <link rel="stylesheet" href="styles.css?v=66">
+  <link rel="stylesheet" href="styles.css?v=67">
   <link rel="stylesheet" href="hebrew-font-fix.css?v=4">
 </head>
 <body class="checkout-page">
@@ -38,9 +38,23 @@
     </section>
     <aside class="order-summary"><h2>סיכום הזמנה</h2><div id="summaryLines"></div><div id="summaryTotal" class="total"></div></aside>
   </main>
+  <div id="tranzilaOverlay" class="payment-overlay" hidden>
+    <section class="payment-dialog" role="dialog" aria-modal="true" aria-labelledby="tranzilaHeading">
+      <header class="payment-dialog-head">
+        <div>
+          <h2 id="tranzilaHeading">תשלום מאובטח</h2>
+          <p id="tranzilaSubheading">פרטי הכרטיס מוזנים ישירות במערכת המאובטחת של Tranzila</p>
+        </div>
+        <button id="closeTranzila" class="payment-dialog-close" type="button" aria-label="סגירת חלון התשלום">×</button>
+      </header>
+      <div id="tranzilaLoading" class="payment-frame-loading">טוען את חלון התשלום...</div>
+      <iframe id="tranzilaFrame" class="payment-frame" title="תשלום מאובטח באמצעות Tranzila" allow="payment" allowpaymentrequest="true"></iframe>
+      <a id="openTranzilaExternal" class="payment-external-link" href="#" target="_blank" rel="noopener">פתיחת התשלום בחלון חדש</a>
+    </section>
+  </div>
   <script src="catalog.js?v=4"></script>
   <script src="orders.js?v=4"></script>
-  <script src="checkout.js?v=23"></script>
+  <script src="checkout.js?v=24"></script>
   <script src="hebrew-arial-enforcer.js?v=3"></script>
   <script src="checkout-analytics.js?v=1"></script>
 </body>

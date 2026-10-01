@@ -10,17 +10,21 @@ import('./api-module.js?v=7').then(async api => {
     fields: ['Full name', 'Email address', 'Phone', 'Country', 'City', 'Street and number', 'Postal code', 'Order notes'],
     countryHelp: 'Choose from the list or enter any other country', card: 'Secure credit card payment (ILS)',
     paypal: 'Pay with PayPal in USD', summary: 'Order summary', total: 'Total to pay', empty: 'Your cart is empty',
-    emptyError: 'An order cannot be created with an empty cart', redirecting: 'Redirecting to payment...',
+    emptyError: 'An order cannot be created with an empty cart', redirecting: 'Opening secure payment...',
     paypalError: 'PayPal could not start the payment', tranzilaError: 'Tranzila did not return a payment link',
-    cancelled: 'Payment was cancelled. You can choose a payment method again.', sdkError: 'PayPal checkout could not be loaded.'
+    cancelled: 'Payment was cancelled. You can choose a payment method again.', sdkError: 'PayPal checkout could not be loaded.',
+    paymentHeading: 'Secure payment', paymentSubheading: 'Card details are entered directly in Tranzila’s secure system',
+    paymentLoading: 'Loading secure payment...', paymentExternal: 'Open payment in a new window', paymentClose: 'Close payment window'
   } : {
     title: 'השלמת הזמנה | NAYA', back: 'חזרה לחנות', heading: 'פרטי הרוכש והמשלוח',
     notice: 'תשלום מאובטח בכרטיס אשראי ובשקלים באמצעות Tranzila.',
     fields: ['שם מלא', 'דואר אלקטרוני', 'טלפון', 'מדינה', 'עיר', 'רחוב ומספר', 'מיקוד', 'הערות להזמנה'],
     countryHelp: 'ניתן לבחור מהרשימה או להקליד כל מדינה אחרת', card: 'תשלום מאובטח בכרטיס אשראי',
     paypal: 'תשלום עם PayPal בדולרים', summary: 'סיכום הזמנה', total: 'סה״כ לתשלום', empty: 'הסל ריק',
-    emptyError: 'לא ניתן ליצור הזמנה עם סל ריק', redirecting: 'מעביר לתשלום...',
-    paypalError: 'לא התקבל קישור תשלום מ-PayPal', tranzilaError: 'לא התקבל קישור תשלום מ-Tranzila'
+    emptyError: 'לא ניתן ליצור הזמנה עם סל ריק', redirecting: 'פותח תשלום מאובטח...',
+    paypalError: 'לא התקבל קישור תשלום מ-PayPal', tranzilaError: 'לא התקבל קישור תשלום מ-Tranzila',
+    paymentHeading: 'תשלום מאובטח', paymentSubheading: 'פרטי הכרטיס מוזנים ישירות במערכת המאובטחת של Tranzila',
+    paymentLoading: 'טוען את חלון התשלום...', paymentExternal: 'פתיחת התשלום בחלון חדש', paymentClose: 'סגירת חלון התשלום'
   };
 
   document.title = copy.title;
@@ -36,6 +40,54 @@ import('./api-module.js?v=7').then(async api => {
   cardButton.hidden = english;
   paypalButton.hidden = true;
   document.querySelector('.order-summary h2').textContent = copy.summary;
+  const paymentOverlay = document.querySelector('#tranzilaOverlay');
+  const paymentFrame = document.querySelector('#tranzilaFrame');
+  const paymentLoading = document.querySelector('#tranzilaLoading');
+  const paymentExternal = document.querySelector('#openTranzilaExternal');
+  const paymentClose = document.querySelector('#closeTranzila');
+  document.querySelector('#tranzilaHeading').textContent = copy.paymentHeading;
+  document.querySelector('#tranzilaSubheading').textContent = copy.paymentSubheading;
+  paymentLoading.textContent = copy.paymentLoading;
+  paymentExternal.textContent = copy.paymentExternal;
+  paymentClose.setAttribute('aria-label', copy.paymentClose);
+
+  let paymentStatusTimer = 0;
+  const closePayment = () => {
+    paymentOverlay.hidden = true;
+    document.body.classList.remove('payment-open');
+    clearTimeout(paymentStatusTimer);
+    paymentFrame.src = 'about:blank';
+  };
+  paymentClose.addEventListener('click', closePayment);
+  paymentOverlay.addEventListener('click', event => { if (event.target === paymentOverlay) closePayment(); });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape' && !paymentOverlay.hidden) closePayment(); });
+
+  async function watchTranzilaPayment(orderId, attempts = 0) {
+    if (paymentOverlay.hidden) return;
+    try {
+      const result = await api.getTranzilaPaymentStatus(orderId);
+      if (result?.payment_status === 'paid') {
+        localStorage.removeItem('naya_new_store_cart_v2');
+        location.assign('payment-success.html');
+        return;
+      }
+      if (result?.payment_status === 'failed') {
+        location.assign('payment-failed.html');
+        return;
+      }
+    } catch {}
+    if (attempts < 300) paymentStatusTimer = setTimeout(() => watchTranzilaPayment(orderId, attempts + 1), 2000);
+  }
+
+  function openTranzilaPayment(paymentLink, orderId) {
+    paymentLoading.hidden = false;
+    paymentFrame.onload = () => { paymentLoading.hidden = true; };
+    paymentExternal.href = paymentLink;
+    paymentFrame.src = paymentLink;
+    paymentOverlay.hidden = false;
+    document.body.classList.add('payment-open');
+    watchTranzilaPayment(orderId);
+  }
 
   const products = await api.getProducts();
   let promotionEnabled = true;
@@ -195,7 +247,13 @@ import('./api-module.js?v=7').then(async api => {
       const paymentLink = provider === 'paypal' ? payment?.approval_url : payment?.pr_link;
       if (!paymentLink) throw new Error(provider === 'paypal' ? copy.paypalError : copy.tranzilaError);
       sessionStorage.setItem('naya_pending_order_number', order.order_number);
-      location.assign(paymentLink);
+      if (provider === 'tranzila') {
+        openTranzilaPayment(paymentLink, order.id);
+        buttons.forEach(item => item.disabled = false);
+        button.textContent = originalText;
+      } else {
+        location.assign(paymentLink);
+      }
     } catch (error) {
       message.textContent = error.message;
       message.className = 'status show error';
