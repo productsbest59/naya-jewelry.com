@@ -431,6 +431,55 @@ html[lang="en"] .sale-banner-en {
   display: block;
 }
 
+.main-menu-links .judaica-menu-link {
+  color: #f4c85a;
+  border-color: rgba(244, 200, 90, 0.72);
+  background: linear-gradient(135deg, rgba(119, 79, 12, 0.42), rgba(29, 19, 4, 0.88));
+  box-shadow: inset 0 0 0 1px rgba(255, 220, 125, 0.12), 0 8px 20px rgba(0, 0, 0, 0.24);
+}
+
+.main-menu-links .judaica-menu-link:hover,
+.main-menu-links .judaica-menu-link:focus-visible {
+  color: #171006;
+  background: linear-gradient(135deg, #f7d978, #c9972f);
+}
+
+.judaica-banner-wrap {
+  display: block;
+  width: min(760px, calc(100% - 28px));
+  margin: 0 auto 26px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.judaica-banner-wrap:hover,
+.judaica-banner-wrap:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.4);
+}
+
+.judaica-banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(212, 168, 69, 0.58);
+  border-radius: 14px;
+}
+
+.judaica-banner-en {
+  display: none;
+}
+
+html[lang="en"] .judaica-banner-he {
+  display: none;
+}
+
+html[lang="en"] .judaica-banner-en {
+  display: block;
+}
+
 @media (max-width: 640px) {
   .sale-banner-wrap {
     width: calc(100% - 16px);
@@ -451,6 +500,16 @@ html[lang="en"] .sale-banner-en {
     filter: blur(2px);
     will-change: transform, opacity;
     animation: saleBannerShineMobile 3.4s linear infinite;
+  }
+
+  .judaica-banner-wrap {
+    width: calc(100% - 16px);
+    margin-bottom: 18px;
+    border-radius: 9px;
+  }
+
+  .judaica-banner {
+    border-radius: 9px;
   }
 }
 
