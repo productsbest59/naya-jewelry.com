@@ -135,7 +135,7 @@ import('./api-module.js?v=7').then(async api => {
 
   document.querySelector('#summaryLines').innerHTML = lines.map(({ item, product }) => `
     <div class="summary-line">
-      <img src="${item.image || product.images[0]}" alt="">
+      <img src="${item.image || product.images[0]}" alt="${english ? product.nameEn : product.nameHe}">
       <div>
         <strong>${english ? product.nameEn : product.nameHe}</strong>
         <small>${[item.color, item.size, item.style].filter(Boolean).map(optionText).join(' | ')}</small>

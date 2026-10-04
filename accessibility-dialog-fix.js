@@ -70,13 +70,13 @@
     body.a11y-bold-text :where(.product, .product *, .product-detail-modal, .product-detail-modal *, .model-showcase, .model-showcase *, .cart-drawer, .cart-drawer *, .product-modal, .product-modal *) {
       font-weight: 800 !important;
     }
-    body.a11y-grayscale :where(.product, .product-detail-modal, .model-showcase, .model-lightbox, .cart-drawer, .product-modal, .mehadrin-gallery) {
+    body.a11y-grayscale :where(.product, .product-detail-modal, .model-showcase, .model-lightbox, .cart-drawer, .product-modal) {
       filter: grayscale(100%) !important;
     }
-    body.a11y-blackwhite :where(.product, .product-detail-modal, .model-showcase, .model-lightbox, .cart-drawer, .product-modal, .mehadrin-gallery) {
+    body.a11y-blackwhite :where(.product, .product-detail-modal, .model-showcase, .model-lightbox, .cart-drawer, .product-modal) {
       filter: grayscale(100%) contrast(145%) brightness(112%) !important;
     }
-    body.a11y-dark-mode :where(.product, .product-detail-modal, .model-showcase, .model-lightbox, .cart-drawer, .product-modal, .mehadrin-gallery) {
+    body.a11y-dark-mode :where(.product, .product-detail-modal, .model-showcase, .model-lightbox, .cart-drawer, .product-modal) {
       filter: invert(100%) hue-rotate(180deg) !important;
     }
     body.a11y-high-contrast :where(.product, .product-detail-card, .model-gallery figure, .cart-drawer, .product-modal) {
