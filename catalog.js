@@ -22,7 +22,7 @@ window.NAYA_SEED_PRODUCTS = [
   nameHe,nameEn,descriptionHe:"",descriptionEn:"",regularPrice,price,priceUsd:Math.max(1,Math.round(price/3.7)),category,
   colors,sizes,styles,
   active:true,
-  images:[1,2,3,4,5].map(i=>`products-images/product${String(number).padStart(2,"0")}-${i}.jpg`)
+  images:[1,2,3,4,5].map(i=>{const key=`${String(number).padStart(2,"0")}-${i}`;return `products-images/product${key}.${new Set(['04-2','04-3']).has(key)?'jpg':'webp'}`})
 }));
 
 window.NayaCatalog = {
