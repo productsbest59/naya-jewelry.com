@@ -1,4 +1,4 @@
-import('./api-module.js?v=8').then(async api=>{
+import('./api-module.js?v=currency-9').then(async api=>{
   const {prepareImageUpload}=await import('./image-upload.js?v=1');
   const session=await api.getSession();if(!session){location.replace('naya-login-b7k4m9q2.html');return}try{if(!await api.isAdmin(session)){api.signOut();location.replace('naya-login-b7k4m9q2.html');return}}catch{location.replace('naya-login-b7k4m9q2.html');return}
   let products=await api.getProducts(session),primaryImage='',additionalImages=[],imageColors=[],productVideos=[],currentVariants=[];const list=document.querySelector('#list'),modal=document.querySelector('#modal'),form=document.querySelector('#form'),statusEl=document.querySelector('#status'),formStatusEl=document.querySelector('#formStatus'),primaryPreview=document.querySelector('#primaryImagePreview'),additionalPreview=document.querySelector('#additionalImagesPreview'),variantsList=document.querySelector('#variantsList'),categoryFilter=document.querySelector('#adminCategoryFilter');

@@ -1,4 +1,5 @@
-import('./api-module.js?v=7').then(async api => {
+import {linePrice as calculateLinePrice,selectedPrice,priceTotals,FALLBACK_USD_ILS_RATE,validRate,assertPaymentQuote} from './supabase/functions/shared/pricing.js?v=1';
+import('./api-module.js?v=currency-9').then(async api => {
   const language = localStorage.getItem('naya_store_language') === 'en' ? 'en' : 'he';
   const english = language === 'en';
   document.documentElement.lang = language;
@@ -115,23 +116,15 @@ import('./api-module.js?v=7').then(async api => {
   try { promotionEnabled = (await api.getPromotionSettings()).enabled; } catch {}
   const cart = JSON.parse(localStorage.getItem('naya_new_store_cart_v2') || '{}');
   const lines = Object.values(cart).map(item => ({ item, product: products.find(product => product.id === item.productId) })).filter(line => line.product);
-  const usdPrice = product => {
-    const manual = Number(product.priceUsd);
-    return manual > 0 ? Math.round(manual) : Math.max(1, Math.round(Number(product.price) / 3.7));
-  };
-  const linePrice = ({ item, product }) => {
-    const ils = Number(item.price ?? product.price);
-    if (!english) return ils;
-    return item.price == null ? usdPrice(product) : Math.max(1, Math.round(ils / 3.7));
-  };
+  for(const {item,product} of lines)if(Number(item.price)===0)item.price=selectedPrice(product,item);
+  const cachedRate=localStorage.getItem('naya_usd_ils_rate');
+  const usdRate=validRate(cachedRate)?Number(cachedRate):FALLBACK_USD_ILS_RATE;
+  const linePrice = line => calculateLinePrice(line,english?'USD':'ILS',usdRate);
   const money = amount => english ? `$${Number(amount).toFixed(2)}` : `${Number(amount).toLocaleString('he-IL')} ש״ח`;
   const optionTranslations = {'זהב':'Gold','צבע זהב':'Gold','מוזהב':'Gold','כסף':'Silver','צבע כסף':'Silver','מוכסף':'Silver','רוז גולד':'Rose Gold','זהב ורוד':'Rose Gold','שחור':'Black','לבן':'White','כחול':'Blue','אדום':'Red','ירוק':'Green','קצר':'Short','קצרה':'Short','ארוך':'Long','ארוכה':'Long','קטן':'Small','קטנה':'Small','בינוני':'Medium','בינונית':'Medium','גדול':'Large','גדולה':'Large','מתכוונן':'Adjustable','מתכווננת':'Adjustable','נשים':'Women','גברים':'Men'};
   const optionText = value => { const raw=String(value).trim(); return english ? (optionTranslations[raw] || raw.replace(/מילימטרים/g,'millimeters').replace(/מילימטר/g,'millimeter').replace(/ס\s*["״']?\s*מ/g,'cm').replace(/מ\s*["״']?\s*מ/g,'mm')) : raw; };
   const unitPrices = lines.flatMap(line => Array.from({length:line.item.qty},()=>linePrice(line)));
-  const subtotal = unitPrices.reduce((sum, price) => sum + price, 0);
-  const cheapest = unitPrices.length ? Math.min(...unitPrices) : 0;
-  const promotionDiscount = promotionEnabled ? (unitPrices.length >= 5 ? cheapest : unitPrices.length >= 4 ? cheapest * .5 : 0) : 0;
-  const total = subtotal - promotionDiscount;
+  const {subtotal,discount:promotionDiscount,total}=priceTotals(unitPrices,promotionEnabled);
 
   document.querySelector('#summaryLines').innerHTML = lines.map(({ item, product }) => `
     <div class="summary-line">
@@ -181,6 +174,7 @@ import('./api-module.js?v=7').then(async api => {
     rememberPendingPurchase(order);
     const payment = await api.startPayPalPayment(order.id);
     if (!payment?.paypal_order_id) throw new Error(copy.paypalError);
+    assertPaymentQuote(payment,total,'USD');
     sessionStorage.setItem('naya_pending_order_number', order.order_number);
     paypalStoreOrder = { order, payment };
     return paypalStoreOrder;
@@ -190,6 +184,7 @@ import('./api-module.js?v=7').then(async api => {
     if (!english) return;
     const config = await api.getPayPalConfig();
     if (!config?.client_id) throw new Error(copy.sdkError);
+    if(config.currency!=='USD')throw new Error('PayPal currency must be USD for English checkout.');
     await new Promise((resolve, reject) => {
       const script = document.createElement('script');
       script.src = `https://www.paypal.com/sdk/js?client-id=${encodeURIComponent(config.client_id)}&currency=${encodeURIComponent(config.currency || 'USD')}&intent=capture&components=buttons&enable-funding=card&disable-funding=paylater`;
@@ -265,6 +260,8 @@ import('./api-module.js?v=7').then(async api => {
       const order = await api.createOrder(customer, items);
       rememberPendingPurchase(order);
       const payment = provider === 'paypal' ? await api.startPayPalPayment(order.id) : await api.startTranzilaIframePayment(order.id);
+      if(provider==='paypal')assertPaymentQuote(payment,total,'USD');
+      else assertPaymentQuote({currency:'ILS',total:payment?.fields?.sum},total,'ILS');
       const paymentLink = provider === 'paypal' ? payment?.approval_url : payment?.iframe_url;
       if (!paymentLink || (provider === 'tranzila' && !payment?.fields?.thtk)) throw new Error(provider === 'paypal' ? copy.paypalError : copy.tranzilaError);
       sessionStorage.setItem('naya_pending_order_number', order.order_number);
