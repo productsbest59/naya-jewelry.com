@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>בדיקת טופס - NAYA</title><meta name="robots" content="noindex,nofollow">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0b0b0b;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px 0;
+      box-sizing: border-box;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 500px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    input, textarea {
+      box-sizing: border-box;
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 12px;
+      border-radius: 12px;
+      border: none;
+      background: #1a1a1a;
+      color: #fff;
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #ffd700, #ffcc00);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .success {
+      display: none;
+      margin-top: 15px;
+      color: #4cff4c;
+      font-weight: bold;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #aaa;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>בדיקת טופס NAYA</h1>
+
+  <form id="contactForm" action="#contact" data-contact-endpoint="https://digital247-contact.productsbest59.workers.dev/contact" data-turnstile-sitekey="0x4AAAAAAGCT2rEdGyVawKEY" method="POST">
+
+    <input type="text" name="name" placeholder="שם מלא" required maxlength="120" aria-label="שם מלא">
+
+    <input type="email" name="email" placeholder="אימייל" required maxlength="254" aria-label="אימייל">
+
+    <input type="text" name="subject" placeholder="נושא הפנייה" maxlength="200" aria-label="נושא הפנייה">
+
+    <textarea name="message" placeholder="הודעה" required maxlength="5000" aria-label="הודעה"></textarea>
+
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none"><p style="font-size:13px;line-height:1.5"><span data-he="הפרטים יועברו באמצעות Cloudflare ו־Brevo לצורך מענה לפנייה." data-en="Your details will be processed through Cloudflare and Brevo to respond to your enquiry.">הפרטים יועברו באמצעות Cloudflare ו־Brevo לצורך מענה לפנייה.</span> <a href="privacy.html" data-he="מדיניות פרטיות" data-en="Privacy policy">מדיניות פרטיות</a></p><button type="submit" data-he="שלח הודעה" data-en="Send Message">שלח הודעה</button>
+
+  <p id="contactFormStatus" role="status" aria-live="polite" style="display:none;line-height:1.5"></p></form>
+
+  <div class="success" id="successMsg">
+    🎉 ההודעה נשלחה בהצלחה!
+  </div>
+
+  <footer>
+    © Naya Fine Jewelry 2006
+  </footer>
+
+</div>
+
+<script src="naya-contact.js?v=1" defer></script></body>
+</html>
