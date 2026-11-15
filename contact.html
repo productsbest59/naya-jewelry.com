@@ -15,7 +15,9 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
+      padding: 24px 0;
+      box-sizing: border-box;
     }
 
     .container {
@@ -29,6 +31,7 @@
     }
 
     input, textarea {
+      box-sizing: border-box;
       width: 100%;
       padding: 14px;
       margin-bottom: 12px;
@@ -76,24 +79,19 @@
 
   <h1>צור קשר</h1>
 
-  <form id="contactForm" action="https://formsubmit.co/info@naya-jewelry.com" method="POST">
+  <form id="contactForm" action="#contact" data-contact-endpoint="https://digital247-contact.productsbest59.workers.dev/contact" data-turnstile-sitekey="0x4AAAAAAGCT2rEdGyVawKEY" method="POST">
 
-    <input type="text" name="name" placeholder="שם מלא" required>
+    <input type="text" name="name" placeholder="שם מלא" required maxlength="120" aria-label="שם מלא">
 
-    <input type="email" name="email" placeholder="אימייל" required>
+    <input type="email" name="email" placeholder="אימייל" required maxlength="254" aria-label="אימייל">
 
-    <input type="text" name="subject" placeholder="נושא הפנייה">
+    <input type="text" name="subject" placeholder="נושא הפנייה" maxlength="200" aria-label="נושא הפנייה">
 
-    <textarea name="message" placeholder="הודעה" required></textarea>
+    <textarea name="message" placeholder="הודעה" required maxlength="5000" aria-label="הודעה"></textarea>
 
-    <input type="hidden" name="_subject" value="פנייה חדשה מהאתר NAYA">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="hidden" name="_template" value="table">
-    <input type="hidden" name="_next" value="https://naya-jewelry.com/thanks.html">
+    <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none"><p style="font-size:13px;line-height:1.5"><span data-he="הפרטים יועברו באמצעות Cloudflare ו־Brevo לצורך מענה לפנייה." data-en="Your details will be processed through Cloudflare and Brevo to respond to your enquiry.">הפרטים יועברו באמצעות Cloudflare ו־Brevo לצורך מענה לפנייה.</span> <a href="privacy.html" data-he="מדיניות פרטיות" data-en="Privacy policy">מדיניות פרטיות</a></p><button type="submit" data-he="שלח הודעה" data-en="Send Message">שלח הודעה</button>
 
-    <button type="submit">שלח הודעה</button>
-
-  </form>
+  <p id="contactFormStatus" role="status" aria-live="polite" style="display:none;line-height:1.5"></p></form>
 
   <div class="success" id="successMsg">
     🎉 ההודעה נשלחה בהצלחה!
@@ -105,5 +103,5 @@
 
 </div>
 
-</body>
+<script src="naya-contact.js?v=1" defer></script></body>
 </html>

@@ -1930,16 +1930,13 @@ body[dir="ltr"] .faq-answer{
       <button type="button" class="contact-popup-close" id="contactPopupClose" aria-label="סגור">×</button>
     </div>
 
-    <form class="contact-popup-form" id="quickContactForm" action="https://formsubmit.co/ajax/info@naya-jewelry.com" method="POST">
-      <input type="text" name="name" placeholder="שם מלא" data-placeholder-he="שם מלא" data-placeholder-en="Full Name" required>
-      <input type="email" name="email" placeholder="אימייל" data-placeholder-he="אימייל" data-placeholder-en="Email" required>
-<input type="tel" name="phone" placeholder="טלפון" data-placeholder-he="טלפון" data-placeholder-en="Phone Number" inputmode="tel" autocomplete="tel" required style="direction:inherit;text-align:inherit;">
-<input type="text" name="subject" placeholder="נושא הפנייה" data-placeholder-he="נושא הפנייה" data-placeholder-en="Subject">      <textarea name="message" placeholder="הודעה" data-placeholder-he="הודעה" data-placeholder-en="Message" required></textarea>
-      <input type="hidden" name="_subject" value="פנייה חדשה מהאתר NAYA">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_template" value="table">
-<button type="submit" class="contact-popup-submit" id="quickContactSubmit" data-he="שלח הודעה" data-en="Send Message">שלח הודעה</button>
-    </form>
+    <form class="contact-popup-form" id="quickContactForm" action="#contact" data-contact-endpoint="https://digital247-contact.productsbest59.workers.dev/contact" data-turnstile-sitekey="0x4AAAAAAGCT2rEdGyVawKEY" method="POST">
+      <input type="text" name="name" placeholder="שם מלא" data-placeholder-he="שם מלא" data-placeholder-en="Full Name" required maxlength="120" aria-label="שם מלא">
+      <input type="email" name="email" placeholder="אימייל" data-placeholder-he="אימייל" data-placeholder-en="Email" required maxlength="254" aria-label="אימייל">
+<input type="tel" name="phone" placeholder="טלפון" data-placeholder-he="טלפון" data-placeholder-en="Phone Number" inputmode="tel" autocomplete="tel" required style="direction:inherit;text-align:inherit;" maxlength="40" aria-label="טלפון">
+<input type="text" name="subject" placeholder="נושא הפנייה" data-placeholder-he="נושא הפנייה" data-placeholder-en="Subject" maxlength="200" aria-label="נושא הפנייה">      <textarea name="message" placeholder="הודעה" data-placeholder-he="הודעה" data-placeholder-en="Message" required maxlength="5000" aria-label="הודעה"></textarea>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true" style="display:none"><p style="font-size:13px;line-height:1.5"><span data-he="הפרטים יועברו באמצעות Cloudflare ו־Brevo לצורך מענה לפנייה." data-en="Your details will be processed through Cloudflare and Brevo to respond to your enquiry.">הפרטים יועברו באמצעות Cloudflare ו־Brevo לצורך מענה לפנייה.</span> <a href="privacy.html" data-he="מדיניות פרטיות" data-en="Privacy policy">מדיניות פרטיות</a></p><button type="submit" class="contact-popup-submit" id="quickContactSubmit" data-he="שלח הודעה" data-en="Send Message">שלח הודעה</button>
+    <p id="contactFormStatus" role="status" aria-live="polite" style="display:none;line-height:1.5"></p></form>
 
     <div class="contact-popup-success" id="quickContactSuccess" data-he="ההודעה נשלחה בהצלחה! נחזור אליכם בהקדם 🙌" data-en="Your message was sent successfully! We will get back to you soon 🙌">ההודעה נשלחה בהצלחה! נחזור אליכם בהקדם 🙌</div>
     <div class="contact-popup-error" id="quickContactError" data-he="שגיאה בשליחה, נסו שוב בעוד רגע" data-en="There was a problem sending the message. Please try again.">שגיאה בשליחה, נסו שוב בעוד רגע</div>
@@ -2340,49 +2337,7 @@ document.addEventListener("click", function(e) {
   </script>
 
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const form = document.getElementById("quickContactForm");
-  const submitBtn = document.getElementById("quickContactSubmit");
-  const successMsg = document.getElementById("quickContactSuccess");
-  const errorMsg = document.getElementById("quickContactError");
-
-  if(form){
-    form.addEventListener("submit", async function(e){
-      e.preventDefault();
-
-      successMsg.style.display = "none";
-      errorMsg.style.display = "none";
-
-      submitBtn.disabled = true;
-      submitBtn.textContent = document.documentElement.lang === "he" ? "שולח..." : "Sending...";
-
-      try{
-        const response = await fetch(form.action, {
-          method: "POST",
-          body: new FormData(form),
-          headers: { "Accept": "application/json" }
-        });
-
-        if(response.ok){
-          form.reset();
-          successMsg.style.display = "block";
-        } else {
-          errorMsg.style.display = "block";
-        }
-      } catch(err){
-        errorMsg.style.display = "block";
-      }
-
-      submitBtn.disabled = false;
-      submitBtn.textContent = submitBtn.getAttribute("data-he") || "שלח הודעה";
-      if(document.documentElement.lang === "en"){
-        submitBtn.textContent = submitBtn.getAttribute("data-en") || "Send Message";
-      }
-    });
-  }
-});
-</script>
+<script src="naya-contact.js?v=1" defer></script>
  <script>
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelectorAll('.buy-now-btn').forEach(function(btn){
